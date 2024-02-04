@@ -149,13 +149,13 @@ module queue_1024 (Data, Clock, WrEn, RdEn, Reset, Q, Empty, Full)/* synthesis N
 
     INV INV_0 (.A(wren_i), .Z(wren_i_inv));
 
-    defparam LUT4_1.initval =  16'h3232 ;
-    ROM16X1A LUT4_1 (.AD3(scuba_vlo), .AD2(cmp_le_1), .AD1(wren_i), .AD0(empty_i), 
-        .DO0(empty_d));
+    defparam LUT4_1.INIT =  16'h3232 ;
+    LUT4 LUT4_1 (.D(scuba_vlo), .C(cmp_le_1), .B(wren_i), .A(empty_i), 
+        .Z(empty_d));
 
-    defparam LUT4_0.initval =  16'h3232 ;
-    ROM16X1A LUT4_0 (.AD3(scuba_vlo), .AD2(cmp_ge_d1), .AD1(rden_i), .AD0(full_i), 
-        .DO0(full_d));
+    defparam LUT4_0.INIT =  16'h3232 ;
+    LUT4 LUT4_0 (.D(scuba_vlo), .C(cmp_ge_d1), .B(rden_i), .A(full_i), 
+        .Z(full_d));
 
     defparam pdp_ram_0_0_1.INIT_DATA = "STATIC" ;
     defparam pdp_ram_0_0_1.ASYNC_RESET_RELEASE = "SYNC" ;
