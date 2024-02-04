@@ -102,27 +102,27 @@ module queue_64 (Data, Clock, WrEn, RdEn, Reset, Q, WCNT, Empty, Full)/* synthes
 
     AND2 AND2_t3 (.A(WrEn), .B(invout_1), .Z(wren_i));
 
-    INV INV_3 (.A(full_i), .Z(invout_1));
+    INVERTED INV_3 (.A(full_i), .Z(invout_1));
 
     AND2 AND2_t2 (.A(RdEn), .B(invout_0), .Z(rden_i));
 
-    INV INV_2 (.A(empty_i), .Z(invout_0));
+    INVERTED INV_2 (.A(empty_i), .Z(invout_0));
 
     AND2 AND2_t1 (.A(wren_i), .B(rden_i_inv), .Z(cnt_con));
 
     XOR2 XOR2_t0 (.A(wren_i), .B(rden_i), .Z(fcnt_en));
 
-    INV INV_1 (.A(rden_i), .Z(rden_i_inv));
+    INVERTED INV_1 (.A(rden_i), .Z(rden_i_inv));
 
-    INV INV_0 (.A(wren_i), .Z(wren_i_inv));
+    INVERTED INV_0 (.A(wren_i), .Z(wren_i_inv));
 
-    defparam LUT4_1.initval =  16'h3232 ;
-    ROM16X1A LUT4_1 (.AD3(scuba_vlo), .AD2(cmp_le_1), .AD1(wren_i), .AD0(empty_i), 
-        .DO0(empty_d));
+    defparam LUT4_1.INIT =  16'h3232 ;
+    LUT4 LUT4_1 (.D(scuba_vlo), .C(cmp_le_1), .B(wren_i), .A(empty_i), 
+        .Z(empty_d));
 
-    defparam LUT4_0.initval =  16'h3232 ;
-    ROM16X1A LUT4_0 (.AD3(scuba_vlo), .AD2(cmp_ge_d1), .AD1(rden_i), .AD0(full_i), 
-        .DO0(full_d));
+    defparam LUT4_0.INIT =  16'h3232 ;
+    LUT4 LUT4_0 (.D(scuba_vlo), .C(cmp_ge_d1), .B(rden_i), .A(full_i), 
+        .Z(full_d));
 
     defparam pdp_ram_0_0_0.INIT_DATA = "STATIC" ;
     defparam pdp_ram_0_0_0.ASYNC_RESET_RELEASE = "SYNC" ;
