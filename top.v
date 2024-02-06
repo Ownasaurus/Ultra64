@@ -4,7 +4,7 @@
 
 // NUM_CONSOLES is the maximum number of N64 consoles to output to
 
-module top #(parameter NUM_CONSOLES=9) (
+module top #(parameter NUM_CONSOLES=64) (
     input clk12,
 	output [7:0] led,
     inout n64real,

@@ -1,5 +1,5 @@
 PROJ=n64_replay_device
-TRELLIS?=/usr/share/trellis
+TRELLIS?=/usr/local/share/trellis
 
 all: ${PROJ}.bit
 
