@@ -2,7 +2,7 @@
 /* Module Version: 5.1 */
 /* C:\lscc\diamond\3.12\ispfpga\bin\nt64\scuba.exe -w -n queue_1024 -lang verilog -synth lse -bus_exp 7 -bb -arch sa5p00g -type ebfifo -sync_mode -depth 1024 -width 32 -no_enable -pe -1 -pf -1 -reset_rel SYNC -fdc C:/Users/Justin/Documents/Lattice Projects/Ultra64_Components/queue_1024/queue_1024.fdc  */
 /* Thu Sep 16 21:05:43 2021 */
-
+// Ported by Ownasaurus to work with yosys+nextpnr
 
 `timescale 1 ns / 1 ps
 module queue_1024 (Data, Clock, WrEn, RdEn, Reset, Q, Empty, Full)/* synthesis NGD_DRC_MASK=1 */;

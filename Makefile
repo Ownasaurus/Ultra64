@@ -14,7 +14,7 @@ ${PROJ}.json: top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v
 
 ${PROJ}.svf : ${PROJ}.bit
 
-prog: ${PROJ}.svf
+flash: ${PROJ}.svf
 	openocd -f ${TRELLIS}/misc/openocd/ecp5-evn.cfg -c "transport select jtag; init; svf $<; exit"
 
 clean:
