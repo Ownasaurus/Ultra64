@@ -6,7 +6,8 @@ module n64_receive_controller_data(
 	input trigger,
     output reg [31:0] controller_data,
 	input n64d,
-	output reg receiving
+	output reg receiving,
+	output [2:0] debug
 );
 
 //localparam one_us = 50;
@@ -22,6 +23,8 @@ localparam idle=0, waiting_for_low=1, waiting_for_high=2, end_of_command=3;
 reg [1:0] state;
 reg [7:0] timer; // shouldn't ever be negative for more than 256 cycles. longest possible should theoretically be 150 cycles.
 reg [5:0] position;
+
+assign debug[1:0] = state;
 
 initial begin
     controller_data = 0;
@@ -46,15 +49,21 @@ always @(posedge sys_clk) begin
     		end
         end
         waiting_for_low: begin
-            // ok to idle here for long periods of time
-            if(!n64d) begin // we went low, so start counting!
-                timer <= timer + 1'b1;
+            // apparently NOT ok to idle here for long periods of time
+	    if(timer > 250) begin
+                state <= idle;
+		receiving <= 1'b0;
+            end else if(!n64d) begin // we went low, so start counting at 1 again!
+                timer <= 1;
                 state <= waiting_for_high;
+            end else begin
+		timer <= timer + 1'b1;
             end
         end
         waiting_for_high: begin
             if(timer > 250) begin // we were low for too long. it's probably not plugged in...?
                 state <= idle;
+                receiving <= 1'b0;
             end else if(n64d) begin
                 // determine the type of signal based on how long we stated low
                 if(timer > zero_one_border && timer <= one_two_border) begin // low for 1us

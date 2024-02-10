@@ -4,14 +4,15 @@
 
 // NUM_CONSOLES is the maximum number of N64 consoles to output to
 
-module top #(parameter NUM_CONSOLES=64) (
+module top #(parameter NUM_CONSOLES=1) (
     input clk12,
 	output [7:0] led,
     inout n64real,
     inout [NUM_CONSOLES-1:0] n64,
     output tx_uart,
     input rx_uart,
-	input button
+	input button,
+    output [2:0] debug
 );
 
 // set up 50MHz to use as base clk ----------------------
@@ -47,7 +48,8 @@ endgenerate
 n64_controller_reader reader(
    .sys_clk(clk),
    .n64d(n64real),
-   .controller_data(real_controller_data)
+   .controller_data(real_controller_data),
+   .debug(debug)
 );
 
 
@@ -71,7 +73,7 @@ initial begin
 end
 
 // turn off all those darn bright LEDs!
-assign led[6:0] = 7'b1111111;
+assign led[6:0] = 7'b1111110;
 assign led[7] = input_mode;
 
 // serial handler------------------------------------------
