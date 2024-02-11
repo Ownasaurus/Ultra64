@@ -31,7 +31,7 @@ reg input_mode;
 generate
    genvar i;
    for(i=0; i<NUM_CONSOLES;i=i+1) begin
-      n64_controller #(.NUM_CONSOLES(NUM_CONSOLES)) player_i (
+      n64_controller player_i (
 		.sys_clk(clk),
 		.n64d(n64[i]),
 		.real_controller_data(real_controller_data),
@@ -73,7 +73,7 @@ initial begin
 end
 
 // turn off all those darn bright LEDs!
-assign led[6:0] = 7'b1111110;
+assign led[6:0] = 7'b0101010;
 assign led[7] = input_mode;
 
 // serial handler------------------------------------------
