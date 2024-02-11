@@ -6,8 +6,7 @@ module n64_receive_controller_data(
 	input trigger,
     output reg [31:0] controller_data,
 	input n64d,
-	output reg receiving,
-	output [2:0] debug
+	output reg receiving
 );
 
 //localparam one_us = 50;
@@ -23,8 +22,6 @@ localparam idle=0, waiting_for_low=1, waiting_for_high=2, end_of_command=3;
 reg [1:0] state;
 reg [7:0] timer; // shouldn't ever be negative for more than 256 cycles. longest possible should theoretically be 150 cycles.
 reg [5:0] position;
-
-assign debug[1:0] = state;
 
 initial begin
     controller_data = 0;

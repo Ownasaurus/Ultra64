@@ -48,8 +48,7 @@ endgenerate
 n64_controller_reader reader(
    .sys_clk(clk),
    .n64d(n64real),
-   .controller_data(real_controller_data),
-   .debug(debug)
+   .controller_data(real_controller_data)
 );
 
 

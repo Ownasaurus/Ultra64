@@ -6,8 +6,7 @@
 module n64_controller_reader(
 	input sys_clk,
 	inout n64d,
-	output reg [31:0] controller_data=32'h00000000,
-	output [2:0] debug
+	output reg [31:0] controller_data=32'h00000000
 );
 
 localparam idle=0, write_request=1, read_response=2, delay=3;
@@ -35,8 +34,7 @@ n64_receive_controller_data receiver(
 	.trigger(get_data),
     .controller_data(data_received),
 	.n64d(n64d_f),
-	.receiving(is_receiving_data),
-	.debug(debug)
+	.receiving(is_receiving_data)
 );
 
 reg direction_output = 1'b0;
