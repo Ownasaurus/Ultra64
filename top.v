@@ -73,7 +73,7 @@ initial begin
 end
 
 // turn off all those darn bright LEDs!
-assign led[6:0] = 7'b0101010;
+assign led[6:0] = 7'b1111111;
 assign led[7] = input_mode;
 
 // serial handler------------------------------------------
