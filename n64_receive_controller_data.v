@@ -46,8 +46,7 @@ always @(posedge sys_clk) begin
     		end
         end
         waiting_for_low: begin
-            // apparently NOT ok to idle here for long periods of time
-	    if(timer > 250) begin
+	    if(timer > 250) begin // we were high for too long. it's probably not plugged in?
                 state <= idle;
 		receiving <= 1'b0;
             end else if(!n64d) begin // we went low, so start counting at 1 again!
