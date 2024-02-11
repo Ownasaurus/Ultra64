@@ -6,12 +6,12 @@
 
 module top #(parameter NUM_CONSOLES=1) (
     input clk12,
-	output [7:0] led,
+    output [7:0] led,
     inout n64real,
     inout [NUM_CONSOLES-1:0] n64,
     output tx_uart,
     input rx_uart,
-	input button,
+    input button,
     output [2:0] debug
 );
 
@@ -87,3 +87,4 @@ serial_handler #(.NUM_CONSOLES(NUM_CONSOLES)) ftdi (
 );
 
 endmodule
+
