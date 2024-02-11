@@ -4,7 +4,7 @@
 
 // NUM_CONSOLES is the maximum number of N64 consoles to output to
 
-module top #(parameter NUM_CONSOLES=1) (
+module top #(parameter NUM_CONSOLES=4) (
     input clk12,
     output [7:0] led,
     inout n64real,
@@ -75,10 +75,56 @@ end
 assign led[6:0] = 7'b1111111;
 assign led[7] = input_mode;
 
+// deal with inactive consoles. let them time out
+reg [NUM_CONSOLES-1:0] ready_override;
+reg at_least_one_ready;
+reg [31:0] console_timeout;
+
+initial begin
+    ready_override = 0;
+    at_least_one_ready = 0;
+    console_timeout = 0;
+end
+
+// logic for handling timeout timer
+// TODO: might be race condition here
+always @(posedge clk) begin
+	if(!at_least_one_ready && !queueWrEn) begin
+		if(|ready_for_next_frame) begin
+			at_least_one_ready <= 1'b1;
+		end
+	end else begin
+		if(queueWrEn) begin // data being given to all consoles. can reset logic
+			// TODO: MIGHT NEED DELAY HERE
+			console_timeout <= 1'b0;
+			at_least_one_ready <= 1'b0;
+		end
+		console_timeout <= console_timeout + 1'b1;
+	end
+end
+
+// actual timeout checks
+generate
+    genvar i;
+    for(i=0; i<NUM_CONSOLES;i=i+1) begin
+        assign consoles_ready[i] = ready_override[i] ? 1'b1 : ready_for_next_frame[i];
+
+	always @(posedge clk) begin
+		if(console_timeout >= 50_000_000) begin // 10 seconds without advancing
+			if(!ready_for_next_frame[i]) begin // we are the one holding them up!
+				ready_override[i] = 1'b1; // so ignore us in the future
+			end
+		end
+	end
+    end
+endgenerate
+
+
+
 // serial handler------------------------------------------
 serial_handler #(.NUM_CONSOLES(NUM_CONSOLES)) ftdi (
     .clk(clk),
-	.request_frame(ready_for_next_frame),
+	.request_frame(ready_override),
     .rx_uart(rx_uart),
 	.tx_uart(tx_uart),
 	.queue_WrEn(queueWrEn),
