@@ -4,14 +4,15 @@
 
 // NUM_CONSOLES is the maximum number of N64 consoles to output to
 
-module top #(parameter NUM_CONSOLES=64) (
+module top #(parameter NUM_CONSOLES=1) (
     input clk12,
-	output [7:0] led,
+    output [7:0] led,
     inout n64real,
     inout [NUM_CONSOLES-1:0] n64,
     output tx_uart,
     input rx_uart,
-	input button
+    input button,
+    output [2:0] debug
 );
 
 // set up 50MHz to use as base clk ----------------------
@@ -30,7 +31,7 @@ reg input_mode;
 generate
    genvar i;
    for(i=0; i<NUM_CONSOLES;i=i+1) begin
-      n64_controller #(.NUM_CONSOLES(NUM_CONSOLES)) player_i (
+      n64_controller player_i (
 		.sys_clk(clk),
 		.n64d(n64[i]),
 		.real_controller_data(real_controller_data),
@@ -86,3 +87,4 @@ serial_handler #(.NUM_CONSOLES(NUM_CONSOLES)) ftdi (
 );
 
 endmodule
+

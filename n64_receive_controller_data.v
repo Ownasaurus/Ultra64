@@ -46,15 +46,20 @@ always @(posedge sys_clk) begin
     		end
         end
         waiting_for_low: begin
-            // ok to idle here for long periods of time
-            if(!n64d) begin // we went low, so start counting!
-                timer <= timer + 1'b1;
+	    if(timer > 250) begin // we were high for too long. it's probably not plugged in?
+                state <= idle;
+		receiving <= 1'b0;
+            end else if(!n64d) begin // we went low, so start counting at 1 again!
+                timer <= 1;
                 state <= waiting_for_high;
+            end else begin
+		timer <= timer + 1'b1;
             end
         end
         waiting_for_high: begin
             if(timer > 250) begin // we were low for too long. it's probably not plugged in...?
                 state <= idle;
+                receiving <= 1'b0;
             end else if(n64d) begin
                 // determine the type of signal based on how long we stated low
                 if(timer > zero_one_border && timer <= one_two_border) begin // low for 1us

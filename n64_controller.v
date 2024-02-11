@@ -3,7 +3,7 @@
 // Has one bidirectional data line
 // Assumes 50MHz sys_clk
 
-module n64_controller #(parameter NUM_CONSOLES=1) (
+module n64_controller(
 	input sys_clk,
 	inout n64d,
 	input [31:0] real_controller_data,
