@@ -1,0 +1,29 @@
+$ git branch --show-current
+N01-fix
+exit: 0
+$ git rev-parse HEAD
+2f4bab11234cc2d5c1b452e51883447ff2831d10
+exit: 0
+$ git diff --cached --check
+exit: 0
+$ git diff --name-only
+exit: 0
+$ git diff --cached --name-only
+README.md
+serial_handler.v
+tests/run_serial_recovery.py
+tests/serial_recovery_tb.v
+validation/N01/README.md
+validation/N01/baseline.log
+validation/N01/build.log
+validation/N01/default-timeout.log
+validation/N01/negative-control.log
+validation/N01/regression.log
+validation/N01/toolchain-and-artifacts.log
+exit: 0
+PASS runner Python syntax
+PASS baseline.log completed successfully
+PASS regression.log completed successfully
+PASS default-timeout.log completed successfully
+PASS negative control rejects original parser behavior
+PASS current RTL SHA256 matches successful bitstream build source: e55d30845cd88f3f38881a83da619bf377c607448c2f537e158966a87b809ef3

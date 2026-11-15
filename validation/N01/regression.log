@@ -1,0 +1,15 @@
+$ iverilog -g2005 -Wall -s serial_recovery_tb -o C:\Users\Justin\AppData\Local\Temp\n01-rtl-fh69t3q0\serial_recovery.vvp serial_handler.v UART_RX.v UART_TX.v tests/serial_recovery_tb.v
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module UART_RX declared here: UART_RX.v:15
+       :   -- module UART_TX declared here: UART_TX.v:15
+       :   -- module serial_handler declared here: serial_handler.v:5
+exit: 0
+$ vvp C:\Users\Justin\AppData\Local\Temp\n01-rtl-fh69t3q0\serial_recovery.vvp
+PASS every incomplete setup/frame/power/bulk prefix recovers without writes
+PASS all 765 unsupported setup field values return FE
+PASS arbitrary binary frames and near-limit inter-byte gaps
+PASS timeout boundary, lost TX completion and real UART reconnect/payload
+PASS serial recovery regression
+tests/serial_recovery_tb.v:188: $finish called at 169173600000 (1ps)
+exit: 0

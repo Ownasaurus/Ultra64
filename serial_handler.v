@@ -1,7 +1,8 @@
 // Ownasaurus
 // Module to handle the serial communication, including buffering
 
-module serial_handler #(parameter NUM_CONSOLES=1) (
+// N01: bound inter-byte/response waits to 10 ms at the board's 50 MHz clock.
+module serial_handler #(parameter NUM_CONSOLES=1, parameter RX_TIMEOUT_CLKS=500000) (
     input clk,
 	input [NUM_CONSOLES-1:0] request_frame,
     input rx_uart,
@@ -35,6 +36,10 @@ queue_64 serial_send_fifo(
 localparam IDLE = 0, AFTER_SEND = 1, RESET_1 = 2, RESET_2 = 3, SETUP_1 = 4, SETUP_2 = 5, SETUP_3 = 6, SETUP_4 = 7, SETUP_5 = 8, SETUP_6 = 9, SETUP_7 = 10;
 localparam RECEIVE_A_1 = 11, RECEIVE_A_2 = 12, RECEIVE_A_3 = 13, RECEIVE_A_4 = 14, RECEIVE_A_5 = 15, POWER_1 = 16, BULK_1 = 17, BULK_2 = 18;
 reg [4:0] state;
+// N01: only complete frame transactions may replace the published queue data.
+reg [31:0] pending_frame_data=32'b0;
+// N01: count silent parser cycles; parameterization keeps recovery tests practical.
+reg [$clog2(RX_TIMEOUT_CLKS+1)-1:0] receive_timeout=0;
 
 // USB UART STUFF
 localparam serial_rst=1'b1;
@@ -137,7 +142,23 @@ always @(posedge clk) begin
 		end
 	endcase
 	
-	if(received) begin //  should only be high for one cycle per command
+	// N01: timeout takes priority even if a byte arrives on the expiry edge.
+	// A host must stop transmitting before recovery; no payload byte is reserved.
+	if(state == IDLE || received) begin
+		receive_timeout <= 0;
+	end else begin
+		receive_timeout <= receive_timeout + 1'b1;
+	end
+	if(state != IDLE && receive_timeout >= RX_TIMEOUT_CLKS-1) begin
+		state <= IDLE;
+		receive_timeout <= 0;
+		pending_frame_data <= 32'b0;
+		queue_WrEn <= 1'b0;
+		respond_to_serial_TX <= 1'b0;
+		n64_controller_reset <= 1'b0;
+		// N01: an abandoned requested frame must allow a subsequent request.
+		new_data_request_lock <= 1'b0;
+	end else if(received) begin //  should only be high for one cycle per command
 		case(state)
 			IDLE: begin
 				case(new_byte)
@@ -188,24 +209,29 @@ always @(posedge clk) begin
 				state <= IDLE;
 			end
 			RECEIVE_A_1: begin // 1st byte received
-				received_frame_data[31:24] <= new_byte;
+				// N01: stage partial payload without publishing it.
+				pending_frame_data[31:24] <= new_byte;
 				state <= RECEIVE_A_2;
 			end
 			RECEIVE_A_2: begin // 2nd byte received
-				received_frame_data[23:16] <= new_byte;
+				// N01: stage partial payload without publishing it.
+				pending_frame_data[23:16] <= new_byte;
 				state <= RECEIVE_A_3;
 			end
 			RECEIVE_A_3: begin // 3rd byte received
-				received_frame_data[15:8] <= new_byte;
+				// N01: stage partial payload without publishing it.
+				pending_frame_data[15:8] <= new_byte;
 				state <= RECEIVE_A_4;
 			end
 			RECEIVE_A_4: begin // 4th byte received
-				received_frame_data[7:0] <= new_byte;
+				// N01: publish the staged word only when the entire frame is accepted.
 				if((&request_frame) == 0) begin // buffer is full in at least one console. send error instead of storing
 					byte_to_send <= 8'hB0; // buffer overrun
 					respond_to_serial_TX <= 1'b1;
 					state <= AFTER_SEND;
 				end else begin
+					// N01: the final byte completes the atomic frame publication.
+					received_frame_data <= {pending_frame_data[31:8], new_byte};
 					queue_WrEn <= 1'b1; // write data to n64 buffers
 					frame_counter <= frame_counter + 1'b1;
 					state <= RECEIVE_A_5;
@@ -224,12 +250,20 @@ always @(posedge clk) begin
 				if(new_byte == 8'd77) begin // run 'M'
 					state <= SETUP_3;
 				end else begin
+					// N01: reject unsupported setup fields instead of waiting forever.
+					byte_to_send <= 8'hFE;
+					respond_to_serial_TX <= 1'b1;
+					state <= AFTER_SEND;
 				end
 			end
 			SETUP_3: begin // Controller byte
 				if(new_byte == 8'h80) begin // 1 player, 1 data line
 					state <= SETUP_4;
 				end else begin
+					// N01: reject unsupported setup fields instead of waiting forever.
+					byte_to_send <= 8'hFE;
+					respond_to_serial_TX <= 1'b1;
+					state <= AFTER_SEND;
 				end
 			end
 			SETUP_4: begin // Settings byte
