@@ -1,0 +1,2 @@
+Command: ['C:\\Users\\Justin\\AppData\\Local\\Temp\\n01-tools\\oss-cad-suite\\bin\\iverilog.EXE', '-g2005', '-s', 'n02_prebuffer', '-I', 'C:\\Users\\Justin\\AppData\\Local\\Temp\\n01-tools\\oss-cad-suite\\share\\yosys\\ecp5', '-Pn02_prebuffer.N=64', '-o', 'C:\\Users\\Justin\\AppData\\Local\\Temp\\n02-sim-oinf6jhe\\n02-64.vvp', 'tests/n02_prebuffer.v', 'serial_handler.v', 'UART_TX.v', 'UART_RX.v', 'queue_64.v', 'queue_1024.v', 'and2.v', 'xor2.v', 'inv.v', 'C:\\Users\\Justin\\AppData\\Local\\Temp\\n01-tools\\oss-cad-suite\\share\\yosys\\ecp5\\cells_sim.v']
+Exit: 0

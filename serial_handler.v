@@ -112,8 +112,11 @@ always @(posedge clk) begin
 		end
 	endcase
 	
-	// when all consoles are no longer requesting more data for the first time, then the prebuffer is complete!
-	if((|request_frame) == 0) begin
+	// Shared writes stop as soon as ANY console is full. Latch that reachable
+	// prebuffer boundary even if other consoles have already consumed frames.
+	// Playback may poll independently; replenishment below still waits for space
+	// in EVERY console, so the slowest console controls shared host writes.
+	if(!(&request_frame)) begin
 		prebuffer_done <= 1'b1;
 	end
 	

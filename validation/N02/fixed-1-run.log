@@ -1,0 +1,4 @@
+Command: ['C:\\Users\\Justin\\AppData\\Local\\Temp\\n01-tools\\oss-cad-suite\\bin\\vvp.EXE', 'C:\\Users\\Justin\\AppData\\Local\\Temp\\n02-sim-oinf6jhe\\n02-1.vvp']
+Exit: 0
+PASS N02 consoles=1: unequal fill, rejection, host pause, resumed polling, reset
+tests/n02_prebuffer.v:92: $finish called at 4516720000 (1ps)

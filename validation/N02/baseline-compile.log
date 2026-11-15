@@ -1,0 +1,157 @@
+iverilog : C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/common_sim.vh:398: error: 'VLO'
+has already been declared in this scope.
+At line:2 char:298
++ ... osys/ecp5'; iverilog -g2005 -s n02_prebuffer -I $ecp -o validation/N0 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:/Users/Justin... in this scope.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+vlo.v:1:      : It was declared here as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/common_sim.vh:400: error: Module VLO was
+already declared here: vlo.v:1
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/common_sim.vh:402: error: 'VHI' has
+already been declared in this scope.
+vhi.v:1:      : It was declared here as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/common_sim.vh:404: error: Module VHI was
+already declared here: vhi.v:1
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:2: error: 'FD1P3AX' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:2:      : It was declared here
+as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:2: error: Module FD1P3AX was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:2
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:3: error: 'FD1P3AY' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:3:      : It was declared here
+as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:3: error: Module FD1P3AY was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:3
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:4: error: 'FD1P3BX' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:4:      : It was declared here
+as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:4: error: Module FD1P3BX was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:4
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:5: error: 'FD1P3DX' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:5:      : It was declared here
+as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:5: error: Module FD1P3DX was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:5
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:6: error: 'FD1P3IX' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:6:      : It was declared here
+as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:6: error: Module FD1P3IX was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:6
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:7: error: 'FD1P3JX' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:7:      : It was declared here
+as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:7: error: Module FD1P3JX was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:7
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:8: error: 'FD1S3AX' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:8:      : It was declared here
+as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:8: error: Module FD1S3AX was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:8
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:9: error: 'FD1S3AY' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:9:      : It was declared here
+as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:9: error: Module FD1S3AY was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:9
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:10: error: 'FD1S3BX' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:10:      : It was declared
+here as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:10: error: Module FD1S3BX was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:10
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:11: error: 'FD1S3DX' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:11:      : It was declared
+here as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:11: error: Module FD1S3DX was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:11
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:12: error: 'FD1S3IX' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:12:      : It was declared
+here as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:12: error: Module FD1S3IX was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:12
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:13: error: 'FD1S3JX' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:13:      : It was declared
+here as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:13: error: Module FD1S3JX was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:13
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:26: error: 'IFS1P3BX' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:26:      : It was declared
+here as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:26: error: Module IFS1P3BX was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:26
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:27: error: 'IFS1P3DX' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:27:      : It was declared
+here as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:27: error: Module IFS1P3DX was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:27
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:28: error: 'IFS1P3IX' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:28:      : It was declared
+here as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:28: error: Module IFS1P3IX was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:28
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:29: error: 'IFS1P3JX' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:29:      : It was declared
+here as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:29: error: Module IFS1P3JX was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:29
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:31: error: 'OFS1P3BX' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:31:      : It was declared
+here as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:31: error: Module OFS1P3BX was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:31
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:32: error: 'OFS1P3DX' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:32:      : It was declared
+here as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:32: error: Module OFS1P3DX was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:32
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:33: error: 'OFS1P3IX' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:33:      : It was declared
+here as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:33: error: Module OFS1P3IX was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:33
+
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:34: error: 'OFS1P3JX' has
+already been declared in this scope.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:34:      : It was declared
+here as a module.
+C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:34: error: Module OFS1P3JX was
+already declared here: C:/Users/Justin/AppData/Local/Temp/n01-tools/oss-cad-suite/share/yosys/ecp5/cells_ff.vh:34

@@ -1,0 +1,10 @@
+yosys -p "synth_ecp5 -json n64_replay_device.json -top top" top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v n64_transmit_controller_state.v n64_transmit_identity.v n64_transmit_byte.v n64_transmit_bit.v UART_TX.v UART_RX.v n64_controller_reader.v n64_receive_controller_data.v n64_request.v and2.v xor2.v vlo.v vhi.v serial_handler.v queue_64.v queue_1024.v inv.v
+make.exe : /bin/sh: line 1: yosys: command not found
+At line:2 char:169
++ ... 64/usr/bin;'+$env:PATH; & C:/msys64/usr/bin/make.exe all 2>&1 | Out-F ...
++                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (/bin/sh: line 1...mmand not found:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+make: *** [Makefile:7: n64_replay_device.json] Error 127
+BUILD_EXIT=2

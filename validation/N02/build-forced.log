@@ -1,0 +1,14 @@
+yosys -p "synth_ecp5 -json n64_replay_device.json -top top" top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v n64_transmit_controller_state.v n64_transmit_identity.v n64_transmit_byte.v n64_transmit_bit.v UART_TX.v UART_RX.v n64_controller_reader.v n64_receive_controller_data.v n64_request.v and2.v xor2.v vlo.v vhi.v serial_handler.v queue_64.v queue_1024.v inv.v
+Microsoft Windows [Version 10.0.26200.9711]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\hgwvxgsw>nextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf
+Microsoft Windows [Version 10.0.26200.9711]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\hgwvxgsw>ecppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit
+Microsoft Windows [Version 10.0.26200.9711]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\hgwvxgsw>
+BUILD_EXIT=0
