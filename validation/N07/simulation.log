@@ -1,0 +1,314 @@
+$ .tools/mingw64/bin/iverilog.exe -V
+Icarus Verilog version 13.0 (stable) (v13_0)
+
+Copyright (c) 2000-2026 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+Icarus Verilog Preprocessor version 13.0 (stable) (v13_0)
+
+Copyright (c) 1999-2026 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+Icarus Verilog Parser/Elaborator version 13.0 (stable) (v13_0)
+
+Copyright (c) 1998-2026 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+ FLAGS DLL vvp.tgt
+vvp.tgt: Icarus Verilog VVP Code Generator 13.0 (stable) (v13_0)
+
+Copyright (c) 2001-2026 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+
+EXIT 0
+MODEL SHA256 2ecb479e4b271c717314ab6f3d689dd350805d4525f459a9b80bfc31e4362a9b ALU24A.v
+MODEL SHA256 7ec74421cbb2d4831ba135d79a88f3d89d2183152258aaaa0b860b35b70f0db2 ALU24B.v
+MODEL SHA256 8ebac46a728d1691a8fd7bd2320f40fbd78f36caf1e18d869ce3d1b467c79371 ALU54A.v
+MODEL SHA256 a84bf845cf9f439d038ab25f09e9c5eb187d5b76f68504b38c1bd4f549fd0d4c ALU54B.v
+MODEL SHA256 433bbe36b9b547373eb827bc10c99d09d880cf1dff804f4e52edd88726835d4d AND2.v
+MODEL SHA256 549b854e026a8f13eea981f00b5182bb9eb3c8f580832d0babd1c1244c3c0bd7 AND3.v
+MODEL SHA256 4437fdddb307ba64ea9b03552ed3b489996cf74fe48918c4b6842fa11c5803bd AND4.v
+MODEL SHA256 93bb484fade5ad781e12b209c0e2be654b7ac6de9a8bd3f5cd4ca8c523b5b5e9 AND5.v
+MODEL SHA256 0d2b4f6ef0a587ed2e7da202887ceabf478d5e314deff9816bf8970fe470bbc0 BB.v
+MODEL SHA256 3d5d9a28e4e59afe802978d6ba253c69a1a76909ee5f85f782bdf4e3dee37745 BBPD.v
+MODEL SHA256 5a917354f3165c5e501c2d613dea536b033ab0a5e9f205c1a5e898e5b025b1ee BBPU.v
+MODEL SHA256 db18c9f8282871a8bd286c8916efbf507edc674122a420223af930c34198a411 BCINRD.v
+MODEL SHA256 7c98b96f6a12eef265ef0de449b2416bef092236959e1aa016ad6ce8622a1748 BCLVDSOB.v
+MODEL SHA256 a706cc2fa37ca73b5b3556bb6aabe0938b827a80fcd9b7e8a12fb799a59d523f BUFBA.v
+MODEL SHA256 032626034649e3593c25f2ab10480e4fd4f44f9cf15ae8348fc73f47c039c41d CCU2C.v
+MODEL SHA256 08eefe60d9d7c179122745fdd5986a049a9875efae429abc3dea968a2b14212f CLKDIVF.v
+MODEL SHA256 0efa694132d6bcf7751b9e9b8063c2963100ef6a98b7a5193d5998b27bbd0737 DCCA.v
+MODEL SHA256 f5dfd16b53e776ad593fd5c7ac46d855d615eb9367ec38540b78b09c746d110f DCSC.v
+MODEL SHA256 a2b715d0fef920d692535480e1faaff78f2410bd6c69827d6fa509d6e2a508d7 DDRDLLA.v
+MODEL SHA256 30db8852971bec7effb796f525979d2b926e2af599a2193e31cd8ae26568dd8d DELAYF.v
+MODEL SHA256 1e10f257bb0fc7a159f91e3485c2c647df495d7385da1623b23236a447d88242 DELAYG.v
+MODEL SHA256 fa8cbffb4a8c9e779a954be69cc7b6c2d81e0833661eacdd2a1b84940ba1871c DLLDELD.v
+MODEL SHA256 5eabb6aab3737cc44999293a87177c572cab5f309d1cdbb2710766a170f59ff4 DP16KD.v
+MODEL SHA256 435c8fb2288a65af50013042054016e3102ae5bfadeff7a563a76b60a09d31ba DPR16X4C.v
+MODEL SHA256 227e9b9f9a3dbc01d8a294f3f1e50ade62ff351d478ba1db533e42f3ab93ee60 DQSBUFM.v
+MODEL SHA256 c7b3728567e53e8c296f00c7aecbb1ed13deae702088259e0cc868fb68fb0c23 DTR.v
+MODEL SHA256 fc8f3c8f11baa5dd3d9d62235e561e23097ac0551b372127fef4e86f208ca83c ECLKBRIDGECS.v
+MODEL SHA256 d14de17993b7914bb028452c11af6df3eb2bc2fa1335ff752579c92cfc5ea6b7 ECLKSYNCB.v
+MODEL SHA256 83f32552a159071c3dc2f614298700acbba04fdc343b8d711e7e89b8161abe65 EHXPLLL.v
+MODEL SHA256 af6e7038cb31dbd68369791db0d86a7fd4c8127ca2ad91853e7da42b482137a0 EXTREFB.v
+MODEL SHA256 bb19191bd6af520b111dfb517f234bebc9a86b612f63910c31f166d10933b02c FD1P3AX.v
+MODEL SHA256 ddf0b3e29561f44035f92e97c163dd400538986832eb944d432ba778e1a20035 FD1P3AY.v
+MODEL SHA256 77659d9589cb114a3055fd5060ad759c809ec821feed308c7b0feca1c7aec0e3 FD1P3BX.v
+MODEL SHA256 4be5abaa66e86242e4fd6efc242f9762aec9de874e145b2f8b81ebbfdfa366b4 FD1P3DX.v
+MODEL SHA256 147884fffcd3ad1abc46bda4c1517d78c3f3eae9832a7ee6e27c153e6bb2f8e4 FD1P3IX.v
+MODEL SHA256 9724e5136c72ca56cd7953cb5dc78d8affae68abf98f191cf5e97bb64840701e FD1P3JX.v
+MODEL SHA256 df49ac6b32ddb5e64225a92362795c3cd25c902040da9ae2bcbb912f7b0fcd93 FD1S3AX.v
+MODEL SHA256 271c529e0c5472d2df3f2c1ca255fadc87074cdf6b623713729d82419d011d9f FD1S3AY.v
+MODEL SHA256 eafba7a1ca54c7e53fe497729eef31725b35df1765a712f221f550bbd8c4d598 FD1S3BX.v
+MODEL SHA256 2bf2a0d8071e7b9e9d4181338510dc6215061cf921103271f1892ace4bf07861 FD1S3DX.v
+MODEL SHA256 65803b37005f23047d16767e4c6d0200bca994aba52ae888604384525f542de2 FD1S3IX.v
+MODEL SHA256 be5f8404fead0bd67a41511bfb621cff450c6008d1c4d3f4aa6cef2a6632f89b FD1S3JX.v
+MODEL SHA256 00cf7bc48a9ef5401a02ca098116ca79814d6d868dddd38d2a7852dd38c8d1dd FL1P3AY.v
+MODEL SHA256 b16f78e75f8898179bf17dda57f4e0de83b30a4e97e994165139caecfc2a20cf FL1P3AY_FUNC.v
+MODEL SHA256 a16fc2cb46abdbf42e05762018b5709d99abb4a0e3a092b4f44eb0d4446b619b FL1P3AZ.v
+MODEL SHA256 34454348717eb779f312b81b2a6db7214aebe33e948e2cba510e648aeffceba2 FL1P3AZ_FUNC.v
+MODEL SHA256 675b3f9ea7d704c6cef338c6f31fc0dcebd705e22dfd9603cc23f1a554b68592 FL1P3BX.v
+MODEL SHA256 e010f7a4991085f9f3183046f238c049525011bd6aca731631d031f86ef07637 FL1P3BX_FUNC.v
+MODEL SHA256 eab31ce3ad755bc2bea987fe7df728422baca71c31513215ee314d9205d4c8bb FL1P3DX.v
+MODEL SHA256 ebf9654693cbec2ac2913484ab896c42f5fa6cd0e0a7df01c6c6292f81f2ead4 FL1P3DX_FUNC.v
+MODEL SHA256 e5cddcfae334cbfa9baf80c39a5b65d267396e09387a11b0c647729ab26f805b FL1P3IY.v
+MODEL SHA256 146c5fe7140e02f80a5295c84a0d8362f1f218fcd65270027d435b7c41904dc5 FL1P3IY_FUNC.v
+MODEL SHA256 31ce46dea8017f231606124ce2e9da0a04b1d6d28e9cfe8cad7a1872b84a0943 FL1P3JY.v
+MODEL SHA256 62f03a4d1c4b1c8d071a611c743919005acd70d68968cc299ee65e32bc901b96 FL1P3JY_FUNC.v
+MODEL SHA256 5fda00034cc22e76c63514c163f48f52164bf64a8a386bdc7c9587132d27a2c9 FL1S3AX.v
+MODEL SHA256 985261c099da7097cebcf6d7782738a8210e8740cdc8e94595b9a869b6770ec2 FL1S3AY.v
+MODEL SHA256 bf608b1cc6752e06ac1c6358108e080bc08408c31253022a0d768d40e50d299a GSR.v
+MODEL SHA256 2a14cbea91e084ca6c3702d0a295a467b1e6f720d12cd6f6ee17bd3f01b6a843 IB.v
+MODEL SHA256 0d388a518ca69a35d995dfa60b40be345d6536ed86b00cda693e47a07bf948fe IBPD.v
+MODEL SHA256 e3735002a00b458c6c66647eb54091a2d60ac2cc4bf14415786826b03755957d IBPU.v
+MODEL SHA256 1ce4be7ab26900ca07df0a07ffaf9a033a158f4ea4b70e5bcccb8d82c1e462f4 IDDR71B.v
+MODEL SHA256 3fe15b473748a52b59004adc703c6dff2023c248b0a032276f372ceb2b96f526 IDDRX1F.v
+MODEL SHA256 41bded4950dd27634bed2e3771a3ff08ad6556f999f05b2e2212b690a9be1534 IDDRX2DQA.v
+MODEL SHA256 fc9220fe9b7ab4b3c14fc5e0f2d63b0ccb76c7455f854c04e37bbffa19d6952e IDDRX2F.v
+MODEL SHA256 2c38579ee80deb755b31103dadf18127c2064aab7b8d58e9f426c648922d3d8b IFS1P3BX.v
+MODEL SHA256 a44d060784591509cdfc7eb7aef367dfdc30360cb8a2ef22a0caab7c27ead30c IFS1P3DX.v
+MODEL SHA256 e5ac23e45c0f43aa7c3dbee2a4a4219a6c953a7ae4426ddaafbf88567dee181a IFS1P3IX.v
+MODEL SHA256 c7fbf9a54a41c7f10f68ba7cc5b5725accff488fdc219420becc9c60055c6b1f IFS1P3JX.v
+MODEL SHA256 a77cc6ccecb7d757d9eb9e6d4186b7e46fd0d78344dbfa4fe39c0cb9407f77cc IFS1S1B.v
+MODEL SHA256 35eafff27b2441f5d4d0cd683e7032b76b0fabc9daf32e2f5fac2718d363cb31 IFS1S1D.v
+MODEL SHA256 4a5867a477c4fbf7356fc3537f67cf81d209e0a48531b6b1a5d3a9962af6c8eb IFS1S1I.v
+MODEL SHA256 5e96388bea6cc8881b35b6a435d3d30d6548ea42db4c28e7abed353deed922c1 IFS1S1J.v
+MODEL SHA256 1b8dd5a17b35da050553d4dcdc0eba0b7bd7bafd5692230ddc381348eaef217b ILVDS.v
+MODEL SHA256 f52e42a4c60a2e474585f8dad79df05cb3732cc59fef87b34ed707f41050fc5e IMIPI.v
+MODEL SHA256 1d1fc07965a4629c0b3c1d449ce5a0325bcdfd340f2731067451bec8f2d9cecb INRDB.v
+MODEL SHA256 dae5326a664c84b336ea15d3fa21b87696fde91fdb99067d1ec944adf2ff6340 INV.v
+MODEL SHA256 3c524ef73d8e58648ac83aba0ec5e241ecf78a3ea8c39b8d55ddccbc6424eb33 L6MUX21.v
+MODEL SHA256 ec7ad33e1b325392a896e2c2e9af6ebcfa54b04eea093d61d2dc6ce15f6fa258 LUT4.v
+MODEL SHA256 825d30a93bf1a57833149a7e1b9ab7be1f437304a2c7a73c97438ff2085a6206 LUT5.v
+MODEL SHA256 86c40e4e37acd90ddf88bf3a20b2f426f72a2a741c96f059b8cdce2f10b7decd LUT6.v
+MODEL SHA256 2991556f53ab06e830ffebce7b3a272fe2f8815837dfbabd653dc80a04c744da LUT7.v
+MODEL SHA256 22d38b0fa894bff8beda6b83339ce219dc3cf4bd31100c491c04b8345f457fa4 LUT8.v
+MODEL SHA256 8971b0489c14ebf53ab2f70a516e266c4230f09e5baec841424e4cbe2b677046 lut_mux2.v
+MODEL SHA256 df74b867803c8840dbd2cca747eb3086572eebb66dcc14b210c2f33f44de9aa4 lut_mux4.v
+MODEL SHA256 ece58ee34bd29d4a79e507b3254fb6226d7b6d28fbc589a877a12671409b15c5 LVDSOB.v
+MODEL SHA256 67fdfef4afe3b1efa5815da7a8a563f5fe4b5f909203884d27b722ed05715651 MULT18X18C.v
+MODEL SHA256 28834c66a5e8f3edd953dc426ed2ffd3300ed57459c831ef7d682b8f2bac370b MULT18X18D.v
+MODEL SHA256 4ab668b5458e43a55e31a3544bd59e70474748495753fb45350931baf2905f7e MULT9X9C.v
+MODEL SHA256 75d5ddbb42dfb368e06724e7acbc1b952c888ab6d1cc9254aca4e7e882196d95 MULT9X9D.v
+MODEL SHA256 1abc563cd63623ba3d1f26882203dccf430ab99ff99a9e279e926b4dc4cf2d52 MUX161.v
+MODEL SHA256 fa71d6c978028f1827157a535f3a196ddd91f04197a05870f8c68287a0790991 MUX21.v
+MODEL SHA256 63c2a6017453d8e9f541c87b94f579ffd35c2cf9f7afb910e8159c8a3c475938 MUX321.v
+MODEL SHA256 430b7f4de00223fdcd09566a71e717fff96362e851495af813f31784c260dd02 MUX41.v
+MODEL SHA256 a4b6c977abf5e2b8409693c28a63a86bbd6485ed3271e132576ddb8225f7d585 MUX81.v
+MODEL SHA256 1271809359260d62610781ac1de681b5f8e185ccc91f75230a0ab2255465b0f3 ND2.v
+MODEL SHA256 16fec3dc8ea83af25fd7b521d37c776ca543f1c235589651cff59502ebddef41 ND3.v
+MODEL SHA256 1e844b49d9ad5a0a2f70301e5718749c1ad9ac2da100cff134c4c4fa4f93fc57 ND4.v
+MODEL SHA256 ea8e697ddba34e5660131fecc39706534429749205a4785e3740bf5f54b2d1b5 ND5.v
+MODEL SHA256 dc76f04841febd7154269f4e2e10b03140e57d832e98b6a4d14c2f21f11f6455 NR2.v
+MODEL SHA256 e2fdc3570025edd13683b278bf1cc7fba06c968dff5c76c1b1c9000a36c0fbd7 NR3.v
+MODEL SHA256 c4a5ef9e498748b4fe30bd320ba44c6083a93b93356b2de85cc9f5c700bca7f2 NR4.v
+MODEL SHA256 65ef2fdbff7f1d6dd067e84707b4e5f7253eb559fd0cffb11df0e3a9657f20a9 NR5.v
+MODEL SHA256 093049d4a02ca67e32caa4a46050a6fcb35c3090fa165a7f277a2d7e7e84718d OB.v
+MODEL SHA256 2915c0d1e8b1a707c71900c58dc2602f7ef581b299456bd994cc0c4caff783d3 OBCO.v
+MODEL SHA256 c8159adeee4f38f65ec526a7f0f715b2a0db34de030fc82e8e97deaa75517a60 OBZ.v
+MODEL SHA256 4711e310a841d6e9e7e563ff50f7ae48354623986baafc2e20509890d79071d8 OBZPD.v
+MODEL SHA256 cceb94aadc76aa1beab9631c6378a28c6469b7eea0b66c485e3865738b08184f OBZPU.v
+MODEL SHA256 26381199c447b47938b8b6d73966c44d8d0d722be80c1fb2bbd960463119b402 ODDR71B.v
+MODEL SHA256 56624cb092c5f1097be22d15eecd1bd7fd2b174c0e3c62e4a178a08fce47d5fb ODDRX1F.v
+MODEL SHA256 1fcea02148b6f038ac11bbd36805a47c7afee4a8179bfa1f97a74db22e652fa3 ODDRX2DQA.v
+MODEL SHA256 8278dde33254ab2df8ac1ead67da70fd3dc869fbb47656e62b1c8bb6641d0d71 ODDRX2DQSB.v
+MODEL SHA256 4f9ecb54113abbed6170124be4ac3ea0a3e9795044955cf367d7188945dac55f ODDRX2F.v
+MODEL SHA256 daf09b265d78ec0aa43eece80f47256031942ddcae11b0899d239ff4669ec558 OFS1P3BX.v
+MODEL SHA256 3082f68c036d3bbde36b335189bbf42f5b27a1854e9dc1db2bad8b809bec24f5 OFS1P3DX.v
+MODEL SHA256 f85e01890d4a5990bf231050581bb1063cfc01f9280c02668b988236a3fc70ef OFS1P3IX.v
+MODEL SHA256 659b2a6d506c42d2aa72cf54179352b75c68313c4f03ed7a7ca47297f478e112 OFS1P3JX.v
+MODEL SHA256 da3dbd5503ab208c1fa196fa67118db7efa1d7f795deb575091110fa1ead35d9 OLVDS.v
+MODEL SHA256 787ca45c21cd84a59e697e5c344633ab4776abe94aafbee34d83f0e6aea1d78f OR2.v
+MODEL SHA256 02c5d7ed45b140e39c879b3433989fdb9e0fc234bf6ad5c0c822a47d3dc3c720 OR3.v
+MODEL SHA256 fa69c0587d553626994d769c6ae549c503893d0f0ff9a1093a9ed14d135cd090 OR4.v
+MODEL SHA256 ea39918f4b554789255b3d20854f9848f2dc55b3219c8687ae82406e447b042d OR5.v
+MODEL SHA256 cd5e2943fe4c4b28bb831d91388951fb06f095492f7c27d044b87e7bea1d9a0d OSCG.v
+MODEL SHA256 bfd68823835d37450c41320951267ef4d3f1a2d7fd4a922242ef8fc3b1f47b41 OSHX2A.v
+MODEL SHA256 d3e658e304a833ad884570234faeb03106a0f2a5cd87f391d73d3a9636599338 PCSCLKDIV.v
+MODEL SHA256 438f14417a9149c2326507caed9879c2a7cae7bd3a67da685e636e3b5fd89d57 PDPW16KD.v
+MODEL SHA256 ab70efb9063fd0ef9e9084c4daec218f56972a3c9f29619d56bbab8795ce8372 PFMUX.v
+MODEL SHA256 86e749c43060923a975bf1057a2674cced434c8abab1a8c5baa7f1401f519ebe PFUMX.v
+MODEL SHA256 3504cf7dc7650c8f82bb6bbe826830f895de1e39ee3d46feada08812d270d9ef PLLREFCS.v
+MODEL SHA256 a429899f820aa997f5936f43c6e28c73a085000ce4ebaa745734a83ffc7cd5f3 PRADD18A.v
+MODEL SHA256 67e9c321df02de51a797eeb2bf03b100a2729b9d466d28f6a7c5255f60c8671b PRADD9A.v
+MODEL SHA256 8af61f64a41d2f5b552a68f2b00e3876d56ba2839af096dc5dee9e95764a06f4 PUR.v
+MODEL SHA256 ef133c5cc908079dfc8f6d2c1c10f068a71f51cc1b2643f46d0b2d367105cda8 ROM128X1A.v
+MODEL SHA256 aa28ad3e4e7ca7774940f01f0243c30f6bbb116424ade6de73bd7f70a08a73a9 ROM16X1A.v
+MODEL SHA256 30341e65908264744faf3489183b766e683eacff59a25142825a912b6aef5ead ROM256X1A.v
+MODEL SHA256 d3e4d5bcdea9b08224ad50586f73d43e01a590abc5888749701e688f3716cf4f ROM32X1A.v
+MODEL SHA256 8d1f05cc33f4bad4cbcc6c5681d9e1694743b6a6f7c19892924584d3e269597b ROM64X1A.v
+MODEL SHA256 afc220d6fc656e4faff7d41f895265c0ae968cebcc747d865ce3931f1fd1166b SCCU2C.v
+MODEL SHA256 b6078483eae01557f515d49cb591d3f7aa5dfed2f3c092620f3a418611f416bf SDPRAME.v
+MODEL SHA256 995738bb278e33fc0f1c87d8b949f65a0ed1654757726b59ceaa378005f982a5 SEDGA.v
+MODEL SHA256 5f4a09ba2e4b5f707fb0bfec991345722b1653fae3389dd04ac9562d45a020c6 SGSR.v
+MODEL SHA256 db3b77489b69a848b05175b68cf7dea986557ee0348c8341705103be41a57066 SLOGICB.v
+MODEL SHA256 4a10767c27cc6da7869acc34e0575bcda8289c972694a36343aa1827c2c85789 SPR16X4C.v
+MODEL SHA256 8d29013c2e8839470148182f608f9c21058465b26bfdf70c7f4daac71b58ba92 SRAMWB.v
+MODEL SHA256 29a81b3f3ff247b003b029eff4c84f22d561fb56750cf0cbeefae647efe5981c START.v
+MODEL SHA256 54eea7e99b23c0ad0efbac709f1f912a0e3f479998ca7ea77e4381d4970ecdff TSHX2DQA.v
+MODEL SHA256 9c837cbf3f0619d1d8bcbd26e52e40120b22654585ed19fc02f5e05673fc94e2 TSHX2DQSA.v
+MODEL SHA256 2acb36d430b3ecc6ab43aa3a3c6f62ea0201d026ffba68f464a4cc0626bcbeb3 UDFDL1_UDP_X.v
+MODEL SHA256 a0fe440284f1c82ebcd2d8bbcccf85fb8ebec7096e1583f7e1bc3aece2dff8fb UDFDL3_UDP_X.v
+MODEL SHA256 731d38fec70a29a49f9dba48350dad207a32b2287a5d9af357edce5e4f8f60b6 UDFDL4E_UDP_X.v
+MODEL SHA256 6fc110744cdc576d5bb4fb27ef84cde31c437012cefb90d5897ab36bdd212cff UDFDL4SC_UDP_X.v
+MODEL SHA256 d4aab0da1d8ee4fdfc6bb9db37a30463f75d9c408211f98a535a1762078ed941 UDFDL5_UDP_X.v
+MODEL SHA256 b26302245844428891282cb5549af1ab7319c0f21451c231841c87a39a52e6ab UDFDL5E_UDP_X.v
+MODEL SHA256 4b067b268227978733598cd5a52a1d16a9de487e0f579b5886322596dbbe4d10 UDFDL5SC_UDP_X.v
+MODEL SHA256 1d827e200c0fbbd4723a96bb2cb10007e3e696349877f632a92b059b73c2d0a3 UDFDL6E_UDP_X.v
+MODEL SHA256 414bf75785101597e3e5d579cf8b983de735d1dd393fa7f1746b5930bf7c2b9c UDFDL6SP_UDP_X.v
+MODEL SHA256 fd285dcc905ae473b3e8394714423183fa035215a45b8fb26deea2babc2172eb UDFDL7_UDP_X.v
+MODEL SHA256 15413a5c3435ce9c6aa4ed486aecdbee1d48de90a49eb13b6852083e473a8042 UDFDL7E_UDP_X.v
+MODEL SHA256 58300350b7de105cdbf035d7809813aee6f14a9f8e1b7251ee695bccf2b14b82 UDFDL7SP_UDP_X.v
+MODEL SHA256 b7f9cef9e675d4b00650f3c7476cfd5544e06632d7fbe38fd373c593018bd180 USRMCLK.v
+MODEL SHA256 5d98a44781843711c551992e46420b3335f2044dc26536071577f78d4fd8053f VHI.v
+MODEL SHA256 0c5b89a6c9ea17b0f6d7cb755cdf8b0c549d4a1456165870b57827ea6e6e2bd1 VLO.v
+MODEL SHA256 3ee7a25d902f82cc63b7a35f7cae906e70e47cd57b8d515663b2913a639cf147 XNOR2.v
+MODEL SHA256 9819f40df0f693f9f63f9eec6c2cdae674f482e7b337d961192d1b100b679444 XNOR3.v
+MODEL SHA256 0b9ca69bcd65bf24ebd81dfbb060af060d77c5d08fa96ef25b3f31ec0656bf21 XNOR4.v
+MODEL SHA256 25c5b6fe2d65a84176a4ae43f459de1ac54484ab8cb597351f225bbfdf50315c XNOR5.v
+MODEL SHA256 73037c19d89b850d2d4d4b80f67ae355fb3dea1f42c2d8e004348bdeba72b3fb XOR11.v
+MODEL SHA256 ebe9acf997354b0434d4b9d3cd4716ef20ee195985bae8dc0237d61258cc07a1 XOR2.v
+MODEL SHA256 f3fb1d103ea91bf2f8bdfe40a001cc03115530ae6f8642afea737bcd75db96ec XOR21.v
+MODEL SHA256 3a3270cb0d837b001b4bd0c7237831bce44df59818d7283a7ad9dcee31cb08a1 XOR3.v
+MODEL SHA256 a68f88113ff1b0e8669935ef4c11a4a5fe7e4ea693f77f60405b8a851c70d40c XOR4.v
+MODEL SHA256 f6d3cf18171ecf2b2ed83276565a0767ffe2bb3deb617f483025e7d2352345b7 XOR5.v
+SOURCE SHA256 0040fc7f12ee5335897964f07ba7c6ee395779e12eb4e9a06c70bd65b5310fc0 and2.v
+SOURCE SHA256 49cf2176d74fb1b1ab1ed7d37d6cd8053f80dd439e07239fa620e364ceb8efc4 glitch_filter.v
+SOURCE SHA256 76090506b9c8dc87599be35d1c5e9694feb85516d993152d1b138946604cc3f6 inv.v
+SOURCE SHA256 25b707490b40ef1d626ae95243e8d85e2d4fd7d18e4f5e8463a9d3b5be35bc06 n64_controller.v
+SOURCE SHA256 1a56bf7c1030da87a8f92899312f7b6b86d42af4660a56ee05e2c8fa750dc1f6 n64_controller_reader.v
+SOURCE SHA256 a33e9785315a749d5e705ed99e3ba927bccd16ebbb53b57952d28c12c4aba90b n64_receive_command.v
+SOURCE SHA256 35eb5f9ae0b578d556e7bdafc6294ae534ed4390e8e31bf49f8ad2dd7d303abe n64_receive_controller_data.v
+SOURCE SHA256 e470c9364a0a010ae74832cde3ed686c588ce56279eca1d7876ebad5488dde9e n64_request.v
+SOURCE SHA256 06c955e3cf57e6d59363eb167908a02dfbfd20d1288478f86c3984cf4e6a459a n64_transmit_bit.v
+SOURCE SHA256 174dda0524c6134603622653a2b76953c231cbb40824c47cc4c92372b9a1864e n64_transmit_byte.v
+SOURCE SHA256 1bb55fb283d7026d431cbf14a6bf87b5403ae80a1e43583688b70715dcce330f n64_transmit_controller_state.v
+SOURCE SHA256 af28ed2347c75796c089b71d425d72c26672221dfcfc3447547eaade5c7b39e4 n64_transmit_identity.v
+SOURCE SHA256 6bc113f6067ea87b17d1d4484c2fa3a4a2cdf933e13ebb8292145f30f86c2722 pll.v
+SOURCE SHA256 432b11d41e41dc2d08e5fb2b0740f4aca7e39ccf7eb22ea3ed4a82466222a8da queue_1024.v
+SOURCE SHA256 8d6386544bcba018bca6a78995b34eec8513e6fa587e93abdf7ea2c9b88d22a5 queue_64.v
+SOURCE SHA256 e9833515025a57f9422ca700a6ac3923a7208d5edd6429a48c0f9a7fa99f34ba serial_handler.v
+SOURCE SHA256 574e08c053684f6273e452cbfa53190964374116bf9990319362e367d8d7573b top.v
+SOURCE SHA256 578fafe56face8048970950dfcae5f628e0a2852b8c2f3fad6a57ba7b3553404 UART_RX.v
+SOURCE SHA256 b6e9bb36d6e51fc9ae77abe3196a9f2233d9318dc8e115b02aff93f8da4ca4f0 UART_TX.v
+SOURCE SHA256 750ef077e9a94c564a3def4caaf0a4c3bf8c3232e330ba93e6295a180588b347 vhi.v
+SOURCE SHA256 07b2d38fce196cd00c93c996ee8970615bd95bbdb10f301e617eb1f6513e83d0 vlo.v
+SOURCE SHA256 70a8d1ef12eb81c8041dde9e4b6f88ed41fbb8d1d9d44f5eb6eef63a56cd6024 xor2.v
+SOURCE SHA256 1466cc2ab33741d6501ca101319842e20fdf498f89184d82359702f98aa1c038 tests\n07_controller_tb.v
+SOURCE SHA256 7c17f2b30067286b84cca645ee78bac0b2975fd35b1f3e5f70c2d0180b1f8a7b tests\n07_status_tb.v
+SOURCE SHA256 6471649e62601e1426620fbff4aff079b0295db658c78528f7ef12a8d7af49ab tests\n07_top_tb.v
+SOURCE SHA256 f28b7e88bc83084274ef3183d2453b3e957fdf9874a3410512d24ba9f5be0ae3 tests\run_n07.py
+
+CASE baseline
+$ .tools/mingw64/bin/iverilog.exe -g2005 -s n07_controller_tb -y C:\lscc\diamond\3.13\cae_library\simulation\verilog\ecp5u -o C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\.build\baseline.vvp C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\.build\baseline_tb.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\.build\LUT4.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\.build\baseline_controller.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\queue_1024.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\and2.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\inv.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\vhi.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\vlo.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\xor2.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\glitch_filter.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_receive_command.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_transmit_identity.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_transmit_controller_state.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_transmit_byte.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_transmit_bit.v
+
+EXIT 0
+$ .tools/mingw64/bin/vvp.exe C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\.build\baseline.vvp
+FATAL: C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\.build\baseline_tb.v:79: underrun drove a response
+       Time: 35620000  Scope: n07_controller_tb.silent_a
+
+EXIT 1
+EXPECTED baseline failure: empty startup must not trigger a response.
+
+CASE fixed
+$ .tools/mingw64/bin/iverilog.exe -g2005 -s n07_controller_tb -y C:\lscc\diamond\3.13\cae_library\simulation\verilog\ecp5u -o C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\.build\fixed.vvp C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\n07_controller_tb.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\.build\LUT4.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_controller.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\queue_1024.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\and2.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\inv.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\vhi.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\vlo.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\xor2.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\glitch_filter.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_receive_command.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_transmit_identity.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_transmit_controller_state.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_transmit_byte.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_transmit_bit.v
+
+EXIT 0
+$ .tools/mingw64/bin/vvp.exe C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\.build\fixed.vvp
+PASS empty startup, starvation and refill fail-stop
+PASS drain-to-empty and reset/refill recovery
+PASS simultaneous empty poll/write
+PASS reset adjacent to dequeue and RAM capture
+PASS reset during accepted response
+PASS unequal console rates with slow full queue
+PASS passthrough and identity; reads A=1027 B=1 replies A=1026 B=1
+PASS TAS selected during empty passthrough RAM wait
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\n07_controller_tb.v:142: $finish called at 178854760000 (1ps)
+
+EXIT 0
+$ .tools/mingw64/bin/iverilog.exe -g2005 -s n07_status_tb -y C:\lscc\diamond\3.13\cae_library\simulation\verilog\ecp5u -o C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\.build\status.vvp C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\n07_status_tb.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\.build\LUT4.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\serial_handler.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\queue_64.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\UART_RX.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\UART_TX.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\and2.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\inv.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\vhi.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\vlo.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\xor2.v
+
+EXIT 0
+$ .tools/mingw64/bin/vvp.exe C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\.build\status.vvp
+PASS UART U healthy, aggregate fault and non-clearing status
+PASS status retained across cleanup/full, snapshot and fault-clear recovery
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\n07_status_tb.v:69: $finish called at 847820000 (1ps)
+
+EXIT 0
+$ .tools/mingw64/bin/iverilog.exe -g2005 -s n07_top_tb -y C:\lscc\diamond\3.13\cae_library\simulation\verilog\ecp5u -o C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\.build\top.vvp C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\n07_top_tb.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\.build\LUT4.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\and2.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\glitch_filter.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\inv.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_controller.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_controller_reader.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_receive_command.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_receive_controller_data.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_request.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_transmit_bit.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_transmit_byte.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_transmit_controller_state.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\n64_transmit_identity.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\pll.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\queue_1024.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\queue_64.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\serial_handler.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\top.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\UART_RX.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\UART_TX.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\vhi.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\vlo.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\xor2.v
+
+EXIT 0
+PASS N07 controller/status regressions and top elaboration

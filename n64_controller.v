@@ -11,19 +11,24 @@ module n64_controller(
 	input queue_WrEn,
 	input [31:0] queue_data,
 	input n64_controller_reset,
-	output next_frame_request
+	output next_frame_request,
+	// N07: sticky playback fault, cleared only by the host's FIFO reset.
+	output reg tas_underrun=1'b0
 );
 
 wire queue_full, queue_empty;
 wire [31:0] queue_output;
 reg [31:0] tas_input=32'h00000000;
 reg queue_RdEn=1'b0;
+// N07: qualify the actual dequeue edge and remember validity across RAM latency.
+wire queue_read_enable = queue_RdEn && !queue_empty && !n64_controller_reset;
+reg frame_valid=1'b0;
 reg firstFrame=1'b1;
 
 // 1024-frame input buffer
 queue_1024 run_data(
 	.Clock(sys_clk),
-	.RdEn(queue_RdEn),
+	.RdEn(queue_read_enable), // N07: never request a rejected/reset read.
 	.Reset(n64_controller_reset),
 	.WrEn(queue_WrEn),
 	.Data(queue_data),
@@ -62,13 +67,17 @@ initial begin
 	delay_2us = 100;
 end
 
-wire direction_output = (state <= read) ? 1'b0 : 1'b1;
+// N07: an underrun (including RAM wait states) must leave the console bus released.
+wire direction_output = (state == write_controller || state == write_ident);
 wire out_data = (state == write_controller) ? n64_datac : n64_datai;
 assign n64d = direction_output ? out_data : 1'bz;
 
 always @(posedge sys_clk) begin
 	case(state)
 		idle: begin
+			// N07: discard cached playback after a completed response, including reset during TX.
+			tas_input <= 32'b0;
+			frame_valid <= 1'b0;
 			delay_2us <= 100;
 			receive_command <= 1;
 			state <= start_read;
@@ -83,8 +92,14 @@ always @(posedge sys_clk) begin
 					if(delay_2us > 0) begin
 						delay_2us <= delay_2us - 1'b1;
 					end else begin
-						queue_RdEn <= 1'b1;
-						state <= buffer_read_1;
+						// N07: fail-stop on starvation; refilling cannot silently resume a shifted run.
+						if(input_mode && (tas_underrun || queue_empty)) begin
+							tas_underrun <= 1'b1;
+							state <= idle;
+						end else begin
+							queue_RdEn <= !queue_empty;
+							state <= buffer_read_1;
+						end
 						
 						
 					end
@@ -101,13 +116,23 @@ always @(posedge sys_clk) begin
 			end
 		end
 		buffer_read_1: begin
+			// N07: this is the FIFO sampling edge, not the earlier scheduling edge.
+			frame_valid <= queue_read_enable;
+			if(input_mode && !queue_read_enable) tas_underrun <= 1'b1;
 			queue_RdEn <= 1'b0;
 			state <= buffer_read_2; // eat another clock cycle before reading output port
 		end
 		buffer_read_2: begin
-			tas_input <= queue_output;// now output data should be ready
-			transmit_controller_state <= 1;
-			state <= write_controller;
+			// N07: only a newly accepted read may publish TAS data or trigger its response.
+			// N07: also qualify the current mode if it changed during the RAM wait.
+			if(!input_mode || (frame_valid && !tas_underrun)) begin
+				if(frame_valid) tas_input <= queue_output;
+				transmit_controller_state <= 1;
+				state <= write_controller;
+			end else begin
+				tas_underrun <= 1'b1; // N07: a newly selected TAS mode still needs a valid frame.
+				state <= idle;
+			end
 		end
 		write_controller: begin
 			transmit_controller_state <= 0;
@@ -122,6 +147,20 @@ always @(posedge sys_clk) begin
 			end
 		end
 	endcase
+	// N07: cancel an in-flight dequeue on reset. A response already started finishes
+	// with its accepted frame; idle then clears its cache without tearing the response.
+	if(n64_controller_reset) begin
+		queue_RdEn <= 1'b0;
+		frame_valid <= 1'b0;
+		tas_underrun <= 1'b0;
+		if(state != write_controller && state != write_ident) begin
+			tas_input <= 32'b0;
+			transmit_controller_state <= 1'b0;
+			transmit_identity <= 1'b0;
+			receive_command <= 1'b0;
+			state <= idle;
+		end
+	end
 end
 
 endmodule

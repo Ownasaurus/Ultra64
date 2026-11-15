@@ -1,0 +1,8 @@
+# N07: keep local validation tools and generated simulation/build artifacts out of commits.
+.tools/
+.git-safe-config
+tests/.build/
+n64_replay_device.json
+n64_replay_device_out.config
+n64_replay_device.bit
+n64_replay_device.svf

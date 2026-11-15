@@ -4,6 +4,8 @@
 module serial_handler #(parameter NUM_CONSOLES=1) (
     input clk,
 	input [NUM_CONSOLES-1:0] request_frame,
+	// N07: sticky console faults are exposed by the optional 'U' status command.
+	input [NUM_CONSOLES-1:0] tas_underrun,
     input rx_uart,
 	output tx_uart,
 	output reg queue_WrEn=1'b0,
@@ -86,6 +88,9 @@ reg [7:0] byte_to_send=8'h00;
 reg respond_to_serial_TX=1'b0;
 reg new_data_request_lock=1'b0;
 reg prebuffer_done=1'b0;
+// N07: hold a status reply across producer cleanup/full FIFO rather than losing a pulse.
+reg underrun_status_pending=1'b0;
+reg [7:0] underrun_status=8'h00;
 reg [32:0] frame_counter=32'h00000000;
 
 // Process commands received on the serial RX line
@@ -123,6 +128,12 @@ always @(posedge clk) begin
 				fifo_input <= byte_to_send; // whatever the serial SM wants to send
 				serial_send_fifo_wren <= 1'b1;
 				send_SM <= send_CLEANUP;
+			end else if(underrun_status_pending && !send_buffer_full) begin
+				// N07: explicit query avoids unsolicited bytes in the existing host protocol.
+				fifo_input <= underrun_status;
+				serial_send_fifo_wren <= 1'b1;
+				underrun_status_pending <= 1'b0;
+				send_SM <= send_CLEANUP;
 			end else if(prebuffer_done && &request_frame && !new_data_request_lock) begin
 				// delay_frame_request is a delay to make sure it doesn't read again too quickly until the consoles have time to lower their not_full pulses
 				fifo_input <= 8'd65; // capital A
@@ -141,6 +152,10 @@ always @(posedge clk) begin
 		case(state)
 			IDLE: begin
 				case(new_byte)
+					8'd85: begin // N07: 'U' -- snapshot aggregate underrun status; read does not clear it.
+						underrun_status <= (|tas_underrun) ? 8'hB1 : 8'h00;
+						underrun_status_pending <= 1'b1;
+					end
 					8'd82: begin // 'R' -- reset
 						byte_to_send <= 8'h01; // first byte of reset response
 						frame_counter <= 32'h00000000;

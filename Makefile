@@ -24,3 +24,14 @@ clean:
 	rm -f *.svf *.bit *.config *.json
 
 .PHONY: prog clean
+
+# N07: run simulation regressions separately from `test`, which programs real hardware.
+PYTHON?=python
+IVERILOG?=iverilog
+VVP?=vvp
+ECP5_MODELS?=
+check-n07:
+	${PYTHON} tests/run_n07.py --models "${ECP5_MODELS}" --iverilog "${IVERILOG}" --vvp "${VVP}"
+
+# N07: the regression runner always executes and preserves its validation log.
+.PHONY: check-n07

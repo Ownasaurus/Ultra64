@@ -1,0 +1,11 @@
+Baseline disables RAM-wait bus-direction assertion to reach transmit trigger; adds a read-count diagnostic.
+$ .tools/mingw64/bin/iverilog.exe -g2005 -s n07_controller_tb -y C:/lscc/diamond/3.13/cae_library/simulation/verilog/ecp5u -o tests/.build/baseline.vvp C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\.build\baseline_tb.v tests/.build/LUT4.v tests/.build/baseline_controller.v queue_1024.v and2.v inv.v vhi.v vlo.v xor2.v glitch_filter.v n64_receive_command.v n64_transmit_identity.v n64_transmit_controller_state.v n64_transmit_byte.v n64_transmit_bit.v
+
+EXIT 0
+$ .tools/mingw64/bin/vvp.exe tests/.build/baseline.vvp
+accepted_reads=0 transmit_trigger=1
+FATAL: C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\tests\.build\baseline_tb.v:79: underrun drove a response
+       Time: 35620000  Scope: n07_controller_tb.silent_a
+
+EXIT 1
+PASS reproduction: response trigger without an accepted read.

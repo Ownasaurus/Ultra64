@@ -1,0 +1,35 @@
+N07 final review 2026-11-15T23:54:09.915164+00:00
+$ git branch --show-current
+N07-fix
+EXIT 0
+$ git rev-parse HEAD
+2f4bab11234cc2d5c1b452e51883447ff2831d10
+EXIT 0
+$ git diff --check
+EXIT 0
+$ git diff --cached --check
+EXIT 0
+$ git diff --cached --stat
+ .gitignore                |   8 +++
+ Makefile                  |  11 ++++
+ README.md                 |  43 ++++++++++++++
+ n64_controller.v          |  65 ++++++++++++++++-----
+ serial_handler.v          |  17 +++++-
+ tests/n07_controller_tb.v | 146 ++++++++++++++++++++++++++++++++++++++++++++++
+ tests/n07_status_tb.v     |  72 +++++++++++++++++++++++
+ tests/n07_top_tb.v        |   6 ++
+ tests/run_n07.py          |  94 +++++++++++++++++++++++++++++
+ top.v                     |   8 ++-
+ validation/N07/README.md  | 129 ++++++++++++++++++++++++++++++++++++++++
+ 11 files changed, 583 insertions(+), 16 deletions(-)
+EXIT 0
+PASS build.log: 22 source/test hashes match current files
+PASS timing-50mhz.log: 22 source/test hashes match current files
+PASS simulation.log: 26 source/test hashes match current files
+PASS branch isolation and staged/unstaged whitespace checks
+$ git diff --check
+EXIT 0
+$ git diff --cached --check
+EXIT 0
+PASS final complete simulation, UART status and top elaboration; runner exit 0
+Raw validation logs retain native spacing; .gitattributes disables source whitespace rules for logs only.

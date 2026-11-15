@@ -1,0 +1,327 @@
+$ C:\Users\Justin\AppData\Local\Virtuali\worktrees\s2n9n538\.tools\runtime16\mingw64\bin\nextpnr-ecp5.exe --json n64_replay_device.json --textcfg tests/.build/n07-50mhz.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf --freq 50
+SOURCE SHA256 0040fc7f12ee5335897964f07ba7c6ee395779e12eb4e9a06c70bd65b5310fc0 and2.v
+SOURCE SHA256 49cf2176d74fb1b1ab1ed7d37d6cd8053f80dd439e07239fa620e364ceb8efc4 glitch_filter.v
+SOURCE SHA256 76090506b9c8dc87599be35d1c5e9694feb85516d993152d1b138946604cc3f6 inv.v
+SOURCE SHA256 25b707490b40ef1d626ae95243e8d85e2d4fd7d18e4f5e8463a9d3b5be35bc06 n64_controller.v
+SOURCE SHA256 1a56bf7c1030da87a8f92899312f7b6b86d42af4660a56ee05e2c8fa750dc1f6 n64_controller_reader.v
+SOURCE SHA256 a33e9785315a749d5e705ed99e3ba927bccd16ebbb53b57952d28c12c4aba90b n64_receive_command.v
+SOURCE SHA256 35eb5f9ae0b578d556e7bdafc6294ae534ed4390e8e31bf49f8ad2dd7d303abe n64_receive_controller_data.v
+SOURCE SHA256 e470c9364a0a010ae74832cde3ed686c588ce56279eca1d7876ebad5488dde9e n64_request.v
+SOURCE SHA256 06c955e3cf57e6d59363eb167908a02dfbfd20d1288478f86c3984cf4e6a459a n64_transmit_bit.v
+SOURCE SHA256 174dda0524c6134603622653a2b76953c231cbb40824c47cc4c92372b9a1864e n64_transmit_byte.v
+SOURCE SHA256 1bb55fb283d7026d431cbf14a6bf87b5403ae80a1e43583688b70715dcce330f n64_transmit_controller_state.v
+SOURCE SHA256 af28ed2347c75796c089b71d425d72c26672221dfcfc3447547eaade5c7b39e4 n64_transmit_identity.v
+SOURCE SHA256 6bc113f6067ea87b17d1d4484c2fa3a4a2cdf933e13ebb8292145f30f86c2722 pll.v
+SOURCE SHA256 432b11d41e41dc2d08e5fb2b0740f4aca7e39ccf7eb22ea3ed4a82466222a8da queue_1024.v
+SOURCE SHA256 8d6386544bcba018bca6a78995b34eec8513e6fa587e93abdf7ea2c9b88d22a5 queue_64.v
+SOURCE SHA256 e9833515025a57f9422ca700a6ac3923a7208d5edd6429a48c0f9a7fa99f34ba serial_handler.v
+SOURCE SHA256 574e08c053684f6273e452cbfa53190964374116bf9990319362e367d8d7573b top.v
+SOURCE SHA256 578fafe56face8048970950dfcae5f628e0a2852b8c2f3fad6a57ba7b3553404 UART_RX.v
+SOURCE SHA256 b6e9bb36d6e51fc9ae77abe3196a9f2233d9318dc8e115b02aff93f8da4ca4f0 UART_TX.v
+SOURCE SHA256 750ef077e9a94c564a3def4caaf0a4c3bf8c3232e330ba93e6295a180588b347 vhi.v
+SOURCE SHA256 07b2d38fce196cd00c93c996ee8970615bd95bbdb10f301e617eb1f6513e83d0 vlo.v
+SOURCE SHA256 70a8d1ef12eb81c8041dde9e4b6f88ed41fbb8d1d9d44f5eb6eef63a56cd6024 xor2.v
+Warning:     ignoring unsupported LPF command 'BLOCK JTAGPATHS ' (on line 5)
+
+Info: Logic utilisation before packing:
+Info:     Total LUT4s:      1533/83640     1%
+Info:         logic LUTs:    971/83640     1%
+Info:         carry LUTs:    562/83640     0%
+Info:           RAM LUTs:      0/10455     0%
+Info:          RAMW LUTs:      0/20910     0%
+
+Info:      Total DFFs:       648/83640     0%
+
+Info: Packing IOs..
+Info: $n64real$iobuf_i: n64real_$_TBUF__Y.Y
+Info: pin 'n64real$tr_io' constrained to Bel 'X9/Y0/PIOA'.
+Info: $n64$iobuf_i: n64_$_TBUF__Y.Y
+Info: pin 'n64$tr_io' constrained to Bel 'X0/Y53/PIOA'.
+Info: pin 'tx_uart$tr_io' constrained to Bel 'X0/Y92/PIOC'.
+Info: pin 'rx_uart$tr_io' constrained to Bel 'X0/Y92/PIOB'.
+Info: pin 'led[7]$tr_io' constrained to Bel 'X76/Y0/PIOB'.
+Info: pin 'led[6]$tr_io' constrained to Bel 'X76/Y0/PIOA'.
+Info: pin 'led[5]$tr_io' constrained to Bel 'X119/Y0/PIOB'.
+Info: pin 'led[4]$tr_io' constrained to Bel 'X119/Y0/PIOA'.
+Info: pin 'led[3]$tr_io' constrained to Bel 'X116/Y0/PIOB'.
+Info: pin 'led[2]$tr_io' constrained to Bel 'X114/Y0/PIOB'.
+Info: pin 'led[1]$tr_io' constrained to Bel 'X116/Y0/PIOA'.
+Info: pin 'led[0]$tr_io' constrained to Bel 'X114/Y0/PIOA'.
+Info: pin 'debug[2]$tr_io' constrained to Bel 'X85/Y0/PIOB'.
+Info: pin 'debug[1]$tr_io' constrained to Bel 'X85/Y0/PIOA'.
+Info: pin 'debug[0]$tr_io' constrained to Bel 'X83/Y0/PIOB'.
+Info: pin 'clk12$tr_io' constrained to Bel 'X63/Y0/PIOA'.
+Info: pin 'button$tr_io' constrained to Bel 'X0/Y92/PIOD'.
+Info: Packing constants..
+Info: Packing carries...
+Info: Packing LUTs...
+Info: Packing LUT5-7s...
+Info: Packing FFs...
+Info:     466 FFs paired with LUTs.
+Info: Generating derived timing constraints...
+Info: Promoting globals...
+Info:     promoting clock net clk to global network
+Info: Checksum: 0x0360de91
+
+Info: Device utilisation:
+Info: 	          TRELLIS_IO:    17/  365     4%
+Info: 	                DCCA:     1/   56     1%
+Info: 	              DP16KD:     3/  208     1%
+Info: 	          MULT18X18D:     0/  156     0%
+Info: 	              ALU54B:     0/   78     0%
+Info: 	             EHXPLLL:     1/    4    25%
+Info: 	             EXTREFB:     0/    2     0%
+Info: 	                DCUA:     0/    2     0%
+Info: 	           PCSCLKDIV:     0/    2     0%
+Info: 	             IOLOGIC:     0/  224     0%
+Info: 	            SIOLOGIC:     0/  141     0%
+Info: 	                 GSR:     0/    1     0%
+Info: 	               JTAGG:     0/    1     0%
+Info: 	                OSCG:     0/    1     0%
+Info: 	               SEDGA:     0/    1     0%
+Info: 	                 DTR:     0/    1     0%
+Info: 	             USRMCLK:     0/    1     0%
+Info: 	             CLKDIVF:     0/    4     0%
+Info: 	           ECLKSYNCB:     0/   10     0%
+Info: 	             DLLDELD:     0/    8     0%
+Info: 	              DDRDLL:     0/    4     0%
+Info: 	             DQSBUFM:     0/   14     0%
+Info: 	     TRELLIS_ECLKBUF:     0/    8     0%
+Info: 	        ECLKBRIDGECS:     0/    2     0%
+Info: 	                DCSC:     0/    2     0%
+Info: 	          TRELLIS_FF:   648/83640     0%
+Info: 	        TRELLIS_COMB:  1699/83640     2%
+Info: 	        TRELLIS_RAMW:     0/10455     0%
+
+Info: Placed 18 cells based on constraints.
+Info: Creating initial analytic placement for 1003 cells, random placement wirelen = 136177.
+Info:     at initial placer iter 0, wirelen = 1700
+Info:     at initial placer iter 1, wirelen = 1309
+Info:     at initial placer iter 2, wirelen = 1334
+Info:     at initial placer iter 3, wirelen = 1260
+Info: Running main analytical placer, max placement attempts per cell = 701520.
+Info:     at iteration #1, type ALL: wirelen solved = 1305, spread = 9567, legal = 10196; time = 0.05s
+Info:     at iteration #2, type ALL: wirelen solved = 1719, spread = 6706, legal = 7429; time = 0.03s
+Info:     at iteration #3, type ALL: wirelen solved = 1961, spread = 5394, legal = 5893; time = 0.02s
+Info:     at iteration #4, type ALL: wirelen solved = 2043, spread = 5002, legal = 5984; time = 0.02s
+Info:     at iteration #5, type ALL: wirelen solved = 2043, spread = 5030, legal = 5863; time = 0.02s
+Info:     at iteration #6, type ALL: wirelen solved = 2192, spread = 4909, legal = 5382; time = 0.02s
+Info:     at iteration #7, type ALL: wirelen solved = 2314, spread = 5209, legal = 5769; time = 0.02s
+Info:     at iteration #8, type ALL: wirelen solved = 2463, spread = 5368, legal = 5809; time = 0.02s
+Info:     at iteration #9, type ALL: wirelen solved = 2629, spread = 4862, legal = 5484; time = 0.02s
+Info:     at iteration #10, type ALL: wirelen solved = 2654, spread = 4726, legal = 5090; time = 0.02s
+Info:     at iteration #11, type ALL: wirelen solved = 2713, spread = 4930, legal = 5497; time = 0.02s
+Info:     at iteration #12, type ALL: wirelen solved = 2848, spread = 5283, legal = 5596; time = 0.02s
+Info:     at iteration #13, type ALL: wirelen solved = 3058, spread = 5138, legal = 6182; time = 0.03s
+Info:     at iteration #14, type ALL: wirelen solved = 3035, spread = 4806, legal = 6004; time = 0.02s
+Info:     at iteration #15, type ALL: wirelen solved = 2879, spread = 5356, legal = 6445; time = 0.02s
+Info: HeAP Placer Time: 0.73s
+Info:   of which solving equations: 0.29s
+Info:   of which spreading cells: 0.07s
+Info:   of which strict legalisation: 0.05s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 59, wirelen = 5090
+Info:   at iteration #5: temp = 0.000000, timing cost = 109, wirelen = 4360
+Info:   at iteration #10: temp = 0.000000, timing cost = 110, wirelen = 4205
+Info:   at iteration #15: temp = 0.000000, timing cost = 66, wirelen = 4036
+Info:   at iteration #17: temp = 0.000000, timing cost = 60, wirelen = 4020 
+Info: SA placement time 2.05s
+
+Info: Max frequency for clock '$glbnet$clk': 261.16 MHz (PASS at 50.00 MHz)
+
+Info: Max delay <async>             -> posedge $glbnet$clk: 4.88 ns
+Info: Max delay posedge $glbnet$clk -> <async>            : 6.74 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 2 endpoint(s)
+Info:          + represents [1,2) endpoint(s)
+Info: [ 16171,  16340) |******+
+Info: [ 16340,  16509) |**************+
+Info: [ 16509,  16678) |**************+
+Info: [ 16678,  16847) |***********+
+Info: [ 16847,  17016) |****************+
+Info: [ 17016,  17185) |***********************************+
+Info: [ 17185,  17354) |**************************+
+Info: [ 17354,  17523) |******************+
+Info: [ 17523,  17692) |***************+
+Info: [ 17692,  17861) |*****************************+
+Info: [ 17861,  18030) |*****************************+
+Info: [ 18030,  18199) |************************************+
+Info: [ 18199,  18368) |**************************************************+
+Info: [ 18368,  18537) |*********************************************************+
+Info: [ 18537,  18706) |********************************************+
+Info: [ 18706,  18875) |*******************************************+
+Info: [ 18875,  19044) |***********************************************+
+Info: [ 19044,  19213) |************************************************************ 
+Info: [ 19213,  19382) |**************************************************+
+Info: [ 19382,  19551) |**********************+
+Info: Checksum: 0xef84b27e
+Info: Routing globals...
+Info:     routing clock net $glbnet$clk using global 0
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 5833 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:       1000 |      144        855 |  144   855 |      4981|       0.32       0.32|
+Info:       2000 |      333       1655 |  189   800 |      4190|       0.20       0.52|
+Info:       3000 |      500       2358 |  167   703 |      3377|       0.17       0.70|
+Info:       4000 |      681       3082 |  181   724 |      2564|       0.17       0.86|
+Info:       5000 |      817       3816 |  136   734 |      1723|       0.16       1.03|
+Info:       6000 |      921       4658 |  104   842 |       835|       0.22       1.24|
+Info:       6882 |      963       5377 |   42   719 |         0|       0.22       1.46|
+Info: Routing complete.
+Info: Router1 time 1.46s
+Info: Checksum: 0x5d1cf1c0
+
+Info: Critical path report for clock '$glbnet$clk' (posedge -> posedge):
+Info: curr total
+Info:  0.3  0.3  Source genblk1[0].player_i.hey_listen_machine.timer_TRELLIS_FF_Q_2.Q
+Info:  0.8  1.1    Net genblk1[0].player_i.hey_listen_machine.timer[2] (4,43) -> (3,44)
+Info:                Sink genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.B
+Info:                Defined in:
+Info:                  top.v:36.22-46.4
+Info:                  n64_receive_command.v:25.11-25.16
+Info:                  n64_controller.v:61.21-61.153
+Info:  0.3  1.3  Source genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCO
+Info:  0.0  1.3    Net genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_FCI_INT (3,44) -> (3,44)
+Info:                Sink genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCI
+Info:  0.0  1.3  Source genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCO
+Info:  0.0  1.3    Net genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_CCU2C_COUT_CIN_CCU2C_COUT_CIN (3,44) -> (3,44)
+Info:                Sink genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  top.v:36.22-46.4
+Info:                  n64_receive_command.v:72.29-72.51
+Info:                  n64_controller.v:61.21-61.153
+Info:                  C:\Users\Justin\AppData\Local\Virtuali\WORKTR~1\s2n9n538\TOOLS~1\mingw64\bin\../share/yosys/ecp5/arith_map.v:74.7-80.4
+Info:                  C:\Users\Justin\AppData\Local\Virtuali\WORKTR~1\s2n9n538\TOOLS~1\mingw64\bin\../share/yosys/ecp5/cells_sim.v:82.9-82.13
+Info:  0.0  1.4  Source genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCO
+Info:  0.0  1.4    Net genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_FCI_INT (3,44) -> (3,44)
+Info:                Sink genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCI
+Info:  0.0  1.4  Source genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCO
+Info:  0.0  1.4    Net genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_CCU2C_COUT_CIN (3,44) -> (3,44)
+Info:                Sink genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_CCU2C_COUT$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  top.v:36.22-46.4
+Info:                  n64_receive_command.v:72.29-72.51
+Info:                  n64_controller.v:61.21-61.153
+Info:                  C:\Users\Justin\AppData\Local\Virtuali\WORKTR~1\s2n9n538\TOOLS~1\mingw64\bin\../share/yosys/ecp5/arith_map.v:74.7-80.4
+Info:                  C:\Users\Justin\AppData\Local\Virtuali\WORKTR~1\s2n9n538\TOOLS~1\mingw64\bin\../share/yosys/ecp5/cells_sim.v:82.9-82.13
+Info:  0.0  1.4  Source genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_CCU2C_COUT$CCU2_COMB0.FCO
+Info:  0.0  1.4    Net genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_CCU2C_COUT$CCU2_FCI_INT (3,44) -> (3,44)
+Info:                Sink genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_CCU2C_COUT$CCU2_COMB1.FCI
+Info:  0.0  1.4  Source genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_CCU2C_COUT$CCU2_COMB1.FCO
+Info:  0.0  1.4    Net $nextpnr_CCU2C_62$CIN (3,44) -> (4,44)
+Info:                Sink $nextpnr_CCU2C_62$CCU2_COMB0.FCI
+Info:  0.3  1.7  Source $nextpnr_CCU2C_62$CCU2_COMB0.F
+Info:  0.5  2.2    Net genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A (4,44) -> (6,43)
+Info:                Sink genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_LUT4_C.C
+Info:                Defined in:
+Info:                  C:\Users\Justin\AppData\Local\Virtuali\WORKTR~1\s2n9n538\TOOLS~1\mingw64\bin\../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.1  2.4  Source genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_LUT4_C.F
+Info:  0.4  2.7    Net genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_LUT4_B_Z_LUT4_Z_3_A_LUT4_C_Z[3] (6,43) -> (6,43)
+Info:                Sink genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_PFUMX_C0_Z_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.D
+Info:                Defined in:
+Info:                  C:\Users\Justin\AppData\Local\Virtuali\WORKTR~1\s2n9n538\TOOLS~1\mingw64\bin\../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.1  2.9  Source genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_PFUMX_C0_Z_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.F
+Info:  0.0  2.9    Net genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_PFUMX_C0_Z_L6MUX21_Z_D1_PFUMX_Z_ALUT (6,43) -> (6,43)
+Info:                Sink genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_PFUMX_C0_Z_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z.F1
+Info:                Defined in:
+Info:                  C:\Users\Justin\AppData\Local\Virtuali\WORKTR~1\s2n9n538\TOOLS~1\mingw64\bin\../share/yosys/ecp5/cells_map.v:141.30-141.32
+Info:  0.1  3.0  Source genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_PFUMX_C0_Z_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z.OFX
+Info:  0.0  3.0    Net genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_PFUMX_C0_Z_L6MUX21_Z_D1 (6,43) -> (6,43)
+Info:                Sink genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_PFUMX_C0_Z_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.FXB
+Info:                Defined in:
+Info:                  C:\Users\Justin\AppData\Local\Virtuali\WORKTR~1\s2n9n538\TOOLS~1\mingw64\bin\../share/yosys/ecp5/cells_map.v:141.38-141.40
+Info:  0.1  3.1  Source genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_PFUMX_C0_Z_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.OFX
+Info:  0.4  3.6    Net genblk1[0].player_i.hey_listen_machine.position_TRELLIS_FF_Q_3_DI_CCU2C_B0_S1[4] (6,43) -> (5,43)
+Info:                Sink genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_PFUMX_C0_Z_LUT4_Z_1.D
+Info:                Defined in:
+Info:                  C:\Users\Justin\AppData\Local\Virtuali\WORKTR~1\s2n9n538\TOOLS~1\mingw64\bin\../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.1  3.7  Source genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_PFUMX_C0_Z_LUT4_Z_1.F
+Info:  0.5  4.2    Net genblk1[0].player_i.hey_listen_machine.receiving_LUT4_C_1_Z_PFUMX_BLUT_Z_PFUMX_C0_Z[5] (5,43) -> (4,43)
+Info:                Sink genblk1[0].player_i.hey_listen_machine.timer_TRELLIS_FF_Q_CE_PFUMX_Z_ALUT_LUT4_Z.D
+Info:                Defined in:
+Info:                  C:\Users\Justin\AppData\Local\Virtuali\WORKTR~1\s2n9n538\TOOLS~1\mingw64\bin\../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.1  4.3  Source genblk1[0].player_i.hey_listen_machine.timer_TRELLIS_FF_Q_CE_PFUMX_Z_ALUT_LUT4_Z.F
+Info:  0.0  4.3    Net genblk1[0].player_i.hey_listen_machine.timer_TRELLIS_FF_Q_CE_PFUMX_Z_ALUT (4,43) -> (4,43)
+Info:                Sink genblk1[0].player_i.hey_listen_machine.timer_TRELLIS_FF_Q_CE_PFUMX_Z_BLUT_LUT4_Z.F1
+Info:                Defined in:
+Info:                  C:\Users\Justin\AppData\Local\Virtuali\WORKTR~1\s2n9n538\TOOLS~1\mingw64\bin\../share/yosys/ecp5/cells_map.v:133.22-133.24
+Info:  0.1  4.4  Source genblk1[0].player_i.hey_listen_machine.timer_TRELLIS_FF_Q_CE_PFUMX_Z_BLUT_LUT4_Z.OFX
+Info:  0.4  4.8    Net genblk1[0].player_i.hey_listen_machine.timer_TRELLIS_FF_Q_CE (4,43) -> (4,44)
+Info:                Sink genblk1[0].player_i.hey_listen_machine.timer_TRELLIS_FF_Q_7.CE
+Info:  0.0  4.8  Setup genblk1[0].player_i.hey_listen_machine.timer_TRELLIS_FF_Q_7.CE
+Info: 1.8 ns logic, 3.0 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge $glbnet$clk':
+Info: curr total
+Info:  0.0  0.0  Source rx_uart$tr_io.O
+Info:  3.4  3.4    Net rx_uart$TRELLIS_IO_IN (0,92) -> (12,45)
+Info:                Sink ftdi.serial_receive.r_SM_Main_TRELLIS_FF_Q_DI_LUT4_Z_B_LUT4_Z.B
+Info:                Defined in:
+Info:                  top.v:13.11-13.18
+Info:  0.1  3.5  Source ftdi.serial_receive.r_SM_Main_TRELLIS_FF_Q_DI_LUT4_Z_B_LUT4_Z.F
+Info:  0.7  4.2    Net ftdi.serial_receive.r_SM_Main_TRELLIS_FF_Q_DI_LUT4_Z_B[1] (12,45) -> (12,44)
+Info:                Sink ftdi.serial_receive.r_SM_Main_TRELLIS_FF_Q_DI_LUT4_Z.B
+Info:                Defined in:
+Info:                  C:\Users\Justin\AppData\Local\Virtuali\WORKTR~1\s2n9n538\TOOLS~1\mingw64\bin\../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.1  4.3  Source ftdi.serial_receive.r_SM_Main_TRELLIS_FF_Q_DI_LUT4_Z.F
+Info:  0.1  4.4    Net ftdi.serial_receive.r_SM_Main_TRELLIS_FF_Q_DI[0] (12,44) -> (12,44)
+Info:                Sink ftdi.serial_receive.r_SM_Main_TRELLIS_FF_Q.DI
+Info:                Defined in:
+Info:                  top.v:82.47-91.2
+Info:                  UART_RX.v:0.0-0.0
+Info:                  UART_RX.v:49.7-140.12
+Info:                  serial_handler.v:59.9-65.2
+Info:                  C:\Users\Justin\AppData\Local\Virtuali\WORKTR~1\s2n9n538\TOOLS~1\mingw64\bin\../share/yosys/techmap.v:578.19-578.22
+Info:  0.0  4.4  Setup ftdi.serial_receive.r_SM_Main_TRELLIS_FF_Q.DI
+Info: 0.3 ns logic, 4.1 ns routing
+
+Info: Critical path report for cross-domain path 'posedge $glbnet$clk' -> '<async>':
+Info: curr total
+Info:  0.3  0.3  Source input_mode_TRELLIS_FF_Q.Q
+Info:  4.3  4.6    Net input_mode (11,41) -> (76,0)
+Info:                Sink led[7]$tr_io.I
+Info:                Defined in:
+Info:                  top.v:9.18-9.21
+Info: 0.3 ns logic, 4.3 ns routing
+
+Info: Max frequency for clock '$glbnet$clk': 206.87 MHz (PASS at 50.00 MHz)
+
+Info: Max delay <async>             -> posedge $glbnet$clk: 4.41 ns
+Info: Max delay posedge $glbnet$clk -> <async>            : 4.63 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 3 endpoint(s)
+Info:          + represents [1,3) endpoint(s)
+Info: [ 15166,  15386) |**********+
+Info: [ 15386,  15606) |***+
+Info: [ 15606,  15826) |**+
+Info: [ 15826,  16046) |******+
+Info: [ 16046,  16266) |************+
+Info: [ 16266,  16486) |*****************************+
+Info: [ 16486,  16706) |***************************+
+Info: [ 16706,  16926) |***********************+
+Info: [ 16926,  17146) |*****************+
+Info: [ 17146,  17366) |**************+
+Info: [ 17366,  17586) |*************+
+Info: [ 17586,  17806) |******************+
+Info: [ 17806,  18026) |*************************************+
+Info: [ 18026,  18246) |***************************************************+
+Info: [ 18246,  18466) |*************************+
+Info: [ 18466,  18686) |***************+
+Info: [ 18686,  18906) |**********************************+
+Info: [ 18906,  19126) |************************************************************ 
+Info: [ 19126,  19346) |*******************+
+Info: [ 19346,  19566) |*+
+1 warning, 0 errors
+
+Info: Program finished normally.
+
+EXIT 0
+ARTIFACT SHA256 c5f72fbc7b72e3b8d51e0706ef7affce435a4b39876ee98fa83c96290bbad2ea n64_replay_device.json
+ARTIFACT SHA256 a7a03100715db4f9c83a1297f0976ecd73036c101533ada88153df365889603d n64_replay_device.bit
+ARTIFACT SHA256 fa1753f60c59e8a014671104287d5ec7e7654638124d20ac25fee152bbab9597 n64_replay_device.svf

@@ -22,6 +22,8 @@ pll_12_50 pll(.clki(clk12), .clko(clk));
 // set up N64 consoles ----------------------------------
 wire [31:0] real_controller_data;
 wire [NUM_CONSOLES-1:0] ready_for_next_frame;
+// N07: report starvation from every independent console to the host status query.
+wire [NUM_CONSOLES-1:0] tas_underrun;
 wire queueWrEn;
 wire [31:0] received_frame_data;
 wire n64_controller_reset;
@@ -39,6 +41,7 @@ generate
 		.queue_WrEn(queueWrEn),
 		.queue_data(received_frame_data),
 		.next_frame_request(ready_for_next_frame[i]),
+		.tas_underrun(tas_underrun[i]), // N07: retain the per-console fault until reset.
 		.n64_controller_reset(n64_controller_reset)
 		);
    end
@@ -79,6 +82,7 @@ assign led[7] = input_mode;
 serial_handler #(.NUM_CONSOLES(NUM_CONSOLES)) ftdi (
     .clk(clk),
 	.request_frame(ready_for_next_frame),
+	.tas_underrun(tas_underrun), // N07: aggregate faults without altering frame flow control.
     .rx_uart(rx_uart),
 	.tx_uart(tx_uart),
 	.queue_WrEn(queueWrEn),

@@ -1,0 +1,2 @@
+# N07: retain raw tool logs, including native line endings and diagnostic spacing.
+validation/N07/*.log -whitespace
