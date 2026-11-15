@@ -1,0 +1,5 @@
+command: ['vvp', 'baseline.vvp']
+cwd: C:\Users\Justin\AppData\Local\Temp\ultra64-N05-7wtu92fu\baseline
+exit: 1
+FATAL: C:\Users\Justin\AppData\Local\Virtuali\worktrees\omaiur0e\tests\n05_inputs_tb.v:55: UART bypasses two-stage boundary
+       Time: 111000  Scope: n05_inputs_tb

@@ -1,0 +1,4 @@
+command: ['nextpnr-ecp5', '--version']
+cwd: C:\Users\Justin\AppData\Local\Temp\ultra64-N05-7wtu92fu
+exit: 0
+"nextpnr-ecp5" -- Next Generation Place and Route (Version nextpnr-0.11.1-92-g5e2718b6)

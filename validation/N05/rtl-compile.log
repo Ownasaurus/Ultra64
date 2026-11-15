@@ -1,0 +1,11 @@
+command: ['iverilog', '-g2005', '-Wall', '-s', 'n05_inputs_tb', '-o', 'n05.vvp', 'C:\\Users\\Justin\\AppData\\Local\\Virtuali\\worktrees\\omaiur0e\\tests\\n05_inputs_tb.v', 'UART_RX.v', 'glitch_filter.v', 'n64_receive_command.v', 'n64_receive_controller_data.v']
+cwd: C:\Users\Justin\AppData\Local\Temp\ultra64-N05-7wtu92fu
+exit: 0
+UART_RX.v:15: warning: timescale for UART_RX inherited from another file.
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\omaiur0e\tests\n05_inputs_tb.v:1: ...: The inherited timescale is here.
+glitch_filter.v:4: warning: timescale for glitch_filter inherited from another file.
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\omaiur0e\tests\n05_inputs_tb.v:1: ...: The inherited timescale is here.
+n64_receive_command.v:4: warning: timescale for n64_receive_command inherited from another file.
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\omaiur0e\tests\n05_inputs_tb.v:1: ...: The inherited timescale is here.
+n64_receive_controller_data.v:4: warning: timescale for n64_receive_controller_data inherited from another file.
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\omaiur0e\tests\n05_inputs_tb.v:1: ...: The inherited timescale is here.

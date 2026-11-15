@@ -1,0 +1,4 @@
+command: ['yosys', '-V']
+cwd: C:\Users\Justin\AppData\Local\Temp\ultra64-N05-7wtu92fu
+exit: 0
+Yosys 0.71+34 (git sha1 e419c4eef, Release, GNU /usr/bin/x86_64-w64-mingw32-g++ 15.2.1)

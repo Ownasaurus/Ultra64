@@ -1,0 +1,271 @@
+command: ['nextpnr-ecp5', '--json', 'n64_replay_device.json', '--textcfg', 'n05.config', '--um5g-85k', '--package', 'CABGA381', '--lpf', 'ecp5evn.lpf', '--freq', '50', '--write', 'n05-routed.json', '--report', 'n05-timing.json']
+cwd: C:\Users\Justin\AppData\Local\Temp\ultra64-N05-7wtu92fu
+exit: 0
+Warning:     ignoring unsupported LPF command 'BLOCK JTAGPATHS ' (on line 5)
+
+Info: Logic utilisation before packing:
+Info:     Total LUT4s:      1404/83640     1%
+Info:         logic LUTs:    838/83640     1%
+Info:         carry LUTs:    566/83640     0%
+Info:           RAM LUTs:      0/10455     0%
+Info:          RAMW LUTs:      0/20910     0%
+
+Info:      Total DFFs:       652/83640     0%
+
+Info: Packing IOs..
+Info: $n64real$iobuf_i: n64real_$_TBUF__Y.Y
+Info: pin 'n64real$tr_io' constrained to Bel 'X9/Y0/PIOA'.
+Info: $n64$iobuf_i: n64_$_TBUF__Y.Y
+Info: pin 'n64$tr_io' constrained to Bel 'X0/Y53/PIOA'.
+Info: pin 'tx_uart$tr_io' constrained to Bel 'X0/Y92/PIOC'.
+Info: pin 'rx_uart$tr_io' constrained to Bel 'X0/Y92/PIOB'.
+Info: pin 'led[7]$tr_io' constrained to Bel 'X76/Y0/PIOB'.
+Info: pin 'led[6]$tr_io' constrained to Bel 'X76/Y0/PIOA'.
+Info: pin 'led[5]$tr_io' constrained to Bel 'X119/Y0/PIOB'.
+Info: pin 'led[4]$tr_io' constrained to Bel 'X119/Y0/PIOA'.
+Info: pin 'led[3]$tr_io' constrained to Bel 'X116/Y0/PIOB'.
+Info: pin 'led[2]$tr_io' constrained to Bel 'X114/Y0/PIOB'.
+Info: pin 'led[1]$tr_io' constrained to Bel 'X116/Y0/PIOA'.
+Info: pin 'led[0]$tr_io' constrained to Bel 'X114/Y0/PIOA'.
+Info: pin 'debug[2]$tr_io' constrained to Bel 'X85/Y0/PIOB'.
+Info: pin 'debug[1]$tr_io' constrained to Bel 'X85/Y0/PIOA'.
+Info: pin 'debug[0]$tr_io' constrained to Bel 'X83/Y0/PIOB'.
+Info: pin 'clk12$tr_io' constrained to Bel 'X63/Y0/PIOA'.
+Info: pin 'button$tr_io' constrained to Bel 'X0/Y92/PIOD'.
+Info: placed PLL 'pll.pll_i' at bel 'X1/Y4/EHXPLL_UL'
+Info: Packing constants..
+Info: Packing carries...
+Info: Packing LUTs...
+Info: Packing LUT5-7s...
+Info: Packing FFs...
+Info:     463 FFs paired with LUTs.
+Info: Generating derived timing constraints...
+Info: Promoting globals...
+Info:     promoting clock net clk to global network
+Info: Checksum: 0x8f41d44c
+
+Info: Device utilisation:
+Info: 	          TRELLIS_IO:      17/    365     4%
+Info: 	                DCCA:       1/     56     1%
+Info: 	              DP16KD:       3/    208     1%
+Info: 	          MULT18X18D:       0/    156     0%
+Info: 	              ALU54B:       0/     78     0%
+Info: 	             EHXPLLL:       1/      4    25%
+Info: 	             EXTREFB:       0/      2     0%
+Info: 	                DCUA:       0/      2     0%
+Info: 	           PCSCLKDIV:       0/      2     0%
+Info: 	             IOLOGIC:       0/    224     0%
+Info: 	            SIOLOGIC:       0/    141     0%
+Info: 	                 GSR:       0/      1     0%
+Info: 	               JTAGG:       0/      1     0%
+Info: 	                OSCG:       0/      1     0%
+Info: 	               SEDGA:       0/      1     0%
+Info: 	                 DTR:       0/      1     0%
+Info: 	             USRMCLK:       0/      1     0%
+Info: 	             CLKDIVF:       0/      4     0%
+Info: 	           ECLKSYNCB:       0/     10     0%
+Info: 	             DLLDELD:       0/      8     0%
+Info: 	              DDRDLL:       0/      4     0%
+Info: 	             DQSBUFM:       0/     14     0%
+Info: 	     TRELLIS_ECLKBUF:       0/      8     0%
+Info: 	        ECLKBRIDGECS:       0/      2     0%
+Info: 	                DCSC:       0/      2     0%
+Info: 	                 GND:       1/      1   100%
+Info: 	          TRELLIS_FF:     652/  83640     0%
+Info: 	                 VCC:       1/      1   100%
+Info: 	        TRELLIS_COMB:    1558/  83640     1%
+Info: 	        TRELLIS_RAMW:       0/  10455     0%
+
+Info: Placed 20 cells based on constraints.
+Info: Creating initial analytic placement for 922 cells, random placement wirelen = 125570.
+Info:     at initial placer iter 0, wirelen = 1350
+Info:     at initial placer iter 1, wirelen = 1162
+Info:     at initial placer iter 2, wirelen = 1065
+Info:     at initial placer iter 3, wirelen = 1105
+Info: Running main analytical placer, max placement attempts per cell = 623844.
+Info:     at iteration #1, type ALL: wirelen solved = 1075, spread = 7749, legal = 8444; time = 0.04s
+Info:     at iteration #2, type ALL: wirelen solved = 1395, spread = 5806, legal = 6589; time = 0.02s
+Info:     at iteration #3, type ALL: wirelen solved = 1506, spread = 4831, legal = 6128; time = 0.02s
+Info:     at iteration #4, type ALL: wirelen solved = 1718, spread = 4547, legal = 5982; time = 0.02s
+Info:     at iteration #5, type ALL: wirelen solved = 1759, spread = 4589, legal = 5937; time = 0.02s
+Info:     at iteration #6, type ALL: wirelen solved = 1854, spread = 4534, legal = 6169; time = 0.02s
+Info:     at iteration #7, type ALL: wirelen solved = 1946, spread = 4448, legal = 5518; time = 0.02s
+Info:     at iteration #8, type ALL: wirelen solved = 1969, spread = 4703, legal = 5971; time = 0.02s
+Info:     at iteration #9, type ALL: wirelen solved = 2125, spread = 4680, legal = 6113; time = 0.02s
+Info:     at iteration #10, type ALL: wirelen solved = 2136, spread = 5051, legal = 5992; time = 0.02s
+Info:     at iteration #11, type ALL: wirelen solved = 2374, spread = 4873, legal = 6129; time = 0.02s
+Info:     at iteration #12, type ALL: wirelen solved = 2401, spread = 4702, legal = 5922; time = 0.02s
+Info: HeAP Placer Time: 0.49s
+Info:   of which solving equations: 0.17s
+Info:   of which spreading cells: 0.05s
+Info:   of which strict legalisation: 0.03s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 126, wirelen = 5518
+Info:   at iteration #5: temp = 0.000000, timing cost = 127, wirelen = 4373
+Info:   at iteration #10: temp = 0.000000, timing cost = 132, wirelen = 4092
+Info:   at iteration #13: temp = 0.000000, timing cost = 91, wirelen = 4077
+Info: SA placement time 1.25s
+
+Info: Max frequency for clock '$glbnet$clk': 200.32 MHz (PASS at 50.00 MHz)
+
+Info: Max delay <async>             -> posedge $glbnet$clk: 2.65 ns
+Info: Max delay posedge $glbnet$clk -> <async>            : 7.68 ns
+
+Info: Slack histogram:
+Info:  legend: times are in ps
+Info:          * represents 2 endpoint(s)
+Info:          + represents [1,2) endpoint(s)
+Info: [ 15008,  15236) |****+
+Info: [ 15236,  15464) |*******************+
+Info: [ 15464,  15692) |**********+
+Info: [ 15692,  15920) |*******+
+Info: [ 15920,  16148) |*********+
+Info: [ 16148,  16376) |*************+
+Info: [ 16376,  16604) |**********+
+Info: [ 16604,  16832) |*********************+
+Info: [ 16832,  17060) |**************************+
+Info: [ 17060,  17288) |**********************+
+Info: [ 17288,  17516) |**************************+
+Info: [ 17516,  17744) |********************************+
+Info: [ 17744,  17972) |**********************************+
+Info: [ 17972,  18200) |**********************************************+
+Info: [ 18200,  18428) |************************************************************
+Info: [ 18428,  18656) |**********************************************+
+Info: [ 18656,  18884) |***********************************+
+Info: [ 18884,  19112) |*************************************************+
+Info: [ 19112,  19340) |*******************************************************+
+Info: [ 19340,  19568) |********+
+Info: Checksum: 0x0afac6e0
+Info: Routing globals...
+Info:     routing clock net $glbnet$clk using global 0
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 5526 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:       1000 |      154        845 |  154   845 |      4701|       0.25       0.25|
+Info:       2000 |      314       1665 |  160   820 |      3868|       0.19       0.44|
+Info:       3000 |      520       2380 |  206   715 |      3096|       0.16       0.60|
+Info:       4000 |      657       3141 |  137   761 |      2237|       0.13       0.73|
+Info:       5000 |      805       3850 |  148   709 |      1417|       0.16       0.89|
+Info:       6000 |      892       4733 |   87   883 |       504|       0.14       1.03|
+Info:       6511 |      900       5122 |    8   389 |         0|       0.06       1.09|
+Info: Routing complete.
+Info: Router1 time 1.09s
+Info: Checksum: 0x3e616ba4
+
+Info: Critical path report for clock '$glbnet$clk' (posedge -> posedge):
+Info:       type curr  total name
+Info:   clk-to-q  0.31  0.31 Source reader.receiver.timer_TRELLIS_FF_Q_7.Q
+Info:    routing  0.80  1.11 Net reader.receiver.timer[3] (21,50) -> (22,49)
+Info:                          Sink reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z_D_LUT4_Z_1_C_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.A
+Info:                          Defined in:
+Info:                               n64_receive_controller_data.v:23.11-23.16
+Info:      logic  0.28  1.39 Source reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z_D_LUT4_Z_1_C_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCO
+Info:    routing  0.00  1.39 Net reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z_D_LUT4_Z_1_C_CCU2C_COUT_CIN_CCU2C_COUT_CIN (22,49) -> (22,49)
+Info:                          Sink reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z_D_LUT4_Z_1_C_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               n64_receive_controller_data.v:65.20-65.43
+Info:                               C:\Users\Justin\AppData\Local\Temp\N05-tools\oss-cad-suite\bin\../share/yosys/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               C:\Users\Justin\AppData\Local\Temp\N05-tools\oss-cad-suite\bin\../share/yosys/lattice\ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.04  1.43 Source reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z_D_LUT4_Z_1_C_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCO
+Info:    routing  0.00  1.43 Net reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z_D_LUT4_Z_1_C_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_FCI_INT (22,49) -> (22,49)
+Info:                          Sink reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z_D_LUT4_Z_1_C_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCI
+Info:      logic  0.00  1.43 Source reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z_D_LUT4_Z_1_C_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCO
+Info:    routing  0.00  1.43 Net reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z_D_LUT4_Z_1_C_CCU2C_COUT_CIN (22,49) -> (23,49)
+Info:                          Sink reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z_D_LUT4_Z_1_C_CCU2C_COUT$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               n64_receive_controller_data.v:65.20-65.43
+Info:                               C:\Users\Justin\AppData\Local\Temp\N05-tools\oss-cad-suite\bin\../share/yosys/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               C:\Users\Justin\AppData\Local\Temp\N05-tools\oss-cad-suite\bin\../share/yosys/lattice\ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.04  1.47 Source reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z_D_LUT4_Z_1_C_CCU2C_COUT$CCU2_COMB0.FCO
+Info:    routing  0.00  1.47 Net reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z_D_LUT4_Z_1_C_CCU2C_COUT$CCU2_FCI_INT (23,49) -> (23,49)
+Info:                          Sink reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z_D_LUT4_Z_1_C_CCU2C_COUT$CCU2_COMB1.FCI
+Info:      logic  0.00  1.47 Source reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z_D_LUT4_Z_1_C_CCU2C_COUT$CCU2_COMB1.FCO
+Info:    routing  0.00  1.47 Net $nextpnr_CCU2C_1$CIN (23,49) -> (23,49)
+Info:                          Sink $nextpnr_CCU2C_1$CCU2_COMB0.FCI
+Info:      logic  0.26  1.73 Source $nextpnr_CCU2C_1$CCU2_COMB0.F
+Info:    routing  0.14  1.87 Net reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z_D_LUT4_Z_1_C (23,49) -> (23,49)
+Info:                          Sink reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z_D_LUT4_Z_1.C
+Info:                          Defined in:
+Info:                               C:\Users\Justin\AppData\Local\Temp\N05-tools\oss-cad-suite\bin\../share/yosys/lattice/cells_map_trellis.v:108.23-108.24
+Info:      logic  0.14  2.01 Source reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z_D_LUT4_Z_1.F
+Info:    routing  0.82  2.83 Net reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z_D[0] (23,49) -> (19,49)
+Info:                          Sink reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z.A
+Info:                          Defined in:
+Info:                               C:\Users\Justin\AppData\Local\Temp\N05-tools\oss-cad-suite\bin\../share/yosys/lattice/cells_map_trellis.v:108.23-108.24
+Info:      logic  0.14  2.97 Source reader.receiver.position_TRELLIS_FF_Q_DI_LUT4_Z_D_CCU2C_S1_S0_LUT4_Z.F
+Info:    routing  0.65  3.63 Net reader.data_received_TRELLIS_FF_Q_16_DI_LUT4_Z_C[4] (19,49) -> (21,51)
+Info:                          Sink reader.receiver.state_TRELLIS_FF_Q_DI_L6MUX21_Z_D1_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z.M
+Info:                          Defined in:
+Info:                               C:\Users\Justin\AppData\Local\Temp\N05-tools\oss-cad-suite\bin\../share/yosys/lattice/cells_map_trellis.v:108.23-108.24
+Info:      logic  0.15  3.78 Source reader.receiver.state_TRELLIS_FF_Q_DI_L6MUX21_Z_D1_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z.OFX
+Info:    routing  0.00  3.78 Net reader.receiver.state_TRELLIS_FF_Q_DI_L6MUX21_Z_D1_L6MUX21_Z_D1 (21,51) -> (21,51)
+Info:                          Sink reader.receiver.state_TRELLIS_FF_Q_DI_L6MUX21_Z_D1_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.FXB
+Info:                          Defined in:
+Info:                               C:\Users\Justin\AppData\Local\Temp\N05-tools\oss-cad-suite\bin\../share/yosys/lattice/cells_map_trellis.v:157.62-157.64
+Info:      logic  0.14  3.92 Source reader.receiver.state_TRELLIS_FF_Q_DI_L6MUX21_Z_D1_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.OFX
+Info:    routing  0.00  3.92 Net reader.receiver.state_TRELLIS_FF_Q_DI_L6MUX21_Z_D1 (21,51) -> (21,51)
+Info:                          Sink reader.receiver.state_TRELLIS_FF_Q_DI_L6MUX21_Z_D1_L6MUX21_Z_D0_PFUMX_Z_ALUT_LUT4_Z.FXB
+Info:                          Defined in:
+Info:                               C:\Users\Justin\AppData\Local\Temp\N05-tools\oss-cad-suite\bin\../share/yosys/lattice/cells_map_trellis.v:157.70-157.72
+Info:      logic  0.14  4.06 Source reader.receiver.state_TRELLIS_FF_Q_DI_L6MUX21_Z_D1_L6MUX21_Z_D0_PFUMX_Z_ALUT_LUT4_Z.OFX
+Info:    routing  0.51  4.57 Net reader.receiver.state_TRELLIS_FF_Q_DI (21,51) -> (21,49)
+Info:                          Sink reader.receiver.state_TRELLIS_FF_Q.M
+Info:      setup  0.00  4.57 Source reader.receiver.state_TRELLIS_FF_Q.M
+Info: 1.64 ns logic, 2.93 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge $glbnet$clk':
+Info:       type curr  total name
+Info:     source  0.00  0.00 Source rx_uart$tr_io.O
+Info:    routing  1.83  1.83 Net rx_uart$TRELLIS_IO_IN (0,92) -> (9,67)
+Info:                          Sink ftdi.serial_receive.rx_meta_TRELLIS_FF_Q.M
+Info:                          Defined in:
+Info:                               top.v:13.11-13.18
+Info:      setup  0.00  1.83 Source ftdi.serial_receive.rx_meta_TRELLIS_FF_Q.M
+Info: 0.00 ns logic, 1.83 ns routing
+
+Info: Critical path report for cross-domain path 'posedge $glbnet$clk' -> '<async>':
+Info:       type curr  total name
+Info:   clk-to-q  0.31  0.31 Source input_mode_TRELLIS_FF_Q.Q
+Info:    routing  5.11  5.42 Net input_mode (6,53) -> (76,0)
+Info:                          Sink led[7]$tr_io.I
+Info:                          Defined in:
+Info:                               top.v:9.18-9.21
+Info: 0.31 ns logic, 5.11 ns routing
+
+Info: Max frequency for clock '$glbnet$clk': 218.67 MHz (PASS at 50.00 MHz)
+
+Info: Max delay <async>             -> posedge $glbnet$clk: 1.83 ns
+Info: Max delay posedge $glbnet$clk -> <async>            : 5.42 ns
+
+Info: Slack histogram:
+Info:  legend: times are in ps
+Info:          * represents 2 endpoint(s)
+Info:          + represents [1,2) endpoint(s)
+Info: [ 15427,  15627) |*********
+Info: [ 15627,  15827) |*****************+
+Info: [ 15827,  16027) |***************************+
+Info: [ 16027,  16227) |**********************************+
+Info: [ 16227,  16427) |****************+
+Info: [ 16427,  16627) |******************************+
+Info: [ 16627,  16827) |****************************+
+Info: [ 16827,  17027) |***************************+
+Info: [ 17027,  17227) |************+
+Info: [ 17227,  17427) |*********************+
+Info: [ 17427,  17627) |***************+
+Info: [ 17627,  17827) |************************************************+
+Info: [ 17827,  18027) |************************************************************
+Info: [ 18027,  18227) |*********************************************************+
+Info: [ 18227,  18427) |******************************************+
+Info: [ 18427,  18627) |***********************************************+
+Info: [ 18627,  18827) |************************************************************
+Info: [ 18827,  19027) |**********************************************+
+Info: [ 19027,  19227) |*********************************************************+
+Info: [ 19227,  19427) |**************+
+
+1 warning, 0 errors
+
+Info: Program finished normally.

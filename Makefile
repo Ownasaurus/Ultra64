@@ -7,7 +7,8 @@ ${PROJ}.json: top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v
 	yosys -p "synth_ecp5 -json $@ -top top" top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v n64_transmit_controller_state.v n64_transmit_identity.v n64_transmit_byte.v n64_transmit_bit.v UART_TX.v UART_RX.v n64_controller_reader.v n64_receive_controller_data.v n64_request.v and2.v xor2.v vlo.v vhi.v serial_handler.v queue_64.v queue_1024.v inv.v
 
 %_out.config: %.json
-	nextpnr-ecp5 --json $< --textcfg $@ --um5g-85k --package CABGA381 --lpf ecp5evn.lpf
+	# N05: Time the synchronizer interstage paths at the 50 MHz sampling clock.
+	nextpnr-ecp5 --json $< --textcfg $@ --um5g-85k --package CABGA381 --lpf ecp5evn.lpf --freq 50
 
 %.bit: %_out.config
 	ecppack --svf ${PROJ}.svf $< $@

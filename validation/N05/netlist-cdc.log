@@ -1,0 +1,38 @@
+command: ['C:\\Python312\\python.exe', 'C:\\Users\\Justin\\AppData\\Local\\Virtuali\\worktrees\\omaiur0e\\tests\\check_n05_netlist.py', 'C:\\Users\\Justin\\AppData\\Local\\Temp\\ultra64-N05-7wtu92fu']
+cwd: C:\Users\Justin\AppData\Local\Temp\ultra64-N05-7wtu92fu
+exit: 0
+{
+  "pairs": [
+    {
+      "first": "data_filter.line_meta_TRELLIS_FF_Q",
+      "second": "data_filter.line_sync_TRELLIS_FF_Q",
+      "first_site": "X2/Y91/SLICEB.FF0",
+      "second_site": "X2/Y84/SLICEA.FF1"
+    },
+    {
+      "first": "ftdi.serial_receive.rx_meta_TRELLIS_FF_Q",
+      "second": "ftdi.serial_receive.rx_sync_TRELLIS_FF_Q",
+      "first_site": "X9/Y67/SLICEC.FF0",
+      "second_site": "X12/Y56/SLICEC.FF0"
+    },
+    {
+      "first": "genblk1[0].player_i.data_filter.line_meta_TRELLIS_FF_Q",
+      "second": "genblk1[0].player_i.data_filter.line_sync_TRELLIS_FF_Q",
+      "first_site": "X2/Y51/SLICEB.FF0",
+      "second_site": "X2/Y48/SLICED.FF1"
+    },
+    {
+      "first": "reader.data_filter.line_meta_TRELLIS_FF_Q",
+      "second": "reader.data_filter.line_sync_TRELLIS_FF_Q",
+      "first_site": "X16/Y3/SLICED.FF1",
+      "second_site": "X16/Y3/SLICEC.FF0"
+    }
+  ],
+  "fmax": {
+    "$glbnet$clk": {
+      "achieved": 218.67483520507812,
+      "constraint": 50
+    }
+  }
+}
+PASS: four preserved two-flop boundaries, exclusive first-stage fanout, timed at 50 MHz

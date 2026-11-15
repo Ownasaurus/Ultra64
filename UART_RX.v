@@ -31,6 +31,16 @@ module UART_RX
   reg [$clog2(CLKS_PER_BIT)-1:0] r_Clock_Count;
   reg [2:0] r_Bit_Index; //8 bits total
   reg [2:0] r_SM_Main;
+
+  // N05: Only the first stage samples the asynchronous pin. Yosys keep
+  // preserves both flops; async_reg records CDC intent for implementation review.
+  // Idle-high initialization avoids a synthetic start while the pipe fills.
+  (* async_reg = "true", keep = 1 *) reg rx_meta = 1'b1;
+  (* async_reg = "true", keep = 1 *) reg rx_sync = 1'b1;
+  always @(posedge i_Clock) begin
+    rx_meta <= i_RX_Serial;
+    rx_sync <= rx_meta;
+  end
   
   initial begin
 	o_RX_DV = 1'b0;
@@ -53,7 +63,7 @@ module UART_RX
           r_Clock_Count <= 0;
           r_Bit_Index   <= 0;
           
-          if (i_RX_Serial == 1'b0)          // Start bit detected
+          if (rx_sync == 1'b0) // N05: Detect starts only after synchronization.
             r_SM_Main <= RX_START_BIT;
           else
             r_SM_Main <= IDLE;
@@ -64,7 +74,7 @@ module UART_RX
         begin
           if (r_Clock_Count == (CLKS_PER_BIT-1)/2)
           begin
-            if (i_RX_Serial == 1'b0)
+            if (rx_sync == 1'b0) // N05: Use the same delayed stream for validation.
             begin
               r_Clock_Count <= 0;  // reset counter, found the middle
               r_SM_Main     <= RX_DATA_BITS;
@@ -91,7 +101,7 @@ module UART_RX
           else
           begin
             r_Clock_Count          <= 0;
-            o_RX_Byte[r_Bit_Index] <= i_RX_Serial;
+            o_RX_Byte[r_Bit_Index] <= rx_sync; // N05: Sample synchronized data.
             
             // Check if we have received all bits
             if (r_Bit_Index < 7)

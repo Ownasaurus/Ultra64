@@ -1,0 +1,55 @@
+{
+  "temporary_build": "C:\\Users\\Justin\\AppData\\Local\\Temp\\ultra64-N05-7wtu92fu",
+  "results": [
+    {
+      "check": "tools",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "iverilog-version",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "nextpnr-version",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "rtl-compile",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "rtl-simulation",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "baseline-compile",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "baseline-detects-N05",
+      "exit": 1,
+      "expected_exit": 1
+    },
+    {
+      "check": "build",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "implementation",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "netlist-cdc",
+      "exit": 0,
+      "expected_exit": 0
+    }
+  ]
+}

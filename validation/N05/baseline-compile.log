@@ -1,0 +1,3 @@
+command: ['iverilog', '-g2005', '-s', 'n05_inputs_tb', '-o', 'baseline.vvp', 'C:\\Users\\Justin\\AppData\\Local\\Virtuali\\worktrees\\omaiur0e\\tests\\n05_inputs_tb.v', 'UART_RX.v', 'glitch_filter.v', 'n64_receive_command.v', 'n64_receive_controller_data.v']
+cwd: C:\Users\Justin\AppData\Local\Temp\ultra64-N05-7wtu92fu\baseline
+exit: 0

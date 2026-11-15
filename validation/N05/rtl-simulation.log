@@ -1,0 +1,5 @@
+command: ['vvp', 'n05.vvp']
+cwd: C:\Users\Justin\AppData\Local\Temp\ultra64-N05-7wtu92fu
+exit: 0
+PASS N05: 72 UART frames, 4 N64 commands/responses, latency and glitch checks
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\omaiur0e\tests\n05_inputs_tb.v:101: $finish called at 7059499000 (1ps)

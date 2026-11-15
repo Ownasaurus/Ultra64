@@ -1,0 +1,6 @@
+PASS: Python validation script syntax
+PASS: actual/expected exit statuses
+PASS: baseline failure reason
+command: git diff --check
+exit: 0
+Scope reviewed: UART_RX.v, glitch_filter.v, Makefile, tests/, validation/N05/
