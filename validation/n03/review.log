@@ -1,0 +1,23 @@
+Staged whitespace check: PASS (CRLF accepted; raw build.log excluded)
+ serial_handler.v               |   38 +-
+ tests/build_n03.py             |   38 +
+ tests/n03_response_tb.v        |  148 ++
+ tests/run_n03.py               |   55 +
+ validation/n03/.gitignore      |    2 +
+ validation/n03/README.md       |  103 +
+ validation/n03/baseline.json   |   29 +
+ validation/n03/build.log       | 4591 ++++++++++++++++++++++++++++++++++++++++
+ validation/n03/regression.json |  359 ++++
+ validation/n03/review.log      |    6 +
+ 10 files changed, 5356 insertions(+), 13 deletions(-)
+serial_handler.v
+tests/build_n03.py
+tests/n03_response_tb.v
+tests/run_n03.py
+validation/n03/.gitignore
+validation/n03/README.md
+validation/n03/baseline.json
+validation/n03/build.log
+validation/n03/regression.json
+validation/n03/review.log
+N03-fix

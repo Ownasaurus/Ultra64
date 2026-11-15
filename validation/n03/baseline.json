@@ -1,0 +1,29 @@
+[
+  {
+    "command": [
+      "iverilog",
+      "-g2005",
+      "-s",
+      "n03_response_tb",
+      "-o",
+      "C:\\Users\\Justin\\AppData\\Local\\Virtuali\\worktrees\\xurqbfy1\\validation\\n03\\generated\\baseline.vvp",
+      "C:\\Users\\Justin\\AppData\\Local\\Virtuali\\worktrees\\xurqbfy1\\tests\\n03_response_tb.v",
+      "C:\\Users\\Justin\\AppData\\Local\\Virtuali\\worktrees\\xurqbfy1\\validation\\n03\\generated\\baseline_serial_handler.v",
+      "C:\\Users\\Justin\\AppData\\Local\\Virtuali\\worktrees\\xurqbfy1\\UART_TX.v",
+      "C:\\Users\\Justin\\AppData\\Local\\Virtuali\\worktrees\\xurqbfy1\\UART_RX.v"
+    ],
+    "exit_code": 0,
+    "output": ""
+  },
+  {
+    "command": [
+      "vvp",
+      "C:\\Users\\Justin\\AppData\\Local\\Virtuali\\worktrees\\xurqbfy1\\validation\\n03\\generated\\baseline.vvp",
+      "+kind=0",
+      "+phase=2",
+      "+stall=0"
+    ],
+    "exit_code": 1,
+    "output": "FATAL: C:\\Users\\Justin\\AppData\\Local\\Virtuali\\worktrees\\xurqbfy1\\tests\\n03_response_tb.v:116: missing response writes=1 sent=1 expected=2 state=0\n       Time: 160016000  Scope: n03_response_tb\n"
+  }
+]

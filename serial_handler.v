@@ -88,6 +88,10 @@ reg new_data_request_lock=1'b0;
 reg prebuffer_done=1'b0;
 reg [32:0] frame_counter=32'h00000000;
 
+// Acknowledge only when the producer reserves a FIFO write for this response.
+// The parser holds its byte and pending flag through producer cleanup/fullness.
+wire response_enqueued = (send_SM == send_IDLE) && respond_to_serial_TX && !send_buffer_full;
+
 // Process commands received on the serial RX line
 always @(posedge clk) begin
 	case(serial_send_SM)
@@ -120,9 +124,13 @@ always @(posedge clk) begin
 	case(send_SM)
 		send_IDLE: begin
 			if(respond_to_serial_TX) begin // takes priority
-				fifo_input <= byte_to_send; // whatever the serial SM wants to send
-				serial_send_fifo_wren <= 1'b1;
-				send_SM <= send_CLEANUP;
+				// Retain the response until there is space; cleanup never consumes it.
+				if(response_enqueued) begin
+					fifo_input <= byte_to_send; // whatever the serial SM wants to send
+					serial_send_fifo_wren <= 1'b1;
+					respond_to_serial_TX <= 1'b0; // explicit enqueue acknowledgement
+					send_SM <= send_CLEANUP;
+				end
 			end else if(prebuffer_done && &request_frame && !new_data_request_lock) begin
 				// delay_frame_request is a delay to make sure it doesn't read again too quickly until the consoles have time to lower their not_full pulses
 				fifo_input <= 8'd65; // capital A
@@ -239,17 +247,21 @@ always @(posedge clk) begin
 				state <= SETUP_5;
 			end
 		endcase
-	end else begin // did not receive new byte; "post-processing"
+	end
+	// An enqueue acknowledgement must advance the parser even if RX is high.
+	if(!received || response_enqueued) begin // response/post-processing states
 		case(state)
 			AFTER_SEND: begin
-				respond_to_serial_TX <= 1'b0;
-				state <= IDLE;
+				// Keep the response stable until the producer acknowledges it.
+				if(response_enqueued) state <= IDLE;
 			end
 			RESET_1: begin
-				respond_to_serial_TX <= 1'b0;
 				n64_controller_reset <= 1'b0;
-				send_timeout <= 0;
-				state <= RESET_2;
+				// Start waiting for transmission only after the first byte is queued.
+				if(response_enqueued) begin
+					send_timeout <= 0;
+					state <= RESET_2;
+				end
 			end
 			RESET_2: begin
 				if(done) begin // done sending the 0x01, now send the 'R'
@@ -263,8 +275,8 @@ always @(posedge clk) begin
 				end
 			end
 			SETUP_5: begin
-				respond_to_serial_TX <= 1'b0;
-				state <= SETUP_6;
+				// Preserve the first setup byte across producer cleanup/fullness.
+				if(response_enqueued) state <= SETUP_6;
 			end
 			SETUP_6: begin
 				if(done) begin // done sending the 0x01, now send the 'S'
