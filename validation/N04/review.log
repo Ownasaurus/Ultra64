@@ -1,0 +1,26 @@
++ git branch --show-current
+N04-fix
++ git rev-parse HEAD
+2f4bab11234cc2d5c1b452e51883447ff2831d10
++ git diff --check
++ git diff --stat
+ Makefile         |  5 +++++
+ UART_RX.v        | 42 ++++++++++++++++++++++++++++++++++++++----
+ serial_handler.v | 16 ++++++++++++++--
+ 3 files changed, 57 insertions(+), 6 deletions(-)
++ git status --short
+ M Makefile
+ M UART_RX.v
+ M serial_handler.v
+?? tests/
+?? validation/
+Exit codes: [0, 0, 0, 0, 0]
+
+Final staged whitespace check (after UTF-8/LF log normalization):
++ git diff --cached --check
+validation/N04/regression-initial.log:90: new blank line at EOF.
+Exit code: 2
+
+Final staged whitespace check (also removing trailing empty log lines):
++ git diff --cached --check
+Exit code: 0

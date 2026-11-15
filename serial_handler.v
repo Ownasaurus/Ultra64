@@ -54,12 +54,16 @@ UART_TX serial_send(
 
 wire [7:0] new_byte;
 wire received;
+// N04: A bad UART stop bit invalidates the current command transaction.
+wire framing_error;
 UART_RX serial_receive(
    .i_Rst_L(serial_rst),
    .i_Clock(clk),
    .i_RX_Serial(rx_uart),
    .o_RX_DV(received),
-   .o_RX_Byte(new_byte)
+   .o_RX_Byte(new_byte),
+   // N04: Propagate framing failure to the parser instead of accepting data.
+   .o_RX_Framing_Error(framing_error)
 );
 
 integer w;
@@ -137,7 +141,15 @@ always @(posedge clk) begin
 		end
 	endcase
 	
-	if(received) begin //  should only be high for one cycle per command
+	// N04: Abandon partial input on framing failure. Already completed frames
+	// remain committed; a later command must start again after RX recovery.
+	if(framing_error) begin
+		state <= IDLE;
+		queue_WrEn <= 1'b0;
+		received_frame_data <= 32'b0;
+		respond_to_serial_TX <= 1'b0;
+		n64_controller_reset <= 1'b0;
+	end else if(received) begin //  should only be high for one cycle per command
 		case(state)
 			IDLE: begin
 				case(new_byte)

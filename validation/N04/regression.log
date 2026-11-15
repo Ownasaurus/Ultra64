@@ -1,0 +1,43 @@
++ make sim-test PATH=/c/Users/Justin/AppData/Local/Temp/ultra64-n04-tools/oss-cad-suite/bin:/c/Users/Justin/AppData/Local/Temp/ultra64-n04-tools/oss-cad-suite/lib:/c/Python312:/usr/bin:/c/Windows/System32
+python tests/run_n04.py
++ iverilog -g2005 -Wall -s uart_break_tb -o C:\Users\Justin\AppData\Local\Temp\ultra64-n04-3pjvjglh\uart_break_tb-None.vvp UART_RX.v tests/uart_break_tb.v
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module UART_RX declared here: UART_RX.v:15
++ vvp C:\Users\Justin\AppData\Local\Temp\ultra64-n04-3pjvjglh\uart_break_tb-None.vvp
+PASS: 10000-clock break accepted no bytes
+tests/uart_break_tb.v:20: $finish called at 100060000 (1ps)
++ iverilog -g2005 -Wall -s uart_framing_tb -o C:\Users\Justin\AppData\Local\Temp\ultra64-n04-3pjvjglh\uart_framing_tb-8.vvp -Puart_framing_tb.CPB=8 UART_RX.v tests/uart_framing_tb.v
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module UART_RX declared here: UART_RX.v:15
++ vvp C:\Users\Justin\AppData\Local\Temp\ultra64-n04-3pjvjglh\uart_framing_tb-8.vvp
+PASS: CPB=8, all 256 good/bad bytes, break, idle qualification, recovery, reset
+tests/uart_framing_tb.v:82: $finish called at 1412440000 (1ps)
++ iverilog -g2005 -Wall -s uart_framing_tb -o C:\Users\Justin\AppData\Local\Temp\ultra64-n04-3pjvjglh\uart_framing_tb-9.vvp -Puart_framing_tb.CPB=9 UART_RX.v tests/uart_framing_tb.v
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module UART_RX declared here: UART_RX.v:15
++ vvp C:\Users\Justin\AppData\Local\Temp\ultra64-n04-3pjvjglh\uart_framing_tb-9.vvp
+PASS: CPB=9, all 256 good/bad bytes, break, idle qualification, recovery, reset
+tests/uart_framing_tb.v:82: $finish called at 1589300000 (1ps)
++ iverilog -g2005 -Wall -s uart_framing_tb -o C:\Users\Justin\AppData\Local\Temp\ultra64-n04-3pjvjglh\uart_framing_tb-434.vvp -Puart_framing_tb.CPB=434 UART_RX.v tests/uart_framing_tb.v
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module UART_RX declared here: UART_RX.v:15
++ vvp C:\Users\Justin\AppData\Local\Temp\ultra64-n04-3pjvjglh\uart_framing_tb-434.vvp
+PASS: CPB=434, all 256 good/bad bytes, break, idle qualification, recovery, reset
+tests/uart_framing_tb.v:82: $finish called at 76754800000 (1ps)
++ iverilog -g2005 -Wall -s serial_framing_tb -o C:\Users\Justin\AppData\Local\Temp\ultra64-n04-3pjvjglh\serial_framing_tb-None.vvp UART_RX.v UART_TX.v serial_handler.v tests/queue_64_model.v tests/serial_framing_tb.v
+warning: Some modules have no timescale. This may cause
+       : confusing timing results.	Affected modules are:
+       :   -- module UART_RX declared here: UART_RX.v:15
+       :   -- module UART_TX declared here: UART_TX.v:15
+       :   -- module queue_64 declared here: tests/queue_64_model.v:3
+       :   -- module serial_handler declared here: serial_handler.v:4
++ vvp C:\Users\Justin\AppData\Local\Temp\ultra64-n04-3pjvjglh\serial_framing_tb-None.vvp
+PASS: parser invalid byte at all frame positions; setup/power/bulk prefixes; breaks/errors in all 19 states; 31 recovered frames
+tests/serial_framing_tb.v:109: $finish called at 12313310000 (1ps)
+PASS: all N04 RTL regressions
+
+EXIT: 0

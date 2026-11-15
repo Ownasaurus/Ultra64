@@ -1,0 +1,5 @@
++ iverilog -g2005 -s uart_break_tb -o C:\Users\Justin\AppData\Local\Temp\ultra64-n04-tools\baseline.vvp C:\Users\Justin\AppData\Local\Temp\ultra64-n04-tools\UART_RX_baseline.v tests/uart_break_tb.v
++ vvp C:\Users\Justin\AppData\Local\Temp\ultra64-n04-tools\baseline.vvp
+FATAL: tests/uart_break_tb.v:18: N04: 10000-clock break accepted 2 bytes
+       Time: 100060000  Scope: uart_break_tb
+EXIT CODES: [0, 1] (simulation failure expected on source)
