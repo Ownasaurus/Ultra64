@@ -1,0 +1,27 @@
+$ git branch --show-current
+N10-fix
+exit=0
+$ git rev-parse HEAD
+2f4bab11234cc2d5c1b452e51883447ff2831d10
+exit=0
+$ git diff --cached --check
+exit=0
+$ git diff --check
+exit=0
+$ git diff --cached --name-only
+n64_receive_command.v
+tests/build_n10.py
+tests/n10_controller_tb.v
+tests/n10_receive_command_tb.v
+tests/run_n10.py
+validation/N10/README.md
+validation/N10/baseline-wrapper.log
+validation/N10/build-missing-runtime.log
+validation/N10/build.log
+validation/N10/modelsim-unavailable.log
+validation/N10/rtl.log
+validation/N10/tool-versions.log
+validation/N10/tools.json
+exit=0
+PASS: all 24 build input SHA256 hashes match the final worktree.
+PASS: n64_receive_command.v is the only modified pre-existing source file.

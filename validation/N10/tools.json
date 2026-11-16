@@ -1,0 +1,30 @@
+[
+  {
+    "url": "https://repo.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-boost-libs-1.87.0-3-any.pkg.tar.zst",
+    "sha256": "23e800e907d40c28d8307ffede38158f7e18ed4346d0f3f000f27da4be76dcd3"
+  },
+  {
+    "url": "https://repo.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-icu-76.1-1-any.pkg.tar.zst",
+    "sha256": "8c52c355eea360d9a107a0d0d4492641af30b9e21c4a515d3d975015c6278198"
+  },
+  {
+    "url": "https://repo.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-iverilog-1~12.0-1-any.pkg.tar.zst",
+    "sha256": "e48d22330f9d8510e1485e2b0ca95b74d3ecd4eac87f1e9d216faf1d59d7dd12"
+  },
+  {
+    "url": "https://repo.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-nextpnr-0.7-4-any.pkg.tar.zst",
+    "sha256": "ac1873ab9a1976500f7c1ba920d3e00ed7d68a2019ed0d3184ddb30419fe3c2e"
+  },
+  {
+    "url": "https://repo.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-prjtrellis-1.4-6-any.pkg.tar.zst",
+    "sha256": "5f7e043332b0aca6af4b37e9c5de3f5bb9dd0205efed893a1cc5265d645fb9a3"
+  },
+  {
+    "url": "https://repo.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-qt5-base-5.15.16+kde+r130-2-any.pkg.tar.zst",
+    "sha256": "cb3ba912b38b74db55acda1445342d22c0bb9c2deb62c9d40abc475c144a6975"
+  },
+  {
+    "url": "https://repo.msys2.org/mingw/ucrt64/mingw-w64-ucrt-x86_64-yosys-0.51-1-any.pkg.tar.zst",
+    "sha256": "35fd42bd263fcb32196c552ca88772dab1284588889f4ed44bd22da7cabaef3c"
+  }
+]

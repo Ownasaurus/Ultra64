@@ -9,7 +9,9 @@ module n64_receive_command(
 	output reg receiving
 );
 
-reg [7:0] byte; // note backwards bit order
+// Keep partial bits private; the wrapper may act only on a completed command.
+reg [7:0] byte;
+reg [7:0] completed_command;
 
 //parameter one_us = 50;
 //parameter two_us = 100;
@@ -20,20 +22,26 @@ parameter one_two_border = 75;
 parameter two_three_border = 125;
 parameter three_four_border = 175;
 
-localparam idle=0, waiting_for_low=1, waiting_for_high=2, end_of_command=3, console_off=4;
+// At 50 MHz, valid data highs last at most 3 us. A 4 us high
+// discards a partial command and also provides the error recovery boundary.
+parameter inter_bit_timeout = 200;
+localparam idle=0, waiting_for_low=1, waiting_for_high=2, end_of_command=3, resynchronize=4;
 reg [2:0] state;
-reg [7:0] timer; // shouldn't ever be negative for more than 256 cycles. longest possible should theoretically be 150 cycles.
+// Both pulse widths and the idle recovery interval fit in eight bits.
+reg [7:0] timer;
 reg [3:0] position;
 
 initial begin
     byte = 0;
+    completed_command = 0; // No partial byte is ever published on failure.
     timer = 0;
     position = 0;
     state = 0;
     receiving = 0;
 end
 
-assign command = byte;
+// Receiving falls only on success, preserving the existing wrapper handshake.
+assign command = completed_command;
 
 always @(posedge sys_clk) begin
     if(trigger) begin
@@ -50,40 +58,48 @@ always @(posedge sys_clk) begin
     		end
         end
         waiting_for_low: begin
-            // ok to idle here for long periods of time
-            if(!n64d) begin // we went low, so start counting!
-                timer <= timer + 1'b1;
+            // Idle is unlimited before the first bit, but bounded thereafter.
+            if(!n64d) begin
+                timer <= 1;
                 state <= waiting_for_high;
+            end else if(position != 0) begin
+                if(timer >= inter_bit_timeout - 1) begin
+                    // This high interval already satisfies resynchronization.
+                    position <= 0;
+                    byte <= 0;
+                    timer <= 0;
+                end else begin
+                    timer <= timer + 1'b1;
+                end
             end
         end
         waiting_for_high: begin
-            if(timer > 250) begin // we were low for too long. it's probably not plugged in...?
-                state <= console_off;
-            end else if(n64d) begin
-                // determine the type of signal based on how long we stated low
+            if(n64d) begin
+                // Only eight data bits followed by a 1 us console stop succeed.
+                // A 2 us controller stop, early stop, or extra zero is an error.
                 if(timer > zero_one_border && timer <= one_two_border) begin // low for 1us
-                    if(position == 8) begin // probably a console stop bit
+                    if(position == 8) begin
+                        completed_command <= byte;
                         state <= end_of_command;
                     end else begin
                         byte[7-position] <= 1'b1;
-                        timer <= 0;
+                        position <= position + 1'b1;
                         state <= waiting_for_low;
                     end
-                end else if(timer > one_two_border && timer <= two_three_border) begin // low for 2us. controller end bit detected!
-                    state <= end_of_command;
-                end else if(timer > two_three_border && timer <= three_four_border) begin // low for 3us
-                    if(position == 8) begin // THIS SHOULD NEVER HAPPEN
-                        state <= end_of_command;
-                    end else begin
-                        byte[7-position] <= 1'b0;
-                        timer <= 0;
-                        state <= waiting_for_low;
-                    end
-                end else begin // it should never be this short of this long. fail back to idle state
-                    state <= idle;
+                end else if(timer > two_three_border && timer <= three_four_border && position < 8) begin
+                    // Three-microsecond lows encode zero only within the byte.
+                    byte[7-position] <= 1'b0;
+                    position <= position + 1'b1;
+                    state <= waiting_for_low;
+                end else begin
+                    // Ignore the rest of this malformed transaction until idle.
+                    state <= resynchronize;
                 end
-
-                position <= position + 1'b1; // it's ok if this overflows at the end of the command
+                timer <= 1; // Count this first high sample toward the gap.
+            end else if(timer >= three_four_border) begin
+                // Do not let a stuck-low timer wrap into a valid pulse width.
+                timer <= 0;
+                state <= resynchronize;
             end else begin
                 timer <= timer + 1'b1;
             end
@@ -92,12 +108,18 @@ always @(posedge sys_clk) begin
             receiving <= 1'b0;
     		state <= idle;
         end
-        console_off: begin
-            if(n64d) begin
+        resynchronize: begin
+            // A continuous 4 us high is required after any malformed pulse.
+            // Keep receiving asserted so the wrapper cannot schedule a reply.
+            if(!n64d) begin
+                timer <= 0;
+            end else if(timer >= inter_bit_timeout - 1) begin
                 position <= 0;
                 byte <= 0;
                 timer <= 0;
                 state <= waiting_for_low;
+            end else begin
+                timer <= timer + 1'b1;
             end
         end
     endcase

@@ -1,0 +1,32 @@
+$ C:\lscc\diamond\3.13\modeltech\win32loem\vlib.exe C:\Users\Justin\AppData\Local\Temp\n10-rtl-986j9sxe\receiver
+
+exit=0
+$ C:\lscc\diamond\3.13\modeltech\win32loem\vlog.exe -work C:\Users\Justin\AppData\Local\Temp\n10-rtl-986j9sxe\receiver C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\n64_receive_command.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\tests\n10_receive_command_tb.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2023.3 Compiler 2023.07 Jul 18 2023
+Start time: 23:18:02 on Nov 15,2026
+vlog -work C:\Users\Justin\AppData\Local\Temp\n10-rtl-986j9sxe\receiver C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\n64_receive_command.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\tests\n10_receive_command_tb.v
+-- Compiling module n64_receive_command
+-- Compiling module n10_receive_command_tb
+
+Top level modules:
+	n10_receive_command_tb
+End time: 23:18:02 on Nov 15,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+
+exit=0
+$ C:\lscc\diamond\3.13\modeltech\win32loem\vsim.exe -c -lib C:\Users\Justin\AppData\Local\Temp\n10-rtl-986j9sxe\receiver n10_receive_command_tb -do "onbreak {quit -code 1}; onerror {quit -code 1}; run -all; quit -code 0"
+Reading pref.tcl
+
+# 2023.3
+
+# vsim -c -lib C:\Users\Justin\AppData\Local\Temp\n10-rtl-986j9sxe\receiver n10_receive_command_tb -do "onbreak {quit -code 1}; onerror {quit -code 1}; run -all; quit -code 0"
+# Start time: 23:18:05 on Nov 15,2026
+# ** License Issue: License request for latticemsim feature failed
+# ** License Issue: Feature has expired. (C:\lscc\diamond\3.13\license\license.dat)
+# ** Error: Failure to obtain a Verilog simulation license. Unable to checkout any of these license features: 'latticemsim' or 'alteramtivlog'.
+# Error loading design
+Error loading design
+# End time: 23:18:05 on Nov 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+
+exit=12

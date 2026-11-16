@@ -1,0 +1,8 @@
+$ C:\Users\Justin\AppData\Local\Temp\n10-fpga-tools\ucrt64\bin\iverilog.exe -g2005 -s n10_controller_tb -o C:\Users\Justin\AppData\Local\Temp\n10-rtl-w2ctjazh\wrapper C:\Users\Justin\AppData\Local\Temp\n10-original-receiver.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\tests\n10_controller_tb.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\n64_controller.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\glitch_filter.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\n64_transmit_identity.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\n64_transmit_controller_state.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\n64_transmit_byte.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\n64_transmit_bit.v
+
+exit=0
+$ C:\Users\Justin\AppData\Local\Temp\n10-fpga-tools\ucrt64\bin\vvp.exe C:\Users\Justin\AppData\Local\Temp\n10-rtl-w2ctjazh\wrapper
+FATAL: C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\tests\n10_controller_tb.v:28: N10 unsolicited response: position=7 width=x
+       Time: 77200000  Scope: n10_controller_tb
+
+exit=1

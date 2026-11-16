@@ -1,0 +1,17 @@
+$ C:\Users\Justin\AppData\Local\Temp\n10-fpga-tools\ucrt64\bin\iverilog.exe -g2005 -s n10_receive_command_tb -o C:\Users\Justin\AppData\Local\Temp\n10-rtl-e0tmrzav\receiver C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\n64_receive_command.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\tests\n10_receive_command_tb.v
+
+exit=0
+$ C:\Users\Justin\AppData\Local\Temp\n10-fpga-tools\ucrt64\bin\vvp.exe C:\Users\Justin\AppData\Local\Temp\n10-rtl-e0tmrzav\receiver
+PASS N10 receiver: 427 checks, 345 valid completions
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\tests\n10_receive_command_tb.v:165: $finish called at 16786670000 (1ps)
+
+exit=0
+$ C:\Users\Justin\AppData\Local\Temp\n10-fpga-tools\ucrt64\bin\iverilog.exe -g2005 -s n10_controller_tb -o C:\Users\Justin\AppData\Local\Temp\n10-rtl-e0tmrzav\wrapper C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\n64_receive_command.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\tests\n10_controller_tb.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\n64_controller.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\glitch_filter.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\n64_transmit_identity.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\n64_transmit_controller_state.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\n64_transmit_byte.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\n64_transmit_bit.v
+
+exit=0
+$ C:\Users\Justin\AppData\Local\Temp\n10-fpga-tools\ucrt64\bin\vvp.exe C:\Users\Justin\AppData\Local\Temp\n10-rtl-e0tmrzav\wrapper
+PASS N10 wrapper: 45 identity and 10 poll replies; no premature response
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\7jc2v1fz\tests\n10_controller_tb.v:102: $finish called at 14107170000 (1ps)
+
+exit=0
+PASS: requested N10 RTL regressions completed.
