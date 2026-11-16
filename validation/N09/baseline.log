@@ -1,0 +1,8 @@
+$ iverilog -g2005 -Wall -s n09_baseline_tb -o C:\Users\Justin\AppData\Local\Temp\n09-8iaizwfz\test.vvp tests/n09_baseline_tb.v C:\Users\Justin\AppData\Local\Temp\n09-8iaizwfz\n64_receive_controller_data.v
+C:\Users\Justin\AppData\Local\Temp\n09-8iaizwfz\n64_receive_controller_data.v:4: warning: timescale for n64_receive_controller_data inherited from another file.
+tests/n09_baseline_tb.v:1: ...: The inherited timescale is here.
+exit=0
+$ vvp C:\Users\Justin\AppData\Local\Temp\n09-8iaizwfz\test.vvp
+CONFIRMED N09: 8 bits then high timeout exposes ff000000; wrapper unconditionally copies it
+tests/n09_baseline_tb.v:23: $finish called at 52140000 (1ps)
+exit=0

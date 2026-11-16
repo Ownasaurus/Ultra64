@@ -1,0 +1,3 @@
+# N09 retains textual validation evidence; generated FPGA/simulation binaries stay local.
+artifacts/
+*.vvp

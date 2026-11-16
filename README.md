@@ -16,3 +16,17 @@ Requires openFPGALoader for flashing
 Supports TAS playback using the same serial protocol as the TAStm32
 Also supports controller passthrough
 
+<!-- N09: document response acceptance and the explicit disconnected-input policy. -->
+Physical-controller polls publish a state only after 32 data bits and a controller
+stop pulse (2 us low, using the receiver's existing 1.5--2.5 us timing window).
+A timeout, early/missing stop or malformed pulse publishes neutral input
+(`00000000`: all buttons released, both sticks centered) for that poll. The receiver
+retains its last complete word internally and reports validity separately from busy.
+The next successful poll restores passthrough. Request turnaround includes eight
+50 MHz clocks for the existing input filter to settle before reception begins.
+
+<!-- N09: simulation is separate from the existing hardware-programming test target. -->
+With Icarus Verilog (`iverilog`, `vvp`) and Python on PATH, run
+`python tests/run_n09.py` for the N09 receiver/reader regression, or add `--baseline`
+to reproduce N09 against the pinned original source via read-only Git extraction.
+Logs are saved in `validation/N09/`. The Makefile's `make test` programs hardware.

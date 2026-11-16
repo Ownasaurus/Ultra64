@@ -1,0 +1,31 @@
+$ git "--git-dir=C:/My Things/Ultra64/.git/worktrees/stk5br62" branch --show-current
+N09-fix
+exit=0
+$ git "--git-dir=C:/My Things/Ultra64/.git/worktrees/stk5br62" rev-parse HEAD
+2f4bab11234cc2d5c1b452e51883447ff2831d10
+exit=0
+$ git "--git-dir=C:/My Things/Ultra64/.git/worktrees/stk5br62" diff --check
+exit=0
+$ git "--git-dir=C:/My Things/Ultra64/.git/worktrees/stk5br62" diff --stat
+ README.md                     | 14 ++++++++++++
+ n64_controller_reader.v       | 28 ++++++++++++++++++-----
+ n64_receive_controller_data.v | 53 +++++++++++++++++++++++--------------------
+ 3 files changed, 65 insertions(+), 30 deletions(-)
+exit=0
+$ yosys -V
+Yosys 0.71+34 (git sha1 e419c4eef, Release, GNU /usr/bin/x86_64-w64-mingw32-g++ 15.2.1)
+exit=0
+$ nextpnr-ecp5 --version
+"nextpnr-ecp5" -- Next Generation Place and Route (Version nextpnr-0.11.1-92-g5e2718b6)
+exit=0
+$ ecppack --version
+Project Trellis ecppack Version 1.4-88-g2d12005
+exit=0
+$ C:/msys64/usr/bin/make.exe --version
+GNU Make 4.4.1
+Built for x86_64-pc-msys
+Copyright (C) 1988-2023 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+exit=0

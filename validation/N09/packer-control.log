@@ -1,0 +1,4 @@
+Minimal no-logic device configuration, independent of N09 RTL
+['ecppack', 'validation\\N09\\artifacts\\empty.config', 'validation/N09/artifacts/empty.bit']
+
+exit=3221226356 hex=0xc0000374

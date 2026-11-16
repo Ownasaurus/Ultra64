@@ -1,0 +1,18 @@
+$ iverilog -g2005 -Wall -s n09_response_tb -o C:\Users\Justin\AppData\Local\Temp\n09-7370pixw\test.vvp tests/n09_response_tb.v n64_receive_controller_data.v n64_controller_reader.v glitch_filter.v n64_request.v n64_transmit_byte.v n64_transmit_bit.v
+n64_receive_controller_data.v:4: warning: timescale for n64_receive_controller_data inherited from another file.
+tests/n09_response_tb.v:1: ...: The inherited timescale is here.
+n64_controller_reader.v:6: warning: timescale for n64_controller_reader inherited from another file.
+tests/n09_response_tb.v:1: ...: The inherited timescale is here.
+glitch_filter.v:4: warning: timescale for glitch_filter inherited from another file.
+tests/n09_response_tb.v:1: ...: The inherited timescale is here.
+n64_request.v:4: warning: timescale for n64_request inherited from another file.
+tests/n09_response_tb.v:1: ...: The inherited timescale is here.
+n64_transmit_byte.v:4: warning: timescale for n64_transmit_byte inherited from another file.
+tests/n09_response_tb.v:1: ...: The inherited timescale is here.
+n64_transmit_bit.v:5: warning: timescale for n64_transmit_bit inherited from another file.
+tests/n09_response_tb.v:1: ...: The inherited timescale is here.
+exit=0
+$ vvp C:\Users\Justin\AppData\Local\Temp\n09-7370pixw\test.vvp
+PASS N09: 221 integrated polls; all bit boundaries, stuck levels, stops, malformed pulses and reconnection
+tests/n09_response_tb.v:147: $finish called at 31078200000 (1ps)
+exit=0

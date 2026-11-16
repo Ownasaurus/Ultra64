@@ -9,8 +9,10 @@ module n64_controller_reader(
 	output reg [31:0] controller_data=32'h00000000
 );
 
-localparam idle=0, write_request=1, read_response=2, delay=3;
-reg [1:0] state = idle;
+// Allow the request's trailing edge to traverse the six-sample input filter.
+localparam idle=0, write_request=1, read_response=2, delay=3, settle_response=4;
+reg [2:0] state = idle;
+reg [3:0] settle_clocks = 0;
 
 reg ask_for_data = 1'b0, get_data = 1'b0;
 wire is_asking_for_data, is_receiving_data;
@@ -29,12 +31,15 @@ wire n64d_f;
 glitch_filter data_filter(.sys_clk(sys_clk), .line_in(n64d), .line_out(n64d_f));
 
 wire [31:0] data_received;
+// Busy ending is not sufficient: the receiver must validate length and stop.
+wire response_valid;
 n64_receive_controller_data receiver(
 	.sys_clk(sys_clk),
 	.trigger(get_data),
     .controller_data(data_received),
 	.n64d(n64d_f),
-	.receiving(is_receiving_data)
+	.receiving(is_receiving_data),
+    .response_valid(response_valid) // Stable result for the completed poll.
 );
 
 reg direction_output = 1'b0;
@@ -53,14 +58,25 @@ always @(posedge sys_clk) begin
 			ask_for_data <= 1'b0;
 			if(!ask_for_data && !is_asking_for_data) begin // done sending request
 				direction_output <= 1'b0;
-				get_data <= 1'b1;
-				state <= read_response;
+                // Bound turnaround even on a stuck-low bus; the receiver then times out.
+                settle_clocks <= 7;
+                state <= settle_response;
 			end
 		end
+        // Do not interpret the filter's delayed request stop as a response pulse.
+        settle_response: begin
+            if(settle_clocks == 0) begin
+                get_data <= 1'b1;
+                state <= read_response;
+            end else begin
+                settle_clocks <= settle_clocks - 1'b1;
+            end
+        end
 		read_response: begin
 			get_data <= 1'b0;
 			if(!get_data && !is_receiving_data) begin // done receiving response
-				controller_data <= data_received; // lock in the data in the output register
+                // Disconnect/framing policy: release all buttons and center both sticks.
+				controller_data <= response_valid ? data_received : 32'h00000000;
 				state <= delay;
 			end
 		end
