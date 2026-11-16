@@ -1,0 +1,325 @@
+N12 regression against unchanged source 2f4bab11234cc2d5c1b452e51883447ff2831d10; expected failure proves coverage.
+test_direct_artifact_targets (__main__.MakeDependencies.test_direct_artifact_targets) ...
+  test_direct_artifact_targets (__main__.MakeDependencies.test_direct_artifact_targets) (suffix='.json') ... FAIL
+  test_direct_artifact_targets (__main__.MakeDependencies.test_direct_artifact_targets) (suffix='_out.config') ... FAIL
+  test_direct_artifact_targets (__main__.MakeDependencies.test_direct_artifact_targets) (suffix='.bit') ... FAIL
+test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) ...
+  test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='all', changed='ecp5evn.lpf', mode='assume-new') ... FAIL
+  test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='all', changed='Makefile', mode='assume-new') ... FAIL
+  test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='all', changed='ecp5evn.lpf', mode='edit') ... FAIL
+  test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='all', changed='Makefile', mode='edit') ... FAIL
+  test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='flash', changed='ecp5evn.lpf', mode='assume-new') ... FAIL
+  test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='flash', changed='Makefile', mode='assume-new') ... FAIL
+  test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='flash', changed='ecp5evn.lpf', mode='edit') ... FAIL
+  test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='flash', changed='Makefile', mode='edit') ... FAIL
+  test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='test', changed='ecp5evn.lpf', mode='assume-new') ... FAIL
+  test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='test', changed='Makefile', mode='assume-new') ... FAIL
+  test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='test', changed='ecp5evn.lpf', mode='edit') ... FAIL
+  test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='test', changed='Makefile', mode='edit') ... FAIL
+
+======================================================================
+FAIL: test_direct_artifact_targets (__main__.MakeDependencies.test_direct_artifact_targets) (suffix='.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 97, in test_direct_artifact_targets
+    self.check_schedule(project + suffix, "Makefile", "edit", stages)
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 66, in check_schedule
+    self.assertEqual(actual, expected, result.stdout)
+AssertionError: Lists differ: [] != ['yosys']
+
+Second list contains 1 additional elements.
+First extra element 0:
+'yosys'
+
+- []
++ ['yosys'] : make: 'n64_replay_device.json' is up to date.
+
+
+======================================================================
+FAIL: test_direct_artifact_targets (__main__.MakeDependencies.test_direct_artifact_targets) (suffix='_out.config')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 97, in test_direct_artifact_targets
+    self.check_schedule(project + suffix, "Makefile", "edit", stages)
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 66, in check_schedule
+    self.assertEqual(actual, expected, result.stdout)
+AssertionError: Lists differ: [] != ['yosys', 'nextpnr-ecp5']
+
+Second list contains 2 additional elements.
+First extra element 0:
+'yosys'
+
+- []
++ ['yosys', 'nextpnr-ecp5'] : make: 'n64_replay_device_out.config' is up to date.
+
+
+======================================================================
+FAIL: test_direct_artifact_targets (__main__.MakeDependencies.test_direct_artifact_targets) (suffix='.bit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 97, in test_direct_artifact_targets
+    self.check_schedule(project + suffix, "Makefile", "edit", stages)
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 66, in check_schedule
+    self.assertEqual(actual, expected, result.stdout)
+AssertionError: Lists differ: [] != ['yosys', 'nextpnr-ecp5', 'ecppack']
+
+Second list contains 3 additional elements.
+First extra element 0:
+'yosys'
+
+- []
++ ['yosys', 'nextpnr-ecp5', 'ecppack'] : make: 'n64_replay_device.bit' is up to date.
+
+
+======================================================================
+FAIL: test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='all', changed='ecp5evn.lpf', mode='assume-new')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 87, in test_incremental_builds_and_programming_targets
+    self.check_schedule(target, changed, mode, stages + programming)
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 66, in check_schedule
+    self.assertEqual(actual, expected, result.stdout)
+AssertionError: Lists differ: [] != ['nextpnr-ecp5', 'ecppack']
+
+Second list contains 2 additional elements.
+First extra element 0:
+'nextpnr-ecp5'
+
+- []
++ ['nextpnr-ecp5', 'ecppack'] : make: Nothing to be done for 'all'.
+
+
+======================================================================
+FAIL: test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='all', changed='Makefile', mode='assume-new')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 87, in test_incremental_builds_and_programming_targets
+    self.check_schedule(target, changed, mode, stages + programming)
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 66, in check_schedule
+    self.assertEqual(actual, expected, result.stdout)
+AssertionError: Lists differ: [] != ['yosys', 'nextpnr-ecp5', 'ecppack']
+
+Second list contains 3 additional elements.
+First extra element 0:
+'yosys'
+
+- []
++ ['yosys', 'nextpnr-ecp5', 'ecppack'] : make: Nothing to be done for 'all'.
+
+
+======================================================================
+FAIL: test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='all', changed='ecp5evn.lpf', mode='edit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 87, in test_incremental_builds_and_programming_targets
+    self.check_schedule(target, changed, mode, stages + programming)
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 66, in check_schedule
+    self.assertEqual(actual, expected, result.stdout)
+AssertionError: Lists differ: [] != ['nextpnr-ecp5', 'ecppack']
+
+Second list contains 2 additional elements.
+First extra element 0:
+'nextpnr-ecp5'
+
+- []
++ ['nextpnr-ecp5', 'ecppack'] : make: Nothing to be done for 'all'.
+
+
+======================================================================
+FAIL: test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='all', changed='Makefile', mode='edit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 87, in test_incremental_builds_and_programming_targets
+    self.check_schedule(target, changed, mode, stages + programming)
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 66, in check_schedule
+    self.assertEqual(actual, expected, result.stdout)
+AssertionError: Lists differ: [] != ['yosys', 'nextpnr-ecp5', 'ecppack']
+
+Second list contains 3 additional elements.
+First extra element 0:
+'yosys'
+
+- []
++ ['yosys', 'nextpnr-ecp5', 'ecppack'] : make: Nothing to be done for 'all'.
+
+
+======================================================================
+FAIL: test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='flash', changed='ecp5evn.lpf', mode='assume-new')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 87, in test_incremental_builds_and_programming_targets
+    self.check_schedule(target, changed, mode, stages + programming)
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 66, in check_schedule
+    self.assertEqual(actual, expected, result.stdout)
+AssertionError: Lists differ: ['openFPGALoader'] != ['nextpnr-ecp5', 'ecppack', 'openFPGALoader']
+
+First differing element 0:
+'openFPGALoader'
+'nextpnr-ecp5'
+
+Second list contains 2 additional elements.
+First extra element 1:
+'ecppack'
+
+- ['openFPGALoader']
++ ['nextpnr-ecp5', 'ecppack', 'openFPGALoader'] : openFPGALoader -b ecp5_evn -f n64_replay_device.bit
+
+
+======================================================================
+FAIL: test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='flash', changed='Makefile', mode='assume-new')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 87, in test_incremental_builds_and_programming_targets
+    self.check_schedule(target, changed, mode, stages + programming)
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 66, in check_schedule
+    self.assertEqual(actual, expected, result.stdout)
+AssertionError: Lists differ: ['openFPGALoader'] != ['yosys', 'nextpnr-ecp5', 'ecppack', 'openFPGALoader']
+
+First differing element 0:
+'openFPGALoader'
+'yosys'
+
+Second list contains 3 additional elements.
+First extra element 1:
+'nextpnr-ecp5'
+
+- ['openFPGALoader']
++ ['yosys', 'nextpnr-ecp5', 'ecppack', 'openFPGALoader'] : openFPGALoader -b ecp5_evn -f n64_replay_device.bit
+
+
+======================================================================
+FAIL: test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='flash', changed='ecp5evn.lpf', mode='edit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 87, in test_incremental_builds_and_programming_targets
+    self.check_schedule(target, changed, mode, stages + programming)
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 66, in check_schedule
+    self.assertEqual(actual, expected, result.stdout)
+AssertionError: Lists differ: ['openFPGALoader'] != ['nextpnr-ecp5', 'ecppack', 'openFPGALoader']
+
+First differing element 0:
+'openFPGALoader'
+'nextpnr-ecp5'
+
+Second list contains 2 additional elements.
+First extra element 1:
+'ecppack'
+
+- ['openFPGALoader']
++ ['nextpnr-ecp5', 'ecppack', 'openFPGALoader'] : openFPGALoader -b ecp5_evn -f n64_replay_device.bit
+
+
+======================================================================
+FAIL: test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='flash', changed='Makefile', mode='edit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 87, in test_incremental_builds_and_programming_targets
+    self.check_schedule(target, changed, mode, stages + programming)
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 66, in check_schedule
+    self.assertEqual(actual, expected, result.stdout)
+AssertionError: Lists differ: ['openFPGALoader'] != ['yosys', 'nextpnr-ecp5', 'ecppack', 'openFPGALoader']
+
+First differing element 0:
+'openFPGALoader'
+'yosys'
+
+Second list contains 3 additional elements.
+First extra element 1:
+'nextpnr-ecp5'
+
+- ['openFPGALoader']
++ ['yosys', 'nextpnr-ecp5', 'ecppack', 'openFPGALoader'] : openFPGALoader -b ecp5_evn -f n64_replay_device.bit
+
+
+======================================================================
+FAIL: test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='test', changed='ecp5evn.lpf', mode='assume-new')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 87, in test_incremental_builds_and_programming_targets
+    self.check_schedule(target, changed, mode, stages + programming)
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 66, in check_schedule
+    self.assertEqual(actual, expected, result.stdout)
+AssertionError: Lists differ: ['openFPGALoader'] != ['nextpnr-ecp5', 'ecppack', 'openFPGALoader']
+
+First differing element 0:
+'openFPGALoader'
+'nextpnr-ecp5'
+
+Second list contains 2 additional elements.
+First extra element 1:
+'ecppack'
+
+- ['openFPGALoader']
++ ['nextpnr-ecp5', 'ecppack', 'openFPGALoader'] : openFPGALoader -b ecp5_evn n64_replay_device.bit
+
+
+======================================================================
+FAIL: test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='test', changed='Makefile', mode='assume-new')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 87, in test_incremental_builds_and_programming_targets
+    self.check_schedule(target, changed, mode, stages + programming)
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 66, in check_schedule
+    self.assertEqual(actual, expected, result.stdout)
+AssertionError: Lists differ: ['openFPGALoader'] != ['yosys', 'nextpnr-ecp5', 'ecppack', 'openFPGALoader']
+
+First differing element 0:
+'openFPGALoader'
+'yosys'
+
+Second list contains 3 additional elements.
+First extra element 1:
+'nextpnr-ecp5'
+
+- ['openFPGALoader']
++ ['yosys', 'nextpnr-ecp5', 'ecppack', 'openFPGALoader'] : openFPGALoader -b ecp5_evn n64_replay_device.bit
+
+
+======================================================================
+FAIL: test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='test', changed='ecp5evn.lpf', mode='edit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 87, in test_incremental_builds_and_programming_targets
+    self.check_schedule(target, changed, mode, stages + programming)
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 66, in check_schedule
+    self.assertEqual(actual, expected, result.stdout)
+AssertionError: Lists differ: ['openFPGALoader'] != ['nextpnr-ecp5', 'ecppack', 'openFPGALoader']
+
+First differing element 0:
+'openFPGALoader'
+'nextpnr-ecp5'
+
+Second list contains 2 additional elements.
+First extra element 1:
+'ecppack'
+
+- ['openFPGALoader']
++ ['nextpnr-ecp5', 'ecppack', 'openFPGALoader'] : openFPGALoader -b ecp5_evn n64_replay_device.bit
+
+
+======================================================================
+FAIL: test_incremental_builds_and_programming_targets (__main__.MakeDependencies.test_incremental_builds_and_programming_targets) (target='test', changed='Makefile', mode='edit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 87, in test_incremental_builds_and_programming_targets
+    self.check_schedule(target, changed, mode, stages + programming)
+  File "C:\Users\Justin\AppData\Local\Virtuali\worktrees\sxnbm8ql\tests\test_make_dependencies.py", line 66, in check_schedule
+    self.assertEqual(actual, expected, result.stdout)
+AssertionError: Lists differ: ['openFPGALoader'] != ['yosys', 'nextpnr-ecp5', 'ecppack', 'openFPGALoader']
+
+First differing element 0:
+'openFPGALoader'
+'yosys'
+
+Second list contains 3 additional elements.
+First extra element 1:
+'nextpnr-ecp5'
+
+- ['openFPGALoader']
++ ['yosys', 'nextpnr-ecp5', 'ecppack', 'openFPGALoader'] : openFPGALoader -b ecp5_evn n64_replay_device.bit
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 12.696s
+
+FAILED (failures=15)

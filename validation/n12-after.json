@@ -1,0 +1,416 @@
+{
+  "source": "C:\\Users\\Justin\\AppData\\Local\\Virtuali\\worktrees\\sxnbm8ql",
+  "successful": true,
+  "runs": [
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "n64_replay_device.json"
+      ],
+      "changed": "Makefile",
+      "mode": "edit",
+      "returncode": 0,
+      "stdout": "yosys -p \"synth_ecp5 -json n64_replay_device.json -top top\" top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v n64_transmit_controller_state.v n64_transmit_identity.v n64_transmit_byte.v n64_transmit_bit.v UART_TX.v UART_RX.v n64_controller_reader.v n64_receive_controller_data.v n64_request.v and2.v xor2.v vlo.v vhi.v serial_handler.v queue_64.v queue_1024.v inv.v\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "n64_replay_device_out.config"
+      ],
+      "changed": "Makefile",
+      "mode": "edit",
+      "returncode": 0,
+      "stdout": "yosys -p \"synth_ecp5 -json n64_replay_device.json -top top\" top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v n64_transmit_controller_state.v n64_transmit_identity.v n64_transmit_byte.v n64_transmit_bit.v UART_TX.v UART_RX.v n64_controller_reader.v n64_receive_controller_data.v n64_request.v and2.v xor2.v vlo.v vhi.v serial_handler.v queue_64.v queue_1024.v inv.v\nnextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "n64_replay_device.bit"
+      ],
+      "changed": "Makefile",
+      "mode": "edit",
+      "returncode": 0,
+      "stdout": "yosys -p \"synth_ecp5 -json n64_replay_device.json -top top\" top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v n64_transmit_controller_state.v n64_transmit_identity.v n64_transmit_byte.v n64_transmit_bit.v UART_TX.v UART_RX.v n64_controller_reader.v n64_receive_controller_data.v n64_request.v and2.v xor2.v vlo.v vhi.v serial_handler.v queue_64.v queue_1024.v inv.v\nnextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "n64_replay_device.json"
+      ],
+      "changed": "ecp5evn.lpf",
+      "mode": "edit",
+      "returncode": 0,
+      "stdout": "make: 'n64_replay_device.json' is up to date.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "all"
+      ],
+      "changed": null,
+      "mode": "assume-new",
+      "returncode": 0,
+      "stdout": "make: Nothing to be done for 'all'.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "-W",
+        "ecp5evn.lpf",
+        "all"
+      ],
+      "changed": "ecp5evn.lpf",
+      "mode": "assume-new",
+      "returncode": 0,
+      "stdout": "nextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "-W",
+        "Makefile",
+        "all"
+      ],
+      "changed": "Makefile",
+      "mode": "assume-new",
+      "returncode": 0,
+      "stdout": "yosys -p \"synth_ecp5 -json n64_replay_device.json -top top\" top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v n64_transmit_controller_state.v n64_transmit_identity.v n64_transmit_byte.v n64_transmit_bit.v UART_TX.v UART_RX.v n64_controller_reader.v n64_receive_controller_data.v n64_request.v and2.v xor2.v vlo.v vhi.v serial_handler.v queue_64.v queue_1024.v inv.v\nnextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "-W",
+        "top.v",
+        "all"
+      ],
+      "changed": "top.v",
+      "mode": "assume-new",
+      "returncode": 0,
+      "stdout": "yosys -p \"synth_ecp5 -json n64_replay_device.json -top top\" top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v n64_transmit_controller_state.v n64_transmit_identity.v n64_transmit_byte.v n64_transmit_bit.v UART_TX.v UART_RX.v n64_controller_reader.v n64_receive_controller_data.v n64_request.v and2.v xor2.v vlo.v vhi.v serial_handler.v queue_64.v queue_1024.v inv.v\nnextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "all"
+      ],
+      "changed": null,
+      "mode": "edit",
+      "returncode": 0,
+      "stdout": "make: Nothing to be done for 'all'.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "all"
+      ],
+      "changed": "ecp5evn.lpf",
+      "mode": "edit",
+      "returncode": 0,
+      "stdout": "nextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "all"
+      ],
+      "changed": "Makefile",
+      "mode": "edit",
+      "returncode": 0,
+      "stdout": "yosys -p \"synth_ecp5 -json n64_replay_device.json -top top\" top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v n64_transmit_controller_state.v n64_transmit_identity.v n64_transmit_byte.v n64_transmit_bit.v UART_TX.v UART_RX.v n64_controller_reader.v n64_receive_controller_data.v n64_request.v and2.v xor2.v vlo.v vhi.v serial_handler.v queue_64.v queue_1024.v inv.v\nnextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "all"
+      ],
+      "changed": "top.v",
+      "mode": "edit",
+      "returncode": 0,
+      "stdout": "yosys -p \"synth_ecp5 -json n64_replay_device.json -top top\" top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v n64_transmit_controller_state.v n64_transmit_identity.v n64_transmit_byte.v n64_transmit_bit.v UART_TX.v UART_RX.v n64_controller_reader.v n64_receive_controller_data.v n64_request.v and2.v xor2.v vlo.v vhi.v serial_handler.v queue_64.v queue_1024.v inv.v\nnextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "flash"
+      ],
+      "changed": null,
+      "mode": "assume-new",
+      "returncode": 0,
+      "stdout": "openFPGALoader -b ecp5_evn -f n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "-W",
+        "ecp5evn.lpf",
+        "flash"
+      ],
+      "changed": "ecp5evn.lpf",
+      "mode": "assume-new",
+      "returncode": 0,
+      "stdout": "nextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\nopenFPGALoader -b ecp5_evn -f n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "-W",
+        "Makefile",
+        "flash"
+      ],
+      "changed": "Makefile",
+      "mode": "assume-new",
+      "returncode": 0,
+      "stdout": "yosys -p \"synth_ecp5 -json n64_replay_device.json -top top\" top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v n64_transmit_controller_state.v n64_transmit_identity.v n64_transmit_byte.v n64_transmit_bit.v UART_TX.v UART_RX.v n64_controller_reader.v n64_receive_controller_data.v n64_request.v and2.v xor2.v vlo.v vhi.v serial_handler.v queue_64.v queue_1024.v inv.v\nnextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\nopenFPGALoader -b ecp5_evn -f n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "-W",
+        "top.v",
+        "flash"
+      ],
+      "changed": "top.v",
+      "mode": "assume-new",
+      "returncode": 0,
+      "stdout": "yosys -p \"synth_ecp5 -json n64_replay_device.json -top top\" top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v n64_transmit_controller_state.v n64_transmit_identity.v n64_transmit_byte.v n64_transmit_bit.v UART_TX.v UART_RX.v n64_controller_reader.v n64_receive_controller_data.v n64_request.v and2.v xor2.v vlo.v vhi.v serial_handler.v queue_64.v queue_1024.v inv.v\nnextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\nopenFPGALoader -b ecp5_evn -f n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "flash"
+      ],
+      "changed": null,
+      "mode": "edit",
+      "returncode": 0,
+      "stdout": "openFPGALoader -b ecp5_evn -f n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "flash"
+      ],
+      "changed": "ecp5evn.lpf",
+      "mode": "edit",
+      "returncode": 0,
+      "stdout": "nextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\nopenFPGALoader -b ecp5_evn -f n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "flash"
+      ],
+      "changed": "Makefile",
+      "mode": "edit",
+      "returncode": 0,
+      "stdout": "yosys -p \"synth_ecp5 -json n64_replay_device.json -top top\" top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v n64_transmit_controller_state.v n64_transmit_identity.v n64_transmit_byte.v n64_transmit_bit.v UART_TX.v UART_RX.v n64_controller_reader.v n64_receive_controller_data.v n64_request.v and2.v xor2.v vlo.v vhi.v serial_handler.v queue_64.v queue_1024.v inv.v\nnextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\nopenFPGALoader -b ecp5_evn -f n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "flash"
+      ],
+      "changed": "top.v",
+      "mode": "edit",
+      "returncode": 0,
+      "stdout": "yosys -p \"synth_ecp5 -json n64_replay_device.json -top top\" top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v n64_transmit_controller_state.v n64_transmit_identity.v n64_transmit_byte.v n64_transmit_bit.v UART_TX.v UART_RX.v n64_controller_reader.v n64_receive_controller_data.v n64_request.v and2.v xor2.v vlo.v vhi.v serial_handler.v queue_64.v queue_1024.v inv.v\nnextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\nopenFPGALoader -b ecp5_evn -f n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "test"
+      ],
+      "changed": null,
+      "mode": "assume-new",
+      "returncode": 0,
+      "stdout": "openFPGALoader -b ecp5_evn n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "-W",
+        "ecp5evn.lpf",
+        "test"
+      ],
+      "changed": "ecp5evn.lpf",
+      "mode": "assume-new",
+      "returncode": 0,
+      "stdout": "nextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\nopenFPGALoader -b ecp5_evn n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "-W",
+        "Makefile",
+        "test"
+      ],
+      "changed": "Makefile",
+      "mode": "assume-new",
+      "returncode": 0,
+      "stdout": "yosys -p \"synth_ecp5 -json n64_replay_device.json -top top\" top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v n64_transmit_controller_state.v n64_transmit_identity.v n64_transmit_byte.v n64_transmit_bit.v UART_TX.v UART_RX.v n64_controller_reader.v n64_receive_controller_data.v n64_request.v and2.v xor2.v vlo.v vhi.v serial_handler.v queue_64.v queue_1024.v inv.v\nnextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\nopenFPGALoader -b ecp5_evn n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "-W",
+        "top.v",
+        "test"
+      ],
+      "changed": "top.v",
+      "mode": "assume-new",
+      "returncode": 0,
+      "stdout": "yosys -p \"synth_ecp5 -json n64_replay_device.json -top top\" top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v n64_transmit_controller_state.v n64_transmit_identity.v n64_transmit_byte.v n64_transmit_bit.v UART_TX.v UART_RX.v n64_controller_reader.v n64_receive_controller_data.v n64_request.v and2.v xor2.v vlo.v vhi.v serial_handler.v queue_64.v queue_1024.v inv.v\nnextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\nopenFPGALoader -b ecp5_evn n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "test"
+      ],
+      "changed": null,
+      "mode": "edit",
+      "returncode": 0,
+      "stdout": "openFPGALoader -b ecp5_evn n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "test"
+      ],
+      "changed": "ecp5evn.lpf",
+      "mode": "edit",
+      "returncode": 0,
+      "stdout": "nextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\nopenFPGALoader -b ecp5_evn n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "test"
+      ],
+      "changed": "Makefile",
+      "mode": "edit",
+      "returncode": 0,
+      "stdout": "yosys -p \"synth_ecp5 -json n64_replay_device.json -top top\" top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v n64_transmit_controller_state.v n64_transmit_identity.v n64_transmit_byte.v n64_transmit_bit.v UART_TX.v UART_RX.v n64_controller_reader.v n64_receive_controller_data.v n64_request.v and2.v xor2.v vlo.v vhi.v serial_handler.v queue_64.v queue_1024.v inv.v\nnextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\nopenFPGALoader -b ecp5_evn n64_replay_device.bit\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:/msys64/usr/bin/make.exe",
+        "-n",
+        "-r",
+        "--no-print-directory",
+        "test"
+      ],
+      "changed": "top.v",
+      "mode": "edit",
+      "returncode": 0,
+      "stdout": "yosys -p \"synth_ecp5 -json n64_replay_device.json -top top\" top.v pll.v glitch_filter.v n64_controller.v n64_receive_command.v n64_transmit_controller_state.v n64_transmit_identity.v n64_transmit_byte.v n64_transmit_bit.v UART_TX.v UART_RX.v n64_controller_reader.v n64_receive_controller_data.v n64_request.v and2.v xor2.v vlo.v vhi.v serial_handler.v queue_64.v queue_1024.v inv.v\nnextpnr-ecp5 --json n64_replay_device.json --textcfg n64_replay_device_out.config --um5g-85k --package CABGA381 --lpf ecp5evn.lpf\necppack --svf n64_replay_device.svf n64_replay_device_out.config n64_replay_device.bit\nopenFPGALoader -b ecp5_evn n64_replay_device.bit\n",
+      "stderr": ""
+    }
+  ]
+}
