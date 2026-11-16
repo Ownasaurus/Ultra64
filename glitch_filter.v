@@ -1,13 +1,16 @@
 // Ownasaurus
 // Designed to filter a signal to eliminate any tiny glitches, faking a rising/falling edge
 
-module glitch_filter(
+// Keep protocol filtering at six clocks; mechanical buttons select a longer interval.
+module glitch_filter #(parameter STABLE_CYCLES = 6)(
 	input sys_clk,
 	input line_in,
 	output line_out
 );
 
-reg [3:0] sample_counter;
+// Size the consecutive-sample counter for the selected interval, including one clock.
+localparam COUNTER_WIDTH = (STABLE_CYCLES > 1) ? $clog2(STABLE_CYCLES) : 1;
+reg [COUNTER_WIDTH-1:0] sample_counter;
 reg filtered_output;
 
 initial begin
@@ -20,7 +23,7 @@ always @(posedge sys_clk) begin
 		sample_counter <= 0;
 	end else begin // the input signal has changed
 		sample_counter <= sample_counter + 1'b1;
-		if(sample_counter == 5) begin // they don't match, and it's been a a few samples. so let the change go through
+		if(sample_counter == STABLE_CYCLES - 1) begin // Accept only a full uninterrupted interval at the new level.
 			filtered_output <= !filtered_output;
 			sample_counter <= 0;
 		end

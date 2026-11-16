@@ -55,7 +55,9 @@ n64_controller_reader reader(
 // toggle TAS mode vs passthrough mode-------------------
 wire button_f;
 reg debounce;
-glitch_filter data_filter(.sys_clk(clk), .line_in(button), .line_out(button_f));
+// Require 10 ms at 50 MHz for both press and release, so bounce cannot rearm the latch.
+// Protocol inputs retain the independent six-clock default in glitch_filter.
+glitch_filter #(.STABLE_CYCLES(500000)) data_filter(.sys_clk(clk), .line_in(button), .line_out(button_f));
 
 always @(posedge clk) begin
 	if(!button_f && !debounce) begin

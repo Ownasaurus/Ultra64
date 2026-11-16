@@ -1,0 +1,11 @@
+Source: 2f4bab11234cc2d5c1b452e51883447ff2831d10 (read-only git show extraction)
+$ C:\Users\Justin\AppData\Local\Virtuali\worktrees\u2w6dy06\.tools\oss-cad-suite\bin\iverilog.exe -g2012 -s n13_button_tb -o .tools/baseline/button.vvp .tools/baseline/top.v .tools/baseline/glitch_filter.v tests/n13_button_tb.v
+Exit code: 0; expected: 0
+$ C:\Users\Justin\AppData\Local\Virtuali\worktrees\u2w6dy06\.tools\oss-cad-suite\bin\vvp.exe .tools/baseline/button.vvp +bounce-trace
+N13 low/high/low 1 ms: transitions=2 final_mode=1
+tests/n13_button_tb.v:47: $finish called at 3000001000 (1ps)
+Exit code: 0; expected: 0
+$ C:\Users\Justin\AppData\Local\Virtuali\worktrees\u2w6dy06\.tools\oss-cad-suite\bin\vvp.exe .tools/baseline/button.vvp
+FATAL: tests/n13_button_tb.v:30: button=0 cycle=6 expected=0 transitions=1 mode=0
+       Time: 2141000  Scope: n13_button_tb.hold
+Exit code: 1; expected: 1

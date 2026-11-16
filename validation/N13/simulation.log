@@ -1,0 +1,12 @@
+iverilog -g2012 -s n13_filter_tb -o tests/n13_filter.vvp glitch_filter.v tests/n13_filter_tb.v
+vvp tests/n13_filter.vvp
+PASS filter interval=1
+PASS filter interval=6
+PASS filter interval=7
+PASS filter interval=500000
+PASS N13 filter: default six clocks and interval boundaries
+tests/n13_filter_tb.v:54: $finish called at 40000031000 (1ps)
+iverilog -g2012 -s n13_button_tb -o tests/n13_button.vvp top.v glitch_filter.v tests/n13_button_tb.v
+vvp tests/n13_button.vvp
+PASS N13 top: press/release bounce, threshold boundaries, holds, second press
+tests/n13_button_tb.v:67: $finish called at 117002001000 (1ps)

@@ -1,0 +1,7 @@
+# Local validation tools and generated FPGA/simulation artifacts are not source evidence.
+.tools/
+tests/*.vvp
+/n64_replay_device.json
+/n64_replay_device_out.config
+/n64_replay_device.bit
+/n64_replay_device.svf

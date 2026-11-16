@@ -24,3 +24,14 @@ clean:
 	rm -f *.svf *.bit *.config *.json
 
 .PHONY: prog clean
+
+# N13 simulation is separate from 'test', which programs the physical board.
+IVERILOG ?= iverilog
+VVP ?= vvp
+sim-n13:
+	$(IVERILOG) -g2012 -s n13_filter_tb -o tests/n13_filter.vvp glitch_filter.v tests/n13_filter_tb.v
+	$(VVP) tests/n13_filter.vvp
+	$(IVERILOG) -g2012 -s n13_button_tb -o tests/n13_button.vvp top.v glitch_filter.v tests/n13_button_tb.v
+	$(VVP) tests/n13_button.vvp
+
+.PHONY: sim-n13
