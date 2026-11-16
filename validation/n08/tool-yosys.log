@@ -1,0 +1,6 @@
+# N08 validation command and result
+$ C:\Users\Justin\AppData\Local\Temp\n08-tools\ucrt64\bin\yosys.EXE -V
+cwd: C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1
+Yosys 0.66 (git sha1 7f8fdfd8d7bc08c749a2a969388d3425d4f369d5, x86_64-w64-mingw32-g++ 16.1.0 -march=nocona -msahf -mtune=generic -O2 -fstack-protector-strong -O3)
+
+exit_code: 0

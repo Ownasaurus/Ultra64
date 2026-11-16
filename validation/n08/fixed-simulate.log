@@ -1,0 +1,59 @@
+# N08 validation command and result
+$ vvp C:\Users\Justin\AppData\Local\Temp\n08-validation-qlj2ruqk\fixed.vvp
+cwd: C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1
+PASS response 1 kind=0 point=0 data=80000000
+PASS response 2 kind=0 point=0 data=00000100
+PASS response 3 kind=0 point=1 data=80000000
+PASS response 4 kind=0 point=1 data=00000100
+PASS response 5 kind=0 point=2 data=80000000
+PASS response 6 kind=0 point=2 data=00000100
+PASS response 7 kind=0 point=3 data=80000000
+PASS response 8 kind=0 point=3 data=00000100
+PASS response 9 kind=0 point=4 data=80000000
+PASS response 10 kind=0 point=4 data=00000100
+PASS response 11 kind=0 point=5 data=80000000
+PASS response 12 kind=0 point=5 data=00000100
+PASS response 13 kind=0 point=6 data=80000000
+PASS response 14 kind=0 point=6 data=00000100
+PASS response 15 kind=0 point=7 data=80000000
+PASS response 16 kind=0 point=7 data=00000100
+PASS response 17 kind=1 point=0 data=a5c35a96
+PASS response 18 kind=1 point=0 data=3c69f00f
+PASS response 19 kind=1 point=1 data=a5c35a96
+PASS response 20 kind=1 point=1 data=3c69f00f
+PASS response 21 kind=1 point=2 data=a5c35a96
+PASS response 22 kind=1 point=2 data=3c69f00f
+PASS response 23 kind=1 point=3 data=a5c35a96
+PASS response 24 kind=1 point=3 data=3c69f00f
+PASS response 25 kind=1 point=4 data=a5c35a96
+PASS response 26 kind=1 point=4 data=3c69f00f
+PASS response 27 kind=1 point=5 data=a5c35a96
+PASS response 28 kind=1 point=5 data=3c69f00f
+PASS response 29 kind=1 point=6 data=a5c35a96
+PASS response 30 kind=1 point=6 data=3c69f00f
+PASS response 31 kind=1 point=7 data=a5c35a96
+PASS response 32 kind=1 point=7 data=3c69f00f
+PASS response 33 kind=2 point=0 data=3c69f00f
+PASS response 34 kind=2 point=0 data=a5c35a96
+PASS response 35 kind=2 point=1 data=3c69f00f
+PASS response 36 kind=2 point=1 data=a5c35a96
+PASS response 37 kind=2 point=2 data=3c69f00f
+PASS response 38 kind=2 point=2 data=a5c35a96
+PASS response 39 kind=2 point=3 data=3c69f00f
+PASS response 40 kind=2 point=3 data=a5c35a96
+PASS response 41 kind=2 point=4 data=3c69f00f
+PASS response 42 kind=2 point=4 data=a5c35a96
+PASS response 43 kind=2 point=5 data=3c69f00f
+PASS response 44 kind=2 point=5 data=a5c35a96
+PASS response 45 kind=2 point=6 data=3c69f00f
+PASS response 46 kind=2 point=6 data=a5c35a96
+PASS response 47 kind=2 point=7 data=3c69f00f
+PASS response 48 kind=2 point=7 data=a5c35a96
+PASS response 49 kind=3 point=8 data=deadbeef
+PASS response 50 kind=3 point=8 data=ffffffff
+PASS response 51 kind=3 point=8 data=12345678
+PASS response 52 kind=3 point=8 data=87654321
+PASS N08: 52 decoded responses
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1\tests\n08_snapshot_tb.v:128: $finish called at 6888020000 (1ps)
+
+exit_code: 0

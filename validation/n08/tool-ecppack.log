@@ -1,0 +1,6 @@
+# N08 validation command and result
+$ C:\Users\Justin\AppData\Local\Temp\n08-tools\ucrt64\bin\ecppack.EXE --version
+cwd: C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1
+Project Trellis ecppack Version srcinfo-cache-31091-g511025d6fb
+
+exit_code: 0

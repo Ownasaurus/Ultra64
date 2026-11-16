@@ -1,0 +1,11 @@
+# N08 validation command and result
+$ iverilog -g2005 -Wall -s n08_snapshot_tb -o C:\Users\Justin\AppData\Local\Temp\n08-validation-qlj2ruqk\fixed.vvp C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1\tests\n08_snapshot_tb.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1\n64_transmit_controller_state.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1\n64_transmit_byte.v C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1\n64_transmit_bit.v
+cwd: C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1\n64_transmit_controller_state.v:4: warning: timescale for n64_transmit_controller_state inherited from another file.
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1\tests\n08_snapshot_tb.v:3: ...: The inherited timescale is here.
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1\n64_transmit_byte.v:4: warning: timescale for n64_transmit_byte inherited from another file.
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1\tests\n08_snapshot_tb.v:3: ...: The inherited timescale is here.
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1\n64_transmit_bit.v:5: warning: timescale for n64_transmit_bit inherited from another file.
+C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1\tests\n08_snapshot_tb.v:3: ...: The inherited timescale is here.
+
+exit_code: 0

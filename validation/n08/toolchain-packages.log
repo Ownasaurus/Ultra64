@@ -1,0 +1,14 @@
+# N08 temporary MSYS2 validation package SHA-256 hashes
+# Downloaded from https://repo.msys2.org/mingw/ucrt64/; extracted outside the repository.
+6bbbd0cf94d8dbfae242d87f540d6a69623208cb1c63183cace0e9e1bb702786  mingw-w64-ucrt-x86_64-gcc-libs-16.2.0-7-any.pkg.tar.zst
+db9282bbd0a2e74c31d66af6bd89eb68d647a09f721eef4c661768588dca4324  mingw-w64-ucrt-x86_64-icu-78.3-4-any.pkg.tar.zst
+fd4d7d7cb60cda1eb437f5476673503d92964cf47ce6c11b460eb3bd05c43582  mingw-w64-ucrt-x86_64-iverilog-1~13.0-2-any.pkg.tar.zst
+bc0ae31c582e0847964b4c8c4b55bb2404a9b7ddce7ebf0b176b6693b76e0c62  mingw-w64-ucrt-x86_64-libgcc-16.2.0-7-any.pkg.tar.zst
+ca3c10421830f19247c701bec9a2ac8f3d6514685c8c9d1733fd5c89fa2da3ef  mingw-w64-ucrt-x86_64-libgomp-16.2.0-7-any.pkg.tar.zst
+4dd4b216b0e92ffa160127dd50620372609e98cb219ff1c5dcb9b3fbfe153253  mingw-w64-ucrt-x86_64-libstdc%2B%2B-16.2.0-7-any.pkg.tar.zst
+6884e4ee2b7ea8ae7864290255658d5706945006477a7ba94a928fdf6770992a  mingw-w64-ucrt-x86_64-libwinpthread-git-12.0.0.r747.g1a99f8514-1-any.pkg.tar.zst
+5582c7a14aac69e09c5fbeb5c287dbc728291a99911402397980f437008f8b36  mingw-w64-ucrt-x86_64-nextpnr-0.7-9-any.pkg.tar.zst
+2bb07676411226e675192183bd603bc09395cf122ede66dec32527171d769bce  mingw-w64-ucrt-x86_64-prjtrellis-1.4-8-any.pkg.tar.zst
+824bcc2b3d048f6afa47ad2d13bb48ebe016203bd603d47dabfe2d13f317ae48  mingw-w64-ucrt-x86_64-python-3.14.9-1-any.pkg.tar.zst
+0a02f5e14552323675741edc5c85e2077efa716a47841bc7544a549be65c5abc  mingw-w64-ucrt-x86_64-qt5-base-5.15.19%2Bkde%2Br96-1-any.pkg.tar.zst
+791bf8b3f200f01964167333bcb8c665d6531f2fa6dfee109db8ab02f0836122  mingw-w64-ucrt-x86_64-yosys-0.66-1-any.pkg.tar.zst

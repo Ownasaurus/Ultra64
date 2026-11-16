@@ -1,0 +1,126 @@
+# N08 validation command and result
+$ C:\Users\Justin\AppData\Local\Temp\n08-tools\ucrt64\bin\nextpnr-ecp5.EXE --help
+cwd: C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1
+"nextpnr-ecp5" -- Next Generation Place and Route (Version nextpnr-0.7)
+
+General options:
+  -h [ --help ]                         show help
+  -v [ --verbose ]                      verbose output
+  -q [ --quiet ]                        quiet mode, only errors and warnings 
+                                        displayed
+  --Werror                              Turn warnings into errors
+  -l [ --log ] arg                      log file, all log messages are written 
+                                        to this file regardless of -q
+  --debug                               debug output
+  --debug-placer                        debug output from placer only
+  --debug-router                        debug output from router only
+  --threads arg                         number of threads for passes where this
+                                        is configurable
+  -f [ --force ]                        keep running after errors
+  --gui                                 start gui
+  --gui-no-aa                           disable anti aliasing (use together 
+                                        with --gui option)
+  --run arg                             python file to execute instead of 
+                                        default flow
+  --pre-pack arg                        python file to run before packing
+  --pre-place arg                       python file to run before placement
+  --pre-route arg                       python file to run before routing
+  --post-route arg                      python file to run after routing
+  --on-failure arg                      python file to run in event of crash 
+                                        for design introspection
+  --json arg                            JSON design file to ingest
+  --write arg                           JSON design file to write
+  --top arg                             name of top module
+  --seed arg                            seed value for random number generator
+  -r [ --randomize-seed ]               randomize seed value for random number 
+                                        generator
+  --placer arg                          placer algorithm to use; available: sa,
+                                        heap, static; default: heap
+  --router arg                          router algorithm to use; available: 
+                                        router1, router2; default: router1
+  --slack_redist_iter arg               number of iterations between slack 
+                                        redistribution
+  --cstrweight arg                      placer weighting for relative 
+                                        constraint satisfaction
+  --starttemp arg                       placer SA start temperature
+  --pack-only                           pack design only without placement or 
+                                        routing
+  --no-route                            process design without routing
+  --no-place                            process design without placement
+  --no-pack                             process design without packing
+  --ignore-loops                        ignore combinational loops in timing 
+                                        analysis
+  --ignore-rel-clk                      ignore clock-to-clock relations in 
+                                        timing checks
+  -V [ --version ]                      show version
+  --test                                check architecture database integrity
+  --freq arg                            set target frequency for design in MHz
+  --timing-allow-fail                   allow timing to fail in design
+  --no-tmdriv                           disable timing-driven placement
+  --sdf arg                             SDF delay back-annotation file to write
+  --sdf-cvc                             enable tweaks for SDF file 
+                                        compatibility with the CVC simulator
+  --no-print-critical-path-source       disable printing of the line numbers 
+                                        associated with each net in the 
+                                        critical path
+  --placer-heap-alpha arg               placer heap alpha value (float, 
+                                        default: 0.1)
+  --placer-heap-beta arg                placer heap beta value (float, default:
+                                        0.9)
+  --placer-heap-critexp arg             placer heap criticality exponent (int, 
+                                        default: 2)
+  --placer-heap-timingweight arg        placer heap timing weight (int, 
+                                        default: 10)
+  --placer-heap-cell-placement-timeout arg
+                                        allow placer to attempt up to 
+                                        max(10000, total cells^2 / N) 
+                                        iterations to place a cell (int N, 
+                                        default: 8, 0 for no timeout)
+  --parallel-refine                     use new experimental parallelised 
+                                        engine for placement refinement
+  --router2-heatmap arg                 prefix for router2 resource congestion 
+                                        heatmaps
+  --tmg-ripup                           enable experimental timing-driven ripup
+                                        in router
+  --router2-tmg-ripup                   enable experimental timing-driven ripup
+                                        in router (deprecated; use --tmg-ripup 
+                                        instead)
+  --router2-alt-weights                 use alternate router2 weights
+  --report arg                          write timing and utilization report in 
+                                        JSON format to file
+  --detailed-timing-report              Append detailed net timing data to the 
+                                        JSON report
+  --placed-svg arg                      write render of placement to SVG file
+  --routed-svg arg                      write render of routing to SVG file
+
+Architecture specific options:
+  --12k                                 set device type to LFE5U-12F
+  --25k                                 set device type to LFE5U-25F
+  --45k                                 set device type to LFE5U-45F
+  --85k                                 set device type to LFE5U-85F
+  --um-25k                              set device type to LFE5UM-25F
+  --um-45k                              set device type to LFE5UM-45F
+  --um-85k                              set device type to LFE5UM-85F
+  --um5g-25k                            set device type to LFE5UM5G-25F
+  --um5g-45k                            set device type to LFE5UM5G-45F
+  --um5g-85k                            set device type to LFE5UM5G-85F
+  --package arg                         select device package (defaults to 
+                                        CABGA381)
+  --speed arg                           select device speedgrade (6, 7 or 8)
+  --basecfg arg                         base chip configuration in Trellis text
+                                        format (deprecated)
+  --override-basecfg arg                base chip configuration in Trellis text
+                                        format
+  --textcfg arg                         textual configuration in Trellis format
+                                        to write
+  --lpf arg                             LPF pin constraint file(s)
+  --lpf-allow-unconstrained             don't require LPF file(s) to constrain 
+                                        all IO
+  --out-of-context                      disable IO buffer insertion and global 
+                                        promotion/routing, for building 
+                                        pre-routed blocks (experimental)
+  --disable-router-lutperm              don't allow the router to permute LUT 
+                                        inputs
+
+
+exit_code: 0

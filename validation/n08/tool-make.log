@@ -1,0 +1,11 @@
+# N08 validation command and result
+$ C:/msys64/usr/bin\make.EXE --version
+cwd: C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1
+GNU Make 4.4.1
+Built for x86_64-pc-msys
+Copyright (C) 1988-2023 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+exit_code: 0

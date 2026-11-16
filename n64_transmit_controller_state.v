@@ -12,6 +12,8 @@ module n64_transmit_controller_state(
 wire n64_datab, n64_datas;
 
 reg [7:0] byte;
+// N08: Hold the selected mode's complete word for the entire response.
+reg [31:0] response_data;
 
 localparam bit_stop = 2'b11;
 
@@ -30,6 +32,8 @@ initial begin
 	send_stop_trigger = 0;
 	send_byte_trigger = 0;
     byte = 0;
+    // N08: Initialize the transaction snapshot along with the serializer.
+    response_data = 0;
     state = 0;
     transmitting = 0;
 end
@@ -39,12 +43,18 @@ assign n64d = (state <= wait2_sending_byte4) ? n64_datab : n64_datas;
 always @(posedge sys_clk) begin
     if(trigger) begin
         transmitting <= 1'b1;
+        // N08: Accept data on the idle trigger edge, before byte serialization.
+        // Changes to data/mode (or triggers while busy) cannot replace this word.
+        if(state == idle && !transmitting) begin
+            response_data <= data;
+        end
     end
 
     case(state)
         idle: begin
             if(transmitting) begin
-        		byte <= data[31:24];
+                // N08: Serialize this byte from the accepted transaction snapshot.
+                byte <= response_data[31:24];
         		send_byte_trigger <= 1'b1;
         		state <= wait1_sending_byte1;
     		end
@@ -55,7 +65,8 @@ always @(posedge sys_clk) begin
         end
         wait2_sending_byte1: begin
         	if(!byte_transmitting) begin
-        		byte <= data[23:16];
+                // N08: Serialize this byte from the accepted transaction snapshot.
+                byte <= response_data[23:16];
         		send_byte_trigger <= 1'b1;
         		state <= wait1_sending_byte2;
         	end
@@ -66,7 +77,8 @@ always @(posedge sys_clk) begin
         end
         wait2_sending_byte2: begin
         	if(!byte_transmitting) begin
-        		byte <= data[15:8];
+                // N08: Serialize this byte from the accepted transaction snapshot.
+                byte <= response_data[15:8];
         		send_byte_trigger <= 1'b1;
         		state <= wait1_sending_byte3;
         	end
@@ -77,7 +89,8 @@ always @(posedge sys_clk) begin
         end
         wait2_sending_byte3: begin
         	if(!byte_transmitting) begin
-                byte <= data[7:0];
+                // N08: Serialize this byte from the accepted transaction snapshot.
+                byte <= response_data[7:0];
         		send_byte_trigger <= 1'b1;
         		state <= wait1_sending_byte4;
         	end

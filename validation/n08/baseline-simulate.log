@@ -1,0 +1,7 @@
+# N08 validation command and result
+$ vvp C:\Users\Justin\AppData\Local\Temp\n08-validation-qlj2ruqk\baseline.vvp +baseline
+cwd: C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1
+FATAL: C:\Users\Justin\AppData\Local\Virtuali\worktrees\g4bp8hu1\tests\n08_snapshot_tb.v:38: kind=0 point=1 expected=80000000 actual=80000100
+       Time: 132370000  Scope: n08_snapshot_tb.decode
+
+exit_code: 1
